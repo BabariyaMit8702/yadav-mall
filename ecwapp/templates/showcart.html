@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Payment Form</title>
+     <style>
+    a:hover {
+      color: rgba(207, 247, 5, 0.4); 
+    }
+    a:active{
+        color:red;
+    }
+  </style>
+</head>
+<body bgcolor="bg-dark">
+    <center>
+        <pre id="citems">Please add your favourite product in cart 
+<a href="/">HOME</a>
+        </pre>
+<!---->
+               
+    <h2>FILL THIS FORM TO ORDER ITEMS WHICH IS IN CART</h2><br>
+
+    <form action="/reod/" method="post" target="_self">
+        {% csrf_token %}
+        
+        <input type="hidden" name="selected_items" value="is coming soon" id="selected_items">
+        
+        <label for="fullname">Full Name:</label><br>
+        <input type="text" id="fullname" name="fullname" required placeholder="Enter yout name"><br><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your contect No" required><br><br>
+
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" placeholder="Enter your parmanent address" rows="4" cols="40" required></textarea><br><br>
+
+        <label>City Name:</label><br>
+            <input type="text" name="CT" id="city_name" placeholder="Enter your city name" required><br><Br>
+        
+        <label>pin/zip code:</label><br>
+            <input type="number" name="zip_code" id="zip_code" placeholder="pin code" required><br><br>
+        
+        <label for="payment">Payment Method:</label><br>
+        <select id="payment" name="payment" required>
+            <option value="">--Select Payment Method--</option>
+            <option value="credit_card">Credit Card</option>
+            <option value="debit_card">Debit Card</option>
+            <option value="net_banking">Net Banking</option>
+            <option value="upi">UPI</option>
+            <option value="cash_on_delivery">Cash on Delivery</option>
+        </select><br><br>
+
+        <div>
+  Total Price: Rs. <span id="total-price"></span>
+</div>
+<br>
+
+        <input id="sb" type="submit" value="Order Now">
+    </form>
+</center>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+if(localStorage.getItem('cart')==null){
+    cart = {};
+}
+else{
+    fetched_cart = JSON.parse(localStorage.getItem('cart'));
+    cart = JSON.stringify(fetched_cart);
+    document.getElementById("citems").innerHTML = cart
+    document.getElementById("selected_items").value = cart
+    
+}
+
+let cartData = JSON.parse(localStorage.getItem('cart'));
+let total = 0;
+
+  for (let key in cartData) {
+      // Example key: "chat gpt logo || Rs. 999"
+      let quantity = cartData[key];
+
+      // Extract price from key
+      let parts = key.split('|| Rs. ');
+      if (parts.length === 2) {
+          let price = parseFloat(parts[1]); // Convert string to float (in case decimal)
+          total += price * quantity;
+          localStorage.setItem('cart_total', JSON.stringify(total));
+          let l_total = JSON.parse(localStorage.getItem('cart_total')) || 0;
+          document.getElementById('total-price').innerHTML = l_total;
+        
+      }
+}
+
+$("#sb").click(function(){
+    localStorage.clear();
+    location.reload();
+})
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        contect us
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+     <h3>Contact Us</h3>
+     <form action="/submit_contect_form/" method="POST" target="_self">
+        {% csrf_token %}
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+  </div>
+          <div class="form-group">
+    <label for="name">Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+  </div>
+          <div class="form-group">
+    <label for="name">Phone No.</label>
+    <input type="tel" class="form-control" id="phone_no" name="phone_no" placeholder="Enter Your Phone Number">
+  </div>
+          <div class="form-group">
+   <div class="form-group">
+    <label for="desc">How May We Help You ?</label>
+    <textarea class="form-control" id="desc" placeholder="discuss you query here" name="query" rows="3"></textarea>
+  </div>
+  
+  <button type="submit" id="sb" class="btn btn-success">Submit</button>
+
+ <!-- <a style="color:antiquewhite" href="/return_from_contect/">Submit</a>
+-->
+ 
+<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+</body>
+</html>
