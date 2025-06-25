@@ -25,7 +25,7 @@
         {% csrf_token %}
         
         <input type="hidden" name="selected_items" value="is coming soon" id="selected_items">
-        
+        <input type="hidden" name="total_amount" value="will soon" id="total_amount">
         <label for="fullname">Full Name:</label><br>
         <input type="text" id="fullname" name="fullname" required placeholder="Enter yout name"><br><br>
 
@@ -89,7 +89,7 @@ let total = 0;
           localStorage.setItem('cart_total', JSON.stringify(total));
           let l_total = JSON.parse(localStorage.getItem('cart_total')) || 0;
           document.getElementById('total-price').innerHTML = l_total;
-        
+          document.getElementById('total_amount').value = l_total;
       }
 }
 

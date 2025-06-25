@@ -95,7 +95,8 @@ def showcart(request):
 def reod(request):
     
     if(request.method=="POST"):    
-        selected_items = request.POST.get("selected_items")    
+        selected_items = request.POST.get("selected_items")
+        total_amount = request.POST.get("total_amount")    
         name = request.POST.get("fullname")
         phone_no = request.POST.get("phone")
         address = request.POST.get("address")
@@ -103,13 +104,14 @@ def reod(request):
         zip_code = request.POST.get("zip_code")
         payment_method = request.POST.get("payment")
 
-        od = orders(selected_items=selected_items,name=name,phone_no=phone_no,address=address,city=city,zip_code=zip_code,payment_method=payment_method)
+        od = orders(selected_items=selected_items,total_amount=total_amount,name=name,phone_no=phone_no,address=address,city=city,zip_code=zip_code,payment_method=payment_method)
         od.save()
         
     if(request.method=="POST"):
-        zip_code = request.POST.get("zip_code")
-
-        return redirect("/thnx/")
+        #zip_code = request.POST.get("zip_code")
+        pm = request.POST.get("payment")
+        if(pm=="cash_on_delivery"): 
+            return redirect("/thnx/")
 
 def thnx(request):
     return render(request,"thnx.html")

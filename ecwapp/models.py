@@ -28,6 +28,7 @@ class contect(models.Model):
 class orders(models.Model):
     order_id = models.AutoField(primary_key=True)
     selected_items = models.CharField(max_length=300,default="")
+    total_amount = models.IntegerField(default=0)
     name = models.CharField(max_length=20,default="")
     phone_no = models.CharField(max_length=10,default="")
     address = models.CharField(max_length=300,default="")
