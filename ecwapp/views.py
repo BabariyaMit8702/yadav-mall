@@ -2,6 +2,7 @@ from django.shortcuts import render,HttpResponse,redirect
 from .models import product,contect,orders
 from math import ceil
 from django.db.models import Q
+import uuid
 
 # Create your views here.
 '''
@@ -112,6 +113,12 @@ def reod(request):
         pm = request.POST.get("payment")
         if(pm=="cash_on_delivery"): 
             return redirect("/thnx/")
+        elif(pm=="upi"):
+            payble_amount = request.POST.get("total_amount")
+            txn_id = str(uuid.uuid4())
+            upi_id = "ahirnaimish655@oksbi"
+            upi_url = f"upi://pay?pa={upi_id}&pn=YourName&tid={txn_id}&tr={txn_id}&tn=Order%20Payment&am={payble_amount}&cu=INR"
+            return render(request,"payment.html",{'upi_url': upi_url})
 
 def thnx(request):
     return render(request,"thnx.html")

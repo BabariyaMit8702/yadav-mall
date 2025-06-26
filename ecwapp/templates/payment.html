@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pay with GPay</title>
+  <style>
+    /* Resetting default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Stylish background */
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px 60px;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    /* Stylish <a> tag styled as a button */
+    .gpay-btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #4285F4;
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(66, 133, 244, 0.5);
+    }
+
+    .gpay-btn:hover {
+      background: #2a64c5;
+      box-shadow: 0 8px 20px rgba(66, 133, 244, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pay Using Google Pay</h1>
+    <a href="{{upi_url}}" class="gpay-btn">
+        Pay Now
+    </a>
+  </div>
+</body>
+</html>
