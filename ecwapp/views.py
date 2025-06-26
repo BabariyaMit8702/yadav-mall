@@ -116,7 +116,7 @@ def reod(request):
         elif(pm=="upi"):
             payble_amount = request.POST.get("total_amount")
             txn_id = str(uuid.uuid4())
-            upi_id = "ahirnaimish655@oksbi"
+            upi_id = "7861035305@fam"
             upi_url = f"upi://pay?pa={upi_id}&pn=YourName&tid={txn_id}&tr={txn_id}&tn=Order%20Payment&am={payble_amount}&cu=INR"
             return render(request,"payment.html",{'upi_url': upi_url})
 
