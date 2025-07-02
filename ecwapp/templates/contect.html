@@ -5,9 +5,10 @@
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
-<body>
+<body id="cbg" style="background-color: black; color: white;">
     <div class="container">
-     <h3>Contact Us</h3>
+     <h3 style="display: inline-block;">Contact Us</h3>
+     <button id="btncc" style="margin-left: 942px;">Switch To Light Mode</button>
      <form action="/submit_contect_form/" method="POST" target="_self">
         {% csrf_token %}
   <div class="form-group">
@@ -34,5 +35,26 @@
 -->
  
 <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<script>
+  let btncc = document.getElementById("btncc");
+  let cbg = document.getElementById("cbg");
+  function cb(vr){
+    let currunt_color = getComputedStyle(vr).color;
+    let currunt_bgcolor = getComputedStyle(vr).backgroundColor
+    if(currunt_color ===  "rgb(255, 255, 255)"){
+      vr.style.color = "black";
+      vr.style.backgroundColor = "white";
+      document.getElementById('btncc').innerHTML = "Switch to Dark Mode"
+    }
+    else{
+      vr.style.color = "white";
+      vr.style.backgroundColor = "black";
+      document.getElementById('btncc').innerHTML = "Switch to Light Mode"
+    }
+  }
+  btncc.addEventListener("click", function(){
+    cb(cbg);
+  });
+</script>
 </body>
 </html>
