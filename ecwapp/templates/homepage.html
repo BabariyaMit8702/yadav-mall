@@ -140,8 +140,10 @@
                 <p class="card-text">{{prod.0.desc|slice:":30" }}...</p>
                 <!--<button id="product is {{prod.o.product_name}}" href="" class="btn btn-primary cart">Add To Cart</botton>
                 -->
-                <button id="{{prod.0.product_name}} || Rs. {{prod.0.price}}" href="" class="btn btn-primary cart">Add To Cart</botton>
-                <a style="color:aliceblue;" id="qv{{prod.0.id}}" href="/products/{{prod.0.id}}"><button style="margin-left: 10px;" class="btn btn-primary">quick view</botton></a>
+                <button id="{{prod.0.product_name}} || Rs. {{prod.0.price}}" class="btn btn-primary cart">Add To Cart</button>
+                <a style="color:aliceblue;" id="qv{{prod.0.id}}" href="/products/{{prod.0.id}}">
+                  <button style="margin-left: 10px;" class="btn btn-primary">quick view</button>
+                </a>
             
                 </div>
           </div>
@@ -157,8 +159,10 @@
               <h5 class="card-title">{{i.product_name}}</h5>
               <h6 class="card-title">Rs.{{i.price}}</h6>
               <p class="card-text">{{i.desc|slice:":30"}}...</p>
-              <button id="{{i.product_name}} || Rs. {{i.price}}" href="" class="btn btn-primary cart">Add To Cart</botton>
-             - <a style="color:aliceblue;" id="qv{{i.id}}" href="/products/{{i.id}}"><button style="margin-left: 10px;" class="btn btn-primary">quick view</botton></a> 
+              <button id="{{i.product_name}} || Rs. {{i.price}}" class="btn btn-primary cart">Add To Cart</button>
+              <a style="color:aliceblue;" id="qv{{i.id}}" href="/products/{{i.id}}">
+              <button style="margin-left: 10px;" class="btn btn-primary">quick view</button>
+            </a> 
              
             </div>
           </div>
@@ -186,9 +190,20 @@
 
 </div>
 {% endfor %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ... ></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+ 
 <script>
+
+//document.addEventListener("DOMContentLoaded",function(){
+  //let cart = {};
 
 if(localStorage.getItem('cart')==null){
   cart = {};
@@ -197,6 +212,26 @@ else{
   cart = JSON.parse(localStorage.getItem('cart'));
   document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
   }
+
+  /*let cartbtn = document.querySelectorAll('#cart');
+  cartbtn.forEach(function (button){
+    button.addEventListener('click',function(){
+      let idst = this.id.toString();
+
+      if(cart[idst] !== undefined){
+        cart[idst] += 1;
+      }
+      else{
+        cart[idst] = 1;
+      }
+
+      localStorage.setItem('cart',JSON.stringify(cart));
+      document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
+    });
+    });
+  } 
+);*/
+
 
 $('.cart').click(function(){
 
@@ -217,13 +252,16 @@ $("#clear").click(function(){
   localStorage.clear();
   location.reload();
 })
+/*let cl = document.getElementById('clear');
+cl.addEventListener('click', function(){
+  localStorage.clear();
+  location.reload();
+});*/
   
 </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+   <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
   </body>
 </html>
