@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cover Template</title>
+    <title>{% block title %} About Page {% endblock %} </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
       /* Custom styles */
@@ -39,6 +39,28 @@
         color: #fff;
         border-bottom-color: #fff;
       }
+
+      .cc{
+        color: white;
+      }
+
+      .cc:hover{
+        background-color: white;
+        color:black;
+      }
+
+      #cl{
+          background-color: white;
+          color: black;
+      }
+      .bg-white::before{
+        content: "Learn ";
+        color: black;
+      }
+      .bg-white::after{
+        content: "more";
+        color: black;
+      }
     </style>
   </head>
   {% load static %}
@@ -48,14 +70,15 @@
         <div>
           <h3 class="float-md-start mb-0">Welcome</h3>
           <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link active" style="color:white;" href="/">Home</a>
-            <a class="nav-link" style="color:white;" href="#">Features</a>
-            <a class="nav-link" style="color:white;" href="/contect/">Contact</a>
+            <a class="cc nav-link active" href="/">Home</a>
+            <a class="cc nav-link" href="#">Features</a>
+            <a class="cc nav-link" href="/contect/">Contact</a>
           </nav>
         </div>
       </header>
       <br>
       <main class="px-3">
+        {% block bodypart %}
         <h1>Here We Tell ABout Us </h1>
         <pre class="lead">I am Student of Gurukul it Collage.
 Now I am working on ecommerce web app project which 
@@ -63,8 +86,9 @@ will help you for shoping.This web app is my first
 project which I was shared with world
         </pre>        
         <p class="lead">
-          <a href="https://getbootstrap.com/docs/5.3/examples/cover/" style="color:black;" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
+          <a href="https://getbootstrap.com/docs/5.3/examples/cover/" id="cl" class="btn btn-lg btn-secondary fw-bold border-white bg-white"></a>
         </p>
+        {% endblock %}
       </main>
       <br><br><br><Br><Br><br><br>
       <footer class="mt-auto text-white-50">

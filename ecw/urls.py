@@ -31,6 +31,7 @@ urlpatterns = [
     path('products/<int:myid>',views.productview,name="productview"),
     path('showcart/',views.showcart,name="showcart"),
     path('reod/',views.reod,name="reod"),
-    path('thnx/',views.thnx,name="thankU")
+    path('thnx/',views.thnx,name="thankU"),
+    path('base/',views.bs)
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

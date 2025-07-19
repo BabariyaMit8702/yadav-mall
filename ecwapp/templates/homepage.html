@@ -24,7 +24,7 @@
           height:350px;
           }
           body .carousel-indicator li{
-          color: rgba(240, 242, 243, 0.932);
+          color: white;
           }
           body .carousel-indicators{
           position: relative;
@@ -32,7 +32,9 @@
           }
           body .carousel-control-prev-icon,
           body .carousel-control-next-icon{
-          background-color: rgb(12, 7, 12);
+          background-color: black;
+          height:35px;
+          width:35px;
           }
 
           .carousel-control-prev,
@@ -43,20 +45,23 @@
           
         .imgs{
           object-fit:contain;
-          background-color: rgb(42, 147, 165);
         }
 
         .carousel-control-prev-icon{
           position: relative;
           bottom: 270px;
         }          
-
+          .carousel-control-prev-icon:hover{
+            background-color: black;
+          }
         .carousel-control-next-icon{
           position: relative;
           bottom: 270px;
           left: 20px;
         }         
-
+        .carousel-control-next-icon:hover{
+            background-color: black;
+          }
         body .no-padding{
            padding-left: 0;
            padding-right: 0;
@@ -64,6 +69,26 @@
         .quick-view-link {
     cursor: pointer !important;
         }
+     .nav-link:hover{
+        background-color: #0069d9;
+      color:black;
+     }
+     
+     .col-xs-3:hover .card-body {
+        background-color: black;
+        color:#0069d9;
+     }
+     .col-xs-3:hover .imgback {
+        background-color: black;
+     }
+     .col-xs-3:hover .cart {
+        background-color: black;
+        color:#0069d9;
+     }
+     .col-xs-3:hover .quick-view-link{
+        background-color: black;
+        color:#0069d9;
+     }
      
   </style>
   </head>
@@ -72,7 +97,7 @@
 <body style="background-image: url({% static 'images/bgimg.jpg' %}); background-repeat: repeat; background-size: 5px 5px; position: relative; top: 0px;">
   
   <nav style="position: sticky; top: 0px; z-index: +1;" class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">My Awesome Cart</a>
+  <a class="navbar-brand" href="#">YADAV MALL</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -84,11 +109,11 @@
       </li>
       
  <li class="nav-item">
-        <a class="nav-link" href="about/">about-us</a>
+        <a class="nav-link" style="color: lightyellow;" href="about/">about-us</a>
       </li>
 
  <li class="nav-item">
-        <a class="nav-link" href="contect/">contect-us</a>
+        <a class="nav-link" style="color: lightyellow;" href="contect/">contect-us</a>
       </li>
 
  <li class="nav-item">
@@ -134,8 +159,9 @@
          <div class="carousel-item active">
          
         <div class="col-xs-3 col-sm-3 col-md-3">
-          <div class="card" style="width: 18rem;">
+          <div class="card imgback" style="width: 18rem;">
             <img src= 'media/{{prod.0.image}}' class="card-img-top imgs" alt="my image">
+            <hr style="border: #0069d9 1px solid;">
             <div class="card-body">
                 <h5 class="card-title">{{prod.0.product_name}}</h5>                
                 <h6 class="card-title">Rs.{{prod.0.price}}</h6>
@@ -156,8 +182,9 @@
        {% for i in prod|slice:"1:" %}
         
         <div class="col-xs-3 col-sm-3 col-md-3">
-          <div class="card" style="width: 18rem;">
+          <div class="card imgback" style="width: 18rem;">
             <img src='media/{{i.image}}' class="card-img-top imgs" alt="...">
+            <hr style="border: #0069d9 1px solid;">
             <div class="card-body">
               <h5 class="card-title">{{i.product_name}}</h5>
               <h6 class="card-title">Rs.{{i.price}}</h6>

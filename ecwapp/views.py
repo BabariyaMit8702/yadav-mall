@@ -123,3 +123,5 @@ def reod(request):
 def thnx(request):
     return render(request,"thnx.html")
 
+def bs(request):
+    return render(request,'base.html')
