@@ -24,7 +24,7 @@
           height:350px;
           }
           body .carousel-indicator li{
-          color: rgb(248, 248, 247);
+          color: rgba(240, 242, 243, 0.932);
           }
           body .carousel-indicators{
           position: relative;
@@ -32,7 +32,7 @@
           }
           body .carousel-control-prev-icon,
           body .carousel-control-next-icon{
-          background-color: rgb(255, 2, 255);
+          background-color: rgb(12, 7, 12);
           }
 
           .carousel-control-prev,
@@ -61,14 +61,16 @@
            padding-left: 0;
            padding-right: 0;
         }
-
+        .quick-view-link {
+    cursor: pointer !important;
+        }
      
   </style>
   </head>
   {% load static %}
- <!-- <body style="background-image: url({% static 'images\41844f569fe2025d2d97879f711b19da.jpg' %}); background-size: cover; background-repeat: no-repeat; background-position: center;">-->
-<body style="background-image: url({% static 'images/bgimg.jpg' %}); background-repeat: repeat; background-size: 1400px auto; position: relative; top: 0px;">
-
+ <!-- <body style="background-image: url({% static 'images\41844f569fe2025d2d97879f711b19da.jpg' %}); background-size: cover; background-repeat: no-repeat; background-position: center;">-->                                                                                                                
+<body style="background-image: url({% static 'images/bgimg.jpg' %}); background-repeat: repeat; background-size: 5px 5px; position: relative; top: 0px;">
+  
   <nav style="position: sticky; top: 0px; z-index: +1;" class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">My Awesome Cart</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -117,7 +119,7 @@
     <!--Slideshow starts here -->
     <br>
 
-<div  style="z-index: -1;"  id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">
+<div id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">
     <ul style="color: rgb(21, 22, 22);" class="carousel-indicators">
       <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
       {% for i in slide_range %}
@@ -141,9 +143,10 @@
                 <!--<button id="product is {{prod.o.product_name}}" href="" class="btn btn-primary cart">Add To Cart</botton>
                 -->
                 <button id="{{prod.0.product_name}} || Rs. {{prod.0.price}}" class="btn btn-primary cart">Add To Cart</button>
-                <a style="color:aliceblue;" id="qv{{prod.0.id}}" href="/products/{{prod.0.id}}">
+                <!--<a style="color:aliceblue;" id="qv{{prod.0.id}}" href="/products/{{prod.0.id}}">
                   <button style="margin-left: 10px;" class="btn btn-primary">quick view</button>
-                </a>
+                </a>-->
+                <a href="/products/{{prod.0.id}}" class="btn btn-primary quick-view-link" style="margin-left: 10px;">Quick View</a>
             
                 </div>
           </div>
@@ -160,9 +163,10 @@
               <h6 class="card-title">Rs.{{i.price}}</h6>
               <p class="card-text">{{i.desc|slice:":30"}}...</p>
               <button id="{{i.product_name}} || Rs. {{i.price}}" class="btn btn-primary cart">Add To Cart</button>
-              <a style="color:aliceblue;" id="qv{{i.id}}" href="/products/{{i.id}}">
+             <!-- <a style="color:aliceblue;" id="qv{{i.id}}" href="/products/{{i.id}}">
               <button style="margin-left: 10px;" class="btn btn-primary">quick view</button>
-            </a> 
+            </a> -->
+            <a href="/products/{{i.id}}" class="btn btn-primary quick-view-link" style="margin-left: 10px;">Quick View</a>
              
             </div>
           </div>
@@ -190,6 +194,7 @@
 
 </div>
 {% endfor %}
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
@@ -200,20 +205,25 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
  
+
+  
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
 <script>
-
+  let cart = {};
 //document.addEventListener("DOMContentLoaded",function(){
-  //let cart = {};
-
+  
 if(localStorage.getItem('cart')==null){
-  cart = {};
+  let cart = {};
 }
 else{
   cart = JSON.parse(localStorage.getItem('cart'));
   document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
   }
 
-  /*let cartbtn = document.querySelectorAll('#cart');
+ /* let cartbtn = document.querySelectorAll('#cart');
   cartbtn.forEach(function (button){
     button.addEventListener('click',function(){
       let idst = this.id.toString();
@@ -247,16 +257,16 @@ $('.cart').click(function(){
   localStorage.setItem('cart',JSON.stringify(cart));  
   document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
   });
-
+/*
 $("#clear").click(function(){
   localStorage.clear();
   location.reload();
-})
-/*let cl = document.getElementById('clear');
+})*/
+let cl = document.getElementById('clear');
 cl.addEventListener('click', function(){
   localStorage.clear();
   location.reload();
-});*/
+});
   
 </script>
 
