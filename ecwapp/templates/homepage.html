@@ -37,6 +37,11 @@
           width:35px;
           }
 
+          body .carousel-control-prev-icon{
+            position: relative;
+            right: 10px;
+          }
+
           .carousel-control-prev,
           .carousel-control-next{
             top:auto;
@@ -73,7 +78,7 @@
         background-color: #0069d9;
       color:black;
      }
-     
+
      .col-xs-3:hover .card-body {
         background-color: black;
         color:#0069d9;
@@ -89,7 +94,19 @@
         background-color: black;
         color:#0069d9;
      }
-     
+     #clear:hover{
+        background-color: rgb(255, 0, 0);
+     }
+     #clear:active{
+        background-color: rgb(0, 255, 81);
+     }
+     #cart_i:hover{
+      background-color: blueviolet;
+     }
+      #cart_i:active{
+      background-color: rgba(43, 180, 226 ,1);
+     }
+
   </style>
   </head>
   {% load static %}
@@ -125,7 +142,7 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
         
-      <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="click here to purchase items which you was keeped in cart">
+      <button type="button" id="cart_i" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="click here to purchase items which you was keeped in cart">
    <a href="showcart/" style="color: white;">
     cart(<span id="cart_calc">0</span>)
    </a>
@@ -145,7 +162,7 @@
     <br>
 
 <div id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">
-    <ul style="color: rgb(21, 22, 22);" class="carousel-indicators">
+    <ul style="color: rgb(21, 22, 22); position: relative; top: 700px;" class="carousel-indicators">
       <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
       {% for i in slide_range %}
       <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}" ></li>
@@ -154,7 +171,7 @@
     </ul>
    
     <div class="container carousel-inner no-padding">
-         <pre><h1 style="color: chartreuse;">{{prod.0.category}}  -Recommended items</h1></pre>
+         <pre><h1 style="color: chartreuse;">{{prod.0.category}}  -AVAILABLE IN STOCK</h1></pre>
         
          <div class="carousel-item active">
          

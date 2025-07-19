@@ -47,8 +47,11 @@ def home(request):
             nslides = n // 4 + ceil((n / 4) - (n // 4))
             products.append([prod, nslides, range(1, nslides + 1)])
     else:
-        catprods = product.objects.values('category', 'id')
-        cats = {items['category'] for items in catprods}
+        #catprods = product.objects.values('category', 'id')
+        #cats = {items['category'] for items in catprods}
+
+        cats = product.objects.values_list('category', flat=True).distinct()
+
 
         for cat in cats:
             prod = product.objects.filter(category=cat)
