@@ -124,14 +124,31 @@
     #cart_i:active {
       background-color: rgba(43, 180, 226, 1);
     }
+        body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ADEDE, #C850C0);
+      background-size: 800% 800%;
+      animation: gradientShift 2s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   </style>
 </head>
 {% load static %}
 <!-- <body style="background-image: url({% static 'images\41844f569fe2025d2d97879f711b19da.jpg' %}); background-size: cover; background-repeat: no-repeat; background-position: center;">-->
 
-<body
-  style="background-image: url({% static 'images/bgimg.jpg' %}); background-repeat: repeat; background-size: 5px 5px; position: relative; top: 0px;">
-
+<body>
   <nav style="position: sticky; top: 0px; z-index: +1;" class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">YADAV MALL</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

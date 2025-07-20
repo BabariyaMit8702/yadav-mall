@@ -12,10 +12,11 @@
         a:active {
             color: red;
         }
+     
     </style>
 </head>
-
-<body bgcolor="bg-dark">
+{% load static %}
+<body style="background-image: url({% static 'images/bgimg.jpg' %}); background-repeat: repeat; background-size: 1400px auto; position: relative; top: 0px;">
     <center>
         <pre id="citems">Please add your favourite product in cart 
 <a href="/">HOME</a>
