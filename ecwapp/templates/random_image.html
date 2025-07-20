@@ -1,0 +1,16 @@
+{% extends 'about.html' %}
+
+{% block title %}
+Random image loaded
+{% endblock %}
+{% block css %}{% endblock %}
+{% block goto %} <a class="cc nav-link" href="/about/">Go Back</a>{% endblock %}
+{% block bodypart %}
+
+<a href="/img/" class="btn btn-lg btn-light fw-bold border-white bg-white"><button>&#x21bb;</button> Change image</a>
+<br><br>
+<img src="https://picsum.photos/700/300" />
+<br><br>
+
+{% endblock %}
+{% block empty %}{% endblock %}

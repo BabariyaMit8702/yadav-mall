@@ -45,7 +45,7 @@ def home(request):
             prod = filtered_products.filter(category=cat)
             n = len(prod)
             nslides = n // 4 + ceil((n / 4) - (n // 4))
-            products.append([prod, nslides, range(1, nslides + 1)])
+            products.append([prod, nslides, range(1, nslides)])
     else:
         #catprods = product.objects.values('category', 'id')
         #cats = {items['category'] for items in catprods}
@@ -57,7 +57,7 @@ def home(request):
             prod = product.objects.filter(category=cat)
             n = len(prod)
             nslides = n // 4 + ceil((n / 4) - (n // 4))
-            products.append([prod, nslides, range(1, nslides + 1)])  # corrected range end
+            products.append([prod, nslides, range(1, nslides)])  # corrected range end
             
     parameters = {'products': products}
     return render(request, "homepage.html", parameters)
@@ -127,4 +127,4 @@ def thnx(request):
     return render(request,"thnx.html")
 
 def bs(request):
-    return render(request,'base.html')
+    return render(request,'random_image.html')

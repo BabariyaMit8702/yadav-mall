@@ -1,83 +1,92 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Hello, world!</title>
-      <style>
-          .col-md-3
-          {
-          display: inline-block;
-          margin-left:-4px;
-          }
-          .carousel-indicators .active {
-          background-color: blue;
-            }
-          .col-md-3 img{
-          width:250px;
-          height:350px;
-          }
-          body .carousel-indicator li{
-          background-color: blue;
-          }
-          body .carousel-indicators{
-          bottom: 0;
-          }
-          body .carousel-control-prev-icon,
-          body .carousel-control-next-icon{
-          background-color: rgb(255, 2, 255);
-          }
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-          .carousel-control-prev,
-          .carousel-control-next{
-            top:auto;
-            bottom: auto;
-          }
+  <title>Hello, world!</title>
+  <style>
+    .col-md-3 {
+      display: inline-block;
+      margin-left: -4px;
+    }
 
-        .carousel-control-prev-icon{
-          position: relative;
-          bottom: 270px;
-        }          
+    .carousel-indicators .active {
+      background-color: blue;
+    }
 
-        .carousel-control-next-icon{
-          position: relative;
-          bottom: 270px;
-        }         
+    .col-md-3 img {
+      width: 250px;
+      height: 350px;
+    }
 
-        body .no-padding{
-           padding-left: 0;
-           padding-right: 0;
-        }
+    body .carousel-indicator li {
+      background-color: blue;
+    }
+
+    body .carousel-indicators {
+      bottom: 0;
+    }
+
+    body .carousel-control-prev-icon,
+    body .carousel-control-next-icon {
+      background-color: rgb(255, 2, 255);
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      top: auto;
+      bottom: auto;
+    }
+
+    .carousel-control-prev-icon {
+      position: relative;
+      bottom: 270px;
+    }
+
+    .carousel-control-next-icon {
+      position: relative;
+      bottom: 270px;
+    }
+
+    body .no-padding {
+      padding-left: 0;
+      padding-right: 0;
+    }
   </style>
-  </head>
-  {% load static %}
- <!-- <body style="background-image: url({% static 'images\41844f569fe2025d2d97879f711b19da.jpg' %}); background-size: cover; background-repeat: no-repeat; background-position: center;">-->
-<body style="background-color: rgb(185, 111, 111);">
-  
+</head>
+{% load static %}
+<!-- <body style="background-image: url({% static 'images\41844f569fe2025d2d97879f711b19da.jpg' %}); background-size: cover; background-repeat: no-repeat; background-position: center;">-->
 
-<div class="container my-4">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="row">
-        <img src="/media/{{currunt_product.image}}" width="233px"; height="385px" style="border: 8px solid rgb(16, 132, 234); border-radius: 5%;">
-      </div>
-      <div class="my-1" class="row">
-        <button style="margin-right: 1px;  border: 2px solid white;" class="btn btn-primary"><a href="/" style="color:white;">Go Back To Home</a> </button>
-        <br>
+<body style="background-color: rgb(185, 111, 111);">
+
+
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="row">
+          <img src="/media/{{currunt_product.image}}" width="233px" ; height="385px"
+            style="border: 8px solid rgb(16, 132, 234); border-radius: 5%;">
         </div>
-    </div>
-    <div class="col-md-8">
-      <h3>{{currunt_product.product_name}}</h3>
-      <p><b>RS. {{currunt_product.price}} </b></p>
-      <pre>descriptions:   {{currunt_product.desc}}</pre>
+        <div class="my-1" class="row">
+          <button style="margin-right: 1px;  border: 2px solid white;" class="btn btn-primary"><a href="/"
+              style="color:white;">Go Back To Home</a> </button>
+          <br>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <h3>{{currunt_product.product_name}}</h3>
+        <p><b>RS. {{currunt_product.price}} </b></p>
+        <pre>descriptions:   {{currunt_product.desc}}</pre>
+      </div>
     </div>
   </div>
-</div>
 
 
 
@@ -85,49 +94,54 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script>
-  console.log("working");
+    console.log("working");
 
 
-if(localStorage.getItem('cart')==null){
-  cart = {};
-}
-else{
-  cart = JSON.parse(localStorage.getItem('cart'));
-  document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
-  }
+    if (localStorage.getItem('cart') == null) {
+      cart = {};
+    }
+    else {
+      cart = JSON.parse(localStorage.getItem('cart'));
+      document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
+    }
 
-$('.cart').click(function(){
-  console.log("clicked");
-  var idst = this.id.toString();
-  console.log(idst);
-  if(cart[idst] != undefined){
-    console.log(cart[idst] = cart[idst] + 1);
-  }
-  else{
-    console.log(cart[idst] = 1);
-  }
-  console.log(cart);
-  localStorage.setItem('cart',JSON.stringify(cart));  
-  document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
-  });
-   
-</script>
+    $('.cart').click(function () {
+      console.log("clicked");
+      var idst = this.id.toString();
+      console.log(idst);
+      if (cart[idst] != undefined) {
+        console.log(cart[idst] = cart[idst] + 1);
+      }
+      else {
+        console.log(cart[idst] = 1);
+      }
+      console.log(cart);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
+    });
 
-
+  </script>
 
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
- 
 
- </body>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
 </html>
-
-
