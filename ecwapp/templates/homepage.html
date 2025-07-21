@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +12,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <title>Hello, world!</title>
   <style>
@@ -208,6 +212,81 @@
       z-index: 1;
     }
   </style>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #fff;
+    }
+
+    .footer {
+      background: #1e1e1e;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer h2 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .subscribe-btn {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: #cc0000;
+      color: #fff;
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background 0.3s ease;
+    }
+
+    .subscribe-btn:hover {
+      background-color: #e60000;
+    }
+
+    .social-icons {
+      margin-top: 25px;
+    }
+
+    .social-icons a {
+      color: #ffffff;
+      margin: 0 10px;
+      font-size: 22px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #ff4081;
+    }
+
+    @media screen and (max-width: 600px) {
+      .footer h2 {
+        font-size: 22px;
+      }
+
+      .subscribe-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+
+      .social-icons a {
+        font-size: 20px;
+      }
+    }
+
+    .subscribe-btn:hover {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
 </head>
 {% load static %}
 <!-- <body style="background-image: url({% static 'images\41844f569fe2025d2d97879f711b19da.jpg' %}); background-size: cover; background-repeat: no-repeat; background-position: center;">-->
@@ -353,109 +432,120 @@
 
     </div>
     {% endfor %}
-</div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  </div>
+  <br><Br>
+  <div class="footer">
+    <h2>Thanks for visit our website </h2>
+    <button class="subscribe-btn">FOLLOW US ON FOLLOWING PLATFORMS</button>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/mit_ahir.8703/?igsh=ZTYyNnJ3MGRzOGt2#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://github.com/BabariyaMit8702"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ...></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ...></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-      crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
 
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-    <!-- Particles.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-      particlesJS("particles-js", {
-        "particles": {
-          "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-          "color": { "value": "#ffffff" },
-          "shape": { "type": "circle" },
-          "opacity": { "value": 0.4, "random": true },
-          "size": { "value": 3, "random": true },
-          "move": { "enable": true, "speed": 2 }
-        }
-      });
-    </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <!-- Particles.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.4, "random": true },
+        "size": { "value": 3, "random": true },
+        "move": { "enable": true, "speed": 2 }
+      }
+    });
+  </script>
 
-    <!-- आपकी cart और DOM scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      // आपकी existing cart scripts यहाँ
-    </script>
+  <!-- आपकी cart और DOM scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // आपकी existing cart scripts यहाँ
+  </script>
 
-    <script>
+  <script>
+    let cart = {};
+    //document.addEventListener("DOMContentLoaded",function(){
+
+    if (localStorage.getItem('cart') == null) {
       let cart = {};
-      //document.addEventListener("DOMContentLoaded",function(){
+    }
+    else {
+      cart = JSON.parse(localStorage.getItem('cart'));
+      document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
+    }
 
-      if (localStorage.getItem('cart') == null) {
-        let cart = {};
+    /* let cartbtn = document.querySelectorAll('#cart');
+     cartbtn.forEach(function (button){
+       button.addEventListener('click',function(){
+         let idst = this.id.toString();
+   
+         if(cart[idst] !== undefined){
+           cart[idst] += 1;
+         }
+         else{
+           cart[idst] = 1;
+         }
+   
+         localStorage.setItem('cart',JSON.stringify(cart));
+         document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
+       });
+       });
+     } 
+   );*/
+
+
+    $('.cart').click(function () {
+
+      var idst = this.id.toString();
+
+
+      if (cart[idst] != undefined) {
+        cart[idst] = cart[idst] + 1;
       }
       else {
-        cart = JSON.parse(localStorage.getItem('cart'));
-        document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
+        cart[idst] = 1;
       }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
+    });
+    /*
+    $("#clear").click(function(){
+      localStorage.clear();
+      location.reload();
+    })*/
+    let cl = document.getElementById('clear');
+    cl.addEventListener('click', function () {
+      localStorage.clear();
+      location.reload();
+    });
 
-      /* let cartbtn = document.querySelectorAll('#cart');
-       cartbtn.forEach(function (button){
-         button.addEventListener('click',function(){
-           let idst = this.id.toString();
-     
-           if(cart[idst] !== undefined){
-             cart[idst] += 1;
-           }
-           else{
-             cart[idst] = 1;
-           }
-     
-           localStorage.setItem('cart',JSON.stringify(cart));
-           document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
-         });
-         });
-       } 
-     );*/
+  </script>
 
-
-      $('.cart').click(function () {
-
-        var idst = this.id.toString();
-
-
-        if (cart[idst] != undefined) {
-          cart[idst] = cart[idst] + 1;
-        }
-        else {
-          cart[idst] = 1;
-        }
-        localStorage.setItem('cart', JSON.stringify(cart));
-        document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
-      });
-      /*
-      $("#clear").click(function(){
-        localStorage.clear();
-        location.reload();
-      })*/
-      let cl = document.getElementById('clear');
-      cl.addEventListener('click', function () {
-        localStorage.clear();
-        location.reload();
-      });
-
-    </script>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
 </body>
 
 </html>
