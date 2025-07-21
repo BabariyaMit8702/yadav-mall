@@ -9,14 +9,9 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
   <title>Hello, world!</title>
-  <style>
-    .col-md-3 {
-      display: inline-block;
-      margin-left: -4px;
-    }
 
+<style>
     .carousel-indicators .active {
       background-color: blue;
     }
@@ -59,31 +54,58 @@
       padding-left: 0;
       padding-right: 0;
     }
+    .animated-bg {
+  background: linear-gradient(-45deg, #ff4e50, black, white, pink, #1e90ff, #2b5876, #ffcc70);
+  background-size: 400% 400%;
+  animation: gradientFlow 5s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+  .btn{
+    margin-right: 1px;
+    border: 2px solid white;
+    color: black;
+  }
+  .btn:hover{
+     color: white;
+    background-color: black;
+  }
   </style>
 </head>
 {% load static %}
 <!-- <body style="background-image: url({% static 'images\41844f569fe2025d2d97879f711b19da.jpg' %}); background-size: cover; background-repeat: no-repeat; background-position: center;">-->
 
-<body style="background-color: rgb(185, 111, 111);">
-
+<body class="animated-bg">
 
   <div class="container my-4">
     <div class="row">
       <div class="col-md-4">
         <div class="row">
           <img src="/media/{{currunt_product.image}}" width="233px" ; height="385px"
-            style="border: 8px solid rgb(16, 132, 234); border-radius: 5%;">
+            style="border: 2px solid rgb(16, 132, 234); border-radius: 5%;">
         </div>
         <div class="my-1" class="row">
-          <button style="margin-right: 1px;  border: 2px solid white;" class="btn btn-primary"><a href="/"
-              style="color:white;">Go Back To Home</a> </button>
+            <a class="btn" href="/">Go Back To Home 🏠</a> 
           <br>
         </div>
       </div>
       <div class="col-md-8">
-        <h3>{{currunt_product.product_name}}</h3>
-        <p><b>RS. {{currunt_product.price}} </b></p>
-        <pre>descriptions:   {{currunt_product.desc}}</pre>
+        <h3 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">{{currunt_product.product_name}}</h3>
+        <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">RS. {{currunt_product.price}} </p>
+        <pre style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">descriptions:   {{currunt_product.desc}}</pre>
       </div>
     </div>
   </div>

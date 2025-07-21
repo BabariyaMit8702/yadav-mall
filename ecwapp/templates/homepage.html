@@ -124,24 +124,88 @@
     #cart_i:active {
       background-color: rgba(43, 180, 226, 1);
     }
-        body {
+  </style>
+  <style>
+    /* Body reset for full screen */
+    body {
       margin: 0;
-      height: 100vh;
-      background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ADEDE, #C850C0);
-      background-size: 800% 800%;
-      animation: gradientShift 2s ease infinite;
+      padding: 0;
+      position: relative;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
     }
 
-    @keyframes gradientShift {
+    /* Gradient background animation */
+    #bg-gradient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(-45deg, #1a2a6c, #b21f1f, black, #11998e);
+      background-size: 400% 400%;
+      animation: gradientBG 5s ease infinite;
+      z-index: -3;
+    }
+
+    @keyframes gradientBG {
       0% {
         background-position: 0% 50%;
       }
+
       50% {
         background-position: 100% 50%;
       }
+
       100% {
         background-position: 0% 50%;
       }
+    }
+
+    /* Particles overlay container */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    /* Subtle moving background images */
+    .bg-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background-image: url('https://source.unsplash.com/1600x900/?abstract,tech');
+      background-size: cover;
+      opacity: 0.05;
+      transform: translate(-50%, -50%);
+      animation: floatImg 30s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes floatImg {
+      0% {
+        transform: translate(-45%, -45%) scale(1);
+      }
+
+      50% {
+        transform: translate(-55%, -55%) scale(1.05);
+      }
+
+      100% {
+        transform: translate(-45%, -45%) scale(1);
+      }
+    }
+
+    /* Content container goes above everything */
+    .page-content {
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
@@ -149,221 +213,249 @@
 <!-- <body style="background-image: url({% static 'images\41844f569fe2025d2d97879f711b19da.jpg' %}); background-size: cover; background-repeat: no-repeat; background-position: center;">-->
 
 <body>
-  <nav style="position: sticky; top: 0px; z-index: +1;" class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">YADAV MALL</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div id="bg-gradient"></div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-        </li>
+  <!-- Slightly floating background image -->
+  <div class="bg-layer"></div>
 
-        <li class="nav-item">
-          <a class="nav-link" style="color: lightyellow;" href="about/">about-us</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" style="color: lightyellow;" href="contect/">contect-us</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" style="color: lightyellow;" href="https://chromedino.com/">?Game?</a>
-        </li>
-      </ul>
-      <form style="padding-right: 5px;" method="GET" target="_self" action="/" class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search 🔍" aria-label="Search" name="query">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-
-      <button type="button" id="cart_i" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"
-        title="click here to purchase items which you was keeped in cart">
-        <a href="showcart/" style="color: white;">
-          &#128722;(<span id="cart_calc">0</span>)
-        </a>
-
+  <!-- Particles.js overlay -->
+  <div id="particles-js"></div>
+  <div class="page-content">
+    <nav style="position: sticky; top: 0px; z-index: +1;" class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">YADAV MALL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
 
-      <button type="button" id="clear" class="btn btn-secondary" style="margin-left: 5px;">Clear &#128722;</button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
 
-    </div>
-  </nav>
-  <br>
-  <hr>
+          <li class="nav-item">
+            <a class="nav-link" style="color: lightyellow;" href="about/">about-us</a>
+          </li>
 
-  <div class="container">
-    {% for prod,nslides,slide_range in products %}
+          <li class="nav-item">
+            <a class="nav-link" style="color: lightyellow;" href="contect/">contect-us</a>
+          </li>
 
-    <!--Slideshow starts here -->
+          <li class="nav-item">
+            <a class="nav-link" style="color: lightyellow;" href="https://chromedino.com/">?Game?</a>
+          </li>
+        </ul>
+        <form style="padding-right: 5px;" method="GET" target="_self" action="/" class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search 🔍" aria-label="Search" name="query">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+        <button type="button" id="cart_i" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"
+          title="click here to purchase items which you was keeped in cart">
+          <a href="showcart/" style="color: white;">
+            &#128722;(<span id="cart_calc">0</span>)
+          </a>
+
+        </button>
+
+        <button type="button" id="clear" class="btn btn-secondary" style="margin-left: 5px;">Clear &#128722;</button>
+
+      </div>
+    </nav>
     <br>
+    <hr>
 
-    <div id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">
-      <ul style="color: rgb(21, 22, 22); position: relative; top: 700px;" class="carousel-indicators">
-        <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
-        {% for i in slide_range %}
-        <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}"></li>
-        {% endfor %}
+    <div class="container">
+      {% for prod,nslides,slide_range in products %}
 
-      </ul>
+      <!--Slideshow starts here -->
+      <br>
 
-      <div class="container carousel-inner no-padding">
-        <pre><h1 style="color: chartreuse;">{{prod.0.category}}  -AVAILABLE IN STOCK</h1></pre>
+      <div id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">
+        <ul style="color: rgb(21, 22, 22); position: relative; top: 700px;" class="carousel-indicators">
+          <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
+          {% for i in slide_range %}
+          <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}"></li>
+          {% endfor %}
 
-        <div class="carousel-item active">
+        </ul>
 
-          <div class="col-xs-3 col-sm-3 col-md-3">
-            <div class="card imgback" style="width: 18rem;">
-              <img src='media/{{prod.0.image}}' class="card-img-top imgs" alt="my image">
-              <hr style="border: #0069d9 1px solid;">
-              <div class="card-body">
-                <h5 class="card-title">{{prod.0.product_name}}</h5>
-                <h6 class="card-title">Rs.{{prod.0.price}}</h6>
-                <p class="card-text">{{prod.0.desc|slice:":30" }}...</p>
-                <!--<button id="product is {{prod.o.product_name}}" href="" class="btn btn-primary cart">Add To Cart</botton>
+        <div class="container carousel-inner no-padding">
+          <pre><h1 style="color: chartreuse;">{{prod.0.category}}  -AVAILABLE IN STOCK</h1></pre>
+
+          <div class="carousel-item active">
+
+            <div class="col-xs-3 col-sm-3 col-md-3">
+              <div class="card imgback" style="width: 18rem;">
+                <img src='media/{{prod.0.image}}' class="card-img-top imgs" alt="my image">
+                <hr style="border: #0069d9 1px solid;">
+                <div class="card-body">
+                  <h5 class="card-title">{{prod.0.product_name}}</h5>
+                  <h6 class="card-title">Rs.{{prod.0.price}}</h6>
+                  <p class="card-text">{{prod.0.desc|slice:":30" }}...</p>
+                  <!--<button id="product is {{prod.o.product_name}}" href="" class="btn btn-primary cart">Add To Cart</botton>
                 -->
-                <button id="{{prod.0.product_name}} || Rs. {{prod.0.price}}" class="btn btn-primary cart">Add To
-                  Cart</button>
-                <!--<a style="color:aliceblue;" id="qv{{prod.0.id}}" href="/products/{{prod.0.id}}">
+                  <button id="{{prod.0.product_name}} || Rs. {{prod.0.price}}" class="btn btn-primary cart">Add To
+                    Cart</button>
+                  <!--<a style="color:aliceblue;" id="qv{{prod.0.id}}" href="/products/{{prod.0.id}}">
                   <button style="margin-left: 10px;" class="btn btn-primary">quick view</button>
                 </a>-->
-                <a href="/products/{{prod.0.id}}" class="btn btn-primary quick-view-link"
-                  style="margin-left: 10px;">Quick View</a>
+                  <a href="/products/{{prod.0.id}}" class="btn btn-primary quick-view-link"
+                    style="margin-left: 10px;">Quick View</a>
 
+                </div>
               </div>
             </div>
-          </div>
 
 
-          {% for i in prod|slice:"1:" %}
+            {% for i in prod|slice:"1:" %}
 
-          <div class="col-xs-3 col-sm-3 col-md-3">
-            <div class="card imgback" style="width: 18rem;">
-              <img src='media/{{i.image}}' class="card-img-top imgs" alt="...">
-              <hr style="border: #0069d9 1px solid;">
-              <div class="card-body">
-                <h5 class="card-title">{{i.product_name}}</h5>
-                <h6 class="card-title">Rs.{{i.price}}</h6>
-                <p class="card-text">{{i.desc|slice:":30"}}...</p>
-                <button id="{{i.product_name}} || Rs. {{i.price}}" class="btn btn-primary cart">Add To Cart</button>
-                <!-- <a style="color:aliceblue;" id="qv{{i.id}}" href="/products/{{i.id}}">
+            <div class="col-xs-3 col-sm-3 col-md-3">
+              <div class="card imgback" style="width: 18rem;">
+                <img src='media/{{i.image}}' class="card-img-top imgs" alt="...">
+                <hr style="border: #0069d9 1px solid;">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.product_name}}</h5>
+                  <h6 class="card-title">Rs.{{i.price}}</h6>
+                  <p class="card-text">{{i.desc|slice:":30"}}...</p>
+                  <button id="{{i.product_name}} || Rs. {{i.price}}" class="btn btn-primary cart">Add To Cart</button>
+                  <!-- <a style="color:aliceblue;" id="qv{{i.id}}" href="/products/{{i.id}}">
               <button style="margin-left: 10px;" class="btn btn-primary">quick view</button>
             </a> -->
-                <a href="/products/{{i.id}}" class="btn btn-primary quick-view-link" style="margin-left: 10px;">Quick
-                  View</a>
+                  <a href="/products/{{i.id}}" class="btn btn-primary quick-view-link" style="margin-left: 10px;">Quick
+                    View</a>
 
+                </div>
               </div>
             </div>
+            {% if forloop.counter|add:"1"|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
           </div>
-          {% if forloop.counter|add:"1"|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
-        </div>
-        <div class="carousel-item">
-          {% endif %}
+          <div class="carousel-item">
+            {% endif %}
 
-          <!--{% if forloop.counter|divisibleby:3 and forloop.counter > 0 and forloop.counter < 4 and not forloop.last %}
+            <!--{% if forloop.counter|divisibleby:3 and forloop.counter > 0 and forloop.counter < 4 and not forloop.last %}
             </div><div class="carousel-item">
         {% endif %}-->
 
-          {% endfor %}
+            {% endfor %}
+          </div>
         </div>
       </div>
+      <!-- left and right controls for the slide -->
+      <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+
+
     </div>
-    <!-- left and right controls for the slide -->
-    <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
+    {% endfor %}
+</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ...></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-  </div>
-  {% endfor %}
-
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ...></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"></script>
 
 
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <!-- Particles.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS("particles-js", {
+        "particles": {
+          "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+          "color": { "value": "#ffffff" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.4, "random": true },
+          "size": { "value": 3, "random": true },
+          "move": { "enable": true, "speed": 2 }
+        }
+      });
+    </script>
 
-  <script>
-    let cart = {};
-    //document.addEventListener("DOMContentLoaded",function(){
+    <!-- आपकी cart और DOM scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // आपकी existing cart scripts यहाँ
+    </script>
 
-    if (localStorage.getItem('cart') == null) {
+    <script>
       let cart = {};
-    }
-    else {
-      cart = JSON.parse(localStorage.getItem('cart'));
-      document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
-    }
+      //document.addEventListener("DOMContentLoaded",function(){
 
-    /* let cartbtn = document.querySelectorAll('#cart');
-     cartbtn.forEach(function (button){
-       button.addEventListener('click',function(){
-         let idst = this.id.toString();
-   
-         if(cart[idst] !== undefined){
-           cart[idst] += 1;
-         }
-         else{
-           cart[idst] = 1;
-         }
-   
-         localStorage.setItem('cart',JSON.stringify(cart));
-         document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
-       });
-       });
-     } 
-   );*/
-
-
-    $('.cart').click(function () {
-
-      var idst = this.id.toString();
-
-
-      if (cart[idst] != undefined) {
-        cart[idst] = cart[idst] + 1;
+      if (localStorage.getItem('cart') == null) {
+        let cart = {};
       }
       else {
-        cart[idst] = 1;
+        cart = JSON.parse(localStorage.getItem('cart'));
+        document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
       }
-      localStorage.setItem('cart', JSON.stringify(cart));
-      document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
-    });
-    /*
-    $("#clear").click(function(){
-      localStorage.clear();
-      location.reload();
-    })*/
-    let cl = document.getElementById('clear');
-    cl.addEventListener('click', function () {
-      localStorage.clear();
-      location.reload();
-    });
 
-  </script>
+      /* let cartbtn = document.querySelectorAll('#cart');
+       cartbtn.forEach(function (button){
+         button.addEventListener('click',function(){
+           let idst = this.id.toString();
+     
+           if(cart[idst] !== undefined){
+             cart[idst] += 1;
+           }
+           else{
+             cart[idst] = 1;
+           }
+     
+           localStorage.setItem('cart',JSON.stringify(cart));
+           document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
+         });
+         });
+       } 
+     );*/
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+
+      $('.cart').click(function () {
+
+        var idst = this.id.toString();
+
+
+        if (cart[idst] != undefined) {
+          cart[idst] = cart[idst] + 1;
+        }
+        else {
+          cart[idst] = 1;
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
+      });
+      /*
+      $("#clear").click(function(){
+        localStorage.clear();
+        location.reload();
+      })*/
+      let cl = document.getElementById('clear');
+      cl.addEventListener('click', function () {
+        localStorage.clear();
+        location.reload();
+      });
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
 </body>
 
 </html>

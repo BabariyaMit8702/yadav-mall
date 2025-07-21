@@ -3,7 +3,19 @@ from .models import product,contect,orders
 from math import ceil
 from django.db.models import Q
 import uuid
+from django.views import View
+from django.views.generic import TemplateView,RedirectView
 
+# Cretate classes
+class Imit(TemplateView):
+    age = 18
+    name = 'Mit Yadav'
+    template_name = "indeed.html"
+    extra_context = {'ag': age , 'nm' : name}
+
+class rd(RedirectView):
+    #url = "/about/"
+    pattern_name = "about"
 # Create your views here.
 '''
 def home(request):
@@ -65,6 +77,7 @@ def home(request):
 def about(request):
     return render(request,"about.html")
 
+
 def contectpage(request):
     return render(request,"contect.html")
 
@@ -119,7 +132,7 @@ def reod(request):
         elif(pm=="upi"):
             payble_amount = request.POST.get("total_amount")
             txn_id = str(uuid.uuid4())
-            upi_id = "7861035305@fam"
+            upi_id = "ahirnaimish655@oksbi"
             upi_url = f"upi://pay?pa={upi_id}&pn=YourName&tid={txn_id}&tr={txn_id}&tn=Order%20Payment&am={payble_amount}&cu=INR"
             return render(request,"payment.html",{'upi_url': upi_url})
 

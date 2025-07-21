@@ -12,15 +12,18 @@
         a:active {
             color: red;
         }
+        h2{
+            color:#feffff;
+        }
      
     </style>
 </head>
 {% load static %}
-<body style="background-image: url({% static 'images/bgimg.jpg' %}); background-repeat: repeat; background-size: 1400px auto; position: relative; top: 0px;">
+<body style="color: white; background-image: url({% static 'images/bgimg.jpg' %}); background-repeat: repeat; background-size: 1400px auto; position: relative; top: 0px;">
     <center>
-        <pre id="citems">Please add your favourite product in cart 
-<a href="/">HOME</a>
-        </pre>
+        <p style="display: inline-block; width: auto;" id="citems" style="color: white;">Please add your favourite product in cart 
+<a href="/">🏠</a>
+        </p>
         <!---->
 
         <h2>FILL THIS FORM TO ORDER ITEMS WHICH IS IN CART</h2><br>
@@ -71,7 +74,7 @@
         else {
             fetched_cart = JSON.parse(localStorage.getItem('cart'));
             cart = JSON.stringify(fetched_cart);
-            document.getElementById("citems").innerHTML = cart
+            document.getElementById("citems").innerText = cart
             document.getElementById("selected_items").value = cart
 
         }
