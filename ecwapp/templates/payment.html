@@ -60,10 +60,18 @@
 
 <body>
   <div class="container">
-    <h1>Pay Using Google Pay</h1>
+    <!--<h1>Pay Using Google Pay</h1>
     <a href="{{upi_url}}" class="gpay-btn">
       Pay Now
-    </a>
+    </a>-->
+    <h2>Scan and Pay</h2>
+    <p>Amount: ₹{{ amount }}</p>
+    <p>Transaction ID: {{ txn_id }}</p>
+
+    <img src="data:image/png;base64,{{ qr_img }}" alt="Scan to Pay">
+    <br><Br><br>
+    <p>Or click this link: <a style="color: rgb(98, 255, 0);" href="{{ upi_url }}">Pay via UPI App</a></p>
+
   </div>
 </body>
 

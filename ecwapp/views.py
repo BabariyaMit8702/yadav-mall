@@ -1,10 +1,13 @@
 from django.shortcuts import render,HttpResponse,redirect
-from .models import product,contect,orders
+from .models import product,contect,orders,UpiTransaction
 from math import ceil
 from django.db.models import Q
 import uuid
 from django.views import View
 from django.views.generic import TemplateView,RedirectView
+import qrcode
+from io import BytesIO
+import base64
 
 # Cretate classes
 class Imit(TemplateView):
@@ -16,27 +19,6 @@ class Imit(TemplateView):
 class rd(RedirectView):
     #url = "/about/"
     pattern_name = "about"
-# Create your views here.
-'''
-def home(request):
-    
-
-    products = []
-    catprods = product.objects.values('category','id')
-    cats = {items['category'] for items in catprods}
-    
-    for cat in cats:
-        prod = product.objects.filter(category=cat)
-        n = len(prod)
-        nslides = n//4 + ceil((n/4)-(n//4))
-        products.append([prod,nslides,range(1,nslides)])
-
-        
-    
-    
-    parameters = {'products':products}
-    return render(request,"homepage.html",parameters)
-'''
 def home(request):
     query = request.GET.get('query', '').strip()  # search query
 
@@ -134,7 +116,26 @@ def reod(request):
             txn_id = str(uuid.uuid4())
             upi_id = "ahirnaimish655@oksbi"
             upi_url = f"upi://pay?pa={upi_id}&pn=YourName&tid={txn_id}&tr={txn_id}&tn=Order%20Payment&am={payble_amount}&cu=INR"
-            return render(request,"payment.html",{'upi_url': upi_url})
+            
+            # UPI payment URL
+            upi_url = f"upi://pay?pa={upi_id}&pn=YourName&tid={txn_id}&tr={txn_id}&tn=Order%20Payment&am={payble_amount}&cu=INR"
+
+
+            UpiTransaction.objects.create(txn_id=txn_id, amount=payble_amount)
+
+            qr = qrcode.make(upi_url)
+            buffered = BytesIO()
+            qr.save(buffered, format="PNG")
+            qr_img = base64.b64encode(buffered.getvalue()).decode()
+
+            return render(request, "payment.html", {
+                "upi_url": upi_url,
+                "qr_img": qr_img,
+                "txn_id": txn_id,
+                "amount": payble_amount,
+            })
+
+        return render(request,"payment.html",{'upi_url': upi_url})
 
 def thnx(request):
     return render(request,"thnx.html")
