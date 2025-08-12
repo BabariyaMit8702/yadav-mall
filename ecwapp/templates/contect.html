@@ -11,12 +11,15 @@
     input[type="email"],
     input[type="tel"] {
       border: black 2px solid;
+      border-radius: 10px;
     }
 
-    button[type="submit"] {
+    /* button[type="submit"] {
       color: #fff;
-      background-color: #28a745;
-      border-color: #28a745;
+    } */
+    #desc{
+      border: 2px solid black;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -24,7 +27,7 @@
 <body id="cbg" style="background-color: black; color: white;">
   <div class="container">
     <h3 style="display: inline-block;">Contact Us</h3>
-    <button class="btn btn-success" style="position: relative; bottom:3px; margin-left: 15px;">
+    <button class="btn btn-danger" style="position: relative; bottom:3px; margin-left: 15px;">
       <a href="/" style="color: white;">Return to Home Page 🏠</a></button>
     <button id="btncc" style="margin-left: 942px;">Switch To Light Mode</button>
     <form action="/submit_contect_form/" method="POST" target="_self">
@@ -44,11 +47,11 @@
       <div class="form-group">
         <div class="form-group">
           <label for="desc">How May We Help You ?</label>
-          <textarea style="border: black 2px solid;" class="form-control" id="desc" placeholder="discuss you query here"
+          <textarea class="form-control" id="desc" placeholder="discuss you query here"
             name="query" rows="3"></textarea>
         </div>
 
-        <button type="submit" id="sb" class="btn btn-success">Submit</button>
+        <button type="submit" id="sb" class="btn btn-danger">Submit</button>
 
         <!-- <a style="color:antiquewhite" href="/return_from_contect/">Submit</a>
 -->

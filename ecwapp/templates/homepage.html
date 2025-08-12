@@ -286,10 +286,30 @@
       opacity: 0;
       pointer-events: none;
     }
+    .card-body{
+      color: blue;
+    }
+    .navbar{
+      background-color: black;
+    }
+    .mycatsminor{
+      margin-left: 25px;
+      margin-top: 5px;
+      text-align: center;
+      background-color: white;
+      color: blue;
+      border: black 2px solid;
+      border-radius: 15px;
+      display: inline-block;
+      width: 170px;
+    }
+    .mycatsminor:hover{
+      background-color: rgb(45, 45, 160);
+      color: wheat;
+    }
   </style>
 </head>
 {% load static %}
-<!-- <body style="background-image: url({% static 'images\41844f569fe2025d2d97879f711b19da.jpg' %}); background-size: cover; background-repeat: no-repeat; background-position: center;">-->
 
 <body>
   <div id="bg-gradient"></div>
@@ -300,7 +320,7 @@
   <!-- Particles.js overlay -->
   <div id="particles-js"></div>
   <div class="page-content">
-    <nav style="position: sticky; top: 0px; z-index: +1;" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav style="position: sticky; top: 0px; z-index: +1;" class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand" href="#">YADAV MALL</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -310,22 +330,26 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" style="color: lightyellow;" href="about/">about-us</a>
+            <a class="nav-link" style="color: lightyellow;" href="about/">ABOUT-US</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" style="color: lightyellow;" href="contect/">contect-us</a>
+            <a class="nav-link" style="color: lightyellow;" href="contect/">CONTECT-US</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" style="color: lightyellow;" href="https://chromedino.com/">?Game?</a>
+            <a class="nav-link" style="color: lightyellow;" href="/">ORDER HISTORY</a>
           </li>
+          
         </ul>
         <form style="padding-right: 5px;" method="GET" target="_self" action="/" class="form-inline my-2 my-lg-0">
+          <button class="btn btn-outline-danger mr-2">
+            Login
+          </button>
           <input class="form-control mr-sm-2" type="search" placeholder="Search 🔍" aria-label="Search" name="query">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
@@ -348,8 +372,15 @@
     <div class="container">
       {% for prod,nslides,slide_range in products %}
 
+      <div class="mycats">
+          {% for i in setlist %}
+            <div class="mycatsminor">
+              {{i}}
+            </div>
+            {% endfor %}
+      </div>
+
       <!--Slideshow starts here -->
-      <br>
 
       <div id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">
         <ul style="color: rgb(21, 22, 22); position: relative; top: 700px;" class="carousel-indicators">

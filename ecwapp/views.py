@@ -17,22 +17,19 @@ class Imit(TemplateView):
     extra_context = {'ag': age , 'nm' : name}
 
 class rd(RedirectView):
-    #url = "/about/"
     pattern_name = "about"
 def home(request):
-    query = request.GET.get('query', '').strip()  # search query
+    query = request.GET.get('query', '').strip()  
 
     products = []
 
     if query:
-        # filter products jisme product_name, category ya desc me query ka partial case-insensitive match ho
         filtered_products = product.objects.filter(
             Q(product_name__icontains=query) | 
             Q(category__icontains=query) | 
             Q(desc__icontains=query)
         )
 
-        # unique categories from filtered products
         cats = filtered_products.values_list('category', flat=True).distinct()
 
         for cat in cats:
@@ -51,9 +48,15 @@ def home(request):
             prod = product.objects.filter(category=cat)
             n = len(prod)
             nslides = n // 4 + ceil((n / 4) - (n // 4))
-            products.append([prod, nslides, range(1, nslides)])  # corrected range end
+            products.append([prod, nslides, range(1, nslides)]) 
+    
+    for_catl = product.objects.all()
+    catlist = []
+    for i in for_catl:
+        catlist.append(i.category)
+    setlist = set(catlist)
             
-    parameters = {'products': products}
+    parameters = {'products': products,'setlist':setlist}
     return render(request, "homepage.html", parameters)
 
 def about(request):
@@ -114,7 +117,7 @@ def reod(request):
         elif(pm=="upi"):
             payble_amount = request.POST.get("total_amount")
             txn_id = str(uuid.uuid4())
-            upi_id = "ahirnaimish655@oksbi"
+            upi_id = "gpay-11262978705@okbizaxis"
             upi_url = f"upi://pay?pa={upi_id}&pn=YourName&tid={txn_id}&tr={txn_id}&tn=Order%20Payment&am={payble_amount}&cu=INR"
             
             # UPI payment URL

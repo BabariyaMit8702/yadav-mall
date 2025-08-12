@@ -15,11 +15,44 @@
         h2{
             color:#feffff;
         }
-     
+        .box{
+            width: 300px;
+            height: 40px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        .box1{
+            width: 400px;
+            height: 80px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        .addresslebel{
+            position: relative;
+            bottom: 40px;
+        }
+        .submitbtn{
+            height: 40px;
+            width: 100px;
+            border: black solid 2px;
+            border-radius: 10px;
+        }
+        #citems{
+            color: black;
+            font-size: larger;
+        }
+        #payment{
+            height: 30px;
+            border: solid 2px black;
+        }
+        h2{
+            color: black;
+        }
     </style>
 </head>
 {% load static %}
-<body style="color: white; background-image: url({% static 'images/bgimg.jpg' %}); background-repeat: repeat; background-size: 1400px auto; position: relative; top: 0px;">
+<body style="color: black; background-image: url({% static 'images/e-commerce-background.jpg' %}); background-repeat: repeat; background-size: 1400px auto; position: relative; top: 0px;">
+  
     <center>
         <p style="display: inline-block; width: auto;" id="citems" style="color: white;">Please add your favourite product in cart 
 <a href="/">🏠</a>
@@ -30,24 +63,24 @@
 
         <form action="/reod/" method="post" target="_self">
             {% csrf_token %}
-
+            
             <input type="hidden" name="selected_items" value="is coming soon" id="selected_items">
             <input type="hidden" name="total_amount" value="will soon" id="total_amount">
-            <label for="fullname">Full Name:</label><br>
-            <input type="text" id="fullname" name="fullname" required placeholder="Enter yout name"><br><br>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required placeholder="Enter yout name" class="box"><br><br>
 
-            <label for="phone">Phone Number:</label><br>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your contect No" required><br><br>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your contect No" class="box" required><br><br>
 
-            <label for="address">Address:</label><br>
-            <textarea id="address" name="address" placeholder="Enter your parmanent address" rows="4" cols="40"
+            <label class="addresslebel" for="address">Address:</label>
+            <textarea id="address" name="address" class="box1" placeholder="Enter your parmanent address" rows="4" cols="40"
                 required></textarea><br><br>
 
-            <label>City Name:</label><br>
-            <input type="text" name="CT" id="city_name" placeholder="Enter your city name" required><br><Br>
+            <label>City Name:</label>
+            <input type="text" name="CT" id="city_name" class="box" placeholder="Enter your city name" required><br><Br>
 
-            <label>pin/zip code:</label><br>
-            <input type="number" name="zip_code" id="zip_code" placeholder="pin code" required><br><br>
+            <label>pin/zip code:</label>
+            <input type="number" name="zip_code" class="box" id="zip_code" placeholder="pin code" required><br><br>
 
             <label for="payment">Payment Method:</label><br>
             <select id="payment" name="payment" required>
@@ -61,7 +94,7 @@
             </div>
             <br>
 
-            <input id="sb" type="submit" value="Order Now">
+            <input class="submitbtn" id="sb" type="submit" value="Order Now">
         </form>
     </center>
 
