@@ -20,23 +20,25 @@ class rd(RedirectView):
     pattern_name = "about"
 def home(request):
     query = request.GET.get('query', '').strip()  
-
+    catagory_buttons = request.GET.get('catagory_buttons','').strip()
     products = []
 
     if query:
         filtered_products = product.objects.filter(
-            Q(product_name__icontains=query) | 
-            Q(category__icontains=query) | 
-            Q(desc__icontains=query)
+        Q(product_name__icontains=query) | 
+        Q(category__icontains=query) | 
+        Q(desc__icontains=query)
         )
 
         cats = filtered_products.values_list('category', flat=True).distinct()
 
         for cat in cats:
-            prod = filtered_products.filter(category=cat)
-            n = len(prod)
-            nslides = n // 4 + ceil((n / 4) - (n // 4))
-            products.append([prod, nslides, range(1, nslides)])
+             prod = filtered_products.filter(category=cat)
+             n = len(prod)
+             nslides = n // 4 + ceil((n / 4) - (n // 4))
+             products.append([prod, nslides, range(1, nslides)])
+    elif catagory_buttons:
+        
     else:
         #catprods = product.objects.values('category', 'id')
         #cats = {items['category'] for items in catprods}

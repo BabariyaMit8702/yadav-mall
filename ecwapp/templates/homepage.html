@@ -372,10 +372,12 @@
     <div class="container">
       <div class="mycats">
           {% for i in setlist %}
-            <button class="mycatsminor">
+          <form target="_self" method="get" action="/">
+            <button class="mycatsminor" name="catagory_buttons">
               {{i}}
             </button>
-            {% endfor %}
+            </form>
+              {% endfor %}
       </div>
       {% for prod,nslides,slide_range in products %}  
       
