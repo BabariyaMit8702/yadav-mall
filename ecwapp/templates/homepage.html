@@ -370,16 +370,15 @@
     <hr>
 
     <div class="container">
-      {% for prod,nslides,slide_range in products %}
-
       <div class="mycats">
           {% for i in setlist %}
-            <div class="mycatsminor">
+            <button class="mycatsminor">
               {{i}}
-            </div>
+            </button>
             {% endfor %}
       </div>
-
+      {% for prod,nslides,slide_range in products %}  
+      
       <!--Slideshow starts here -->
 
       <div id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">
@@ -465,6 +464,7 @@
     {% endfor %}
   </div>
   <br><Br>
+  
   <div class="footer">
     <h2>Thanks for visit our website </h2>
     <button class="subscribe-btn">FOLLOW US ON FOLLOWING PLATFORMS</button>
