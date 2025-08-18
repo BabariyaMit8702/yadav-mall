@@ -8,6 +8,7 @@ from django.views.generic import TemplateView,RedirectView
 import qrcode
 from io import BytesIO
 import base64
+from urllib.parse import unquote_plus
 
 # Cretate classes
 class Imit(TemplateView):
@@ -21,6 +22,7 @@ class rd(RedirectView):
 def home(request):
     query = request.GET.get('query', '').strip()  
     catagory_buttons = request.GET.get('catagory_buttons','').strip()
+    catagory_buttons = unquote_plus(catagory_buttons)
     products = []
 
     if query:
@@ -38,6 +40,10 @@ def home(request):
              nslides = n // 4 + ceil((n / 4) - (n // 4))
              products.append([prod, nslides, range(1, nslides)])
     elif catagory_buttons:
+        prod = product.objects.filter(category=catagory_buttons)
+        n = len(prod)
+        nslides = n//4 + ceil((n/4) - (n//4))
+        products.append([prod,nslides,range(1,nslides)])
         
     else:
         #catprods = product.objects.values('category', 'id')

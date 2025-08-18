@@ -307,6 +307,13 @@
       background-color: rgb(45, 45, 160);
       color: wheat;
     }
+    .allbtn{
+        text-decoration-line: none;
+    }
+    .btncntflex{
+      display: flex;
+      flex-wrap: wrap;
+    }
   </style>
 </head>
 {% load static %}
@@ -370,10 +377,11 @@
     <hr>
 
     <div class="container">
-      <div class="mycats">
+      <div class="mycats btncntflex">
+        <a href="/" class="mycatsminor allbtn">All</a>
           {% for i in setlist %}
           <form target="_self" method="get" action="/">
-            <button class="mycatsminor" name="catagory_buttons">
+            <button class="mycatsminor" name="catagory_buttons" value="{{i}}">
               {{i}}
             </button>
             </form>
