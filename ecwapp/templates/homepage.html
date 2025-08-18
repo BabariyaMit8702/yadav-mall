@@ -360,13 +360,14 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
 
-        <button type="button" id="cart_i" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"
-          title="click here to purchase items which you was keeped in cart">
+        
           <a href="showcart/" style="color: white;">
-            &#128722;(<span id="cart_calc">0</span>)
+            <button type="button" id="cart_i" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"
+          title="click here to purchase items which you was keeped in cart">
+            &#128722;(<span id="cart_calc">0</span>)</button>
           </a>
 
-        </button>
+        
 
         <button type="button" id="clear" class="btn btn-secondary" style="margin-left: 5px;">Clear &#128722;</button>
 
@@ -379,7 +380,7 @@
 
     <div class="container">
       <div class="mycats btncntflex">
-        <a href="/" class="mycatsminor allbtn">All</a>
+        <a href="/" ><button class="mycatsminor allbtn">All</button></a>
           {% for i in setlist %}
           <form target="_self" method="get" action="/">
             <button class="mycatsminor" name="catagory_buttons" value="{{i}}">

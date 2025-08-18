@@ -76,12 +76,22 @@
 }
   .btn{
     margin-right: 1px;
-    border: 2px solid white;
+    border: 2px solid black;
     color: black;
+    transition: transform 0.5s ease-in;
   }
   .btn:hover{
      color: white;
+     transform: rotate(360deg);
     background-color: black;
+  }
+  .myfl{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 55px;
+  }
+  .r{
+    margin-left: 90px;
   }
   </style>
 </head>
@@ -90,30 +100,24 @@
 
 <body class="animated-bg">
 
-  <div class="container my-4">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="row">
-          <img src="/media/{{currunt_product.image}}" width="233px" ; height="385px"
+  <div class="my-4 myfl">
+        <div class="l">
+          <img src="/media/{{currunt_product.image}}" width="auto" ; height="400px"
             style="border: 2px solid rgb(16, 132, 234); border-radius: 5%;">
-        </div>
-        <div class="my-1" class="row">
+        
+        <br><br><br><Br>
             <a class="btn" href="/">Go Back To Home 🏠</a> 
           <br>
         </div>
-      </div>
-      <div class="col-md-8">
+      
+      <div class="r">
         <h3 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">{{currunt_product.product_name}}</h3>
         <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">RS. {{currunt_product.price}} </p>
-        <pre style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">descriptions:   {{currunt_product.desc}}</pre>
+        <pre style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">descriptions:   {{ currunt_product.desc|slice:'0:100' }}
+                                   {{ currunt_product.desc|slice:'101:200' }}
+                                  {{ currunt_product.desc|slice:'201:300' }}</pre>
       </div>
     </div>
-  </div>
-
-
-
-
-
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
