@@ -586,13 +586,21 @@
 
   </script>
   <script>
+    (function () { 
     let width = window.innerWidth;
-    let url  = new URL(window.location.href);
-    if(!url.searchParams.has('screen')){
-      url.searchParams.set('screen',width);
-      window.location.href = url.toString();
+    let item = 4;
+    if(width<768){
+      item = 2;
+    }else if(width<992){
+      item = 3;
+    }else{
+      item = 4;
     }
-    
+    let url  = new URL(window.location.href);
+    if(url.searchParams.get('itm') != item.toString()){
+      url.searchParams.set('itm',item);
+      window.location.href = url.toString();
+    }})();
   </script>
 </body>
 </html>
