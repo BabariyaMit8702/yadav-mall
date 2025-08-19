@@ -10,93 +10,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <title>Hello, world!</title>
-
-<style>
-    .carousel-indicators .active {
-      background-color: blue;
-    }
-
-    .col-md-3 img {
-      width: 250px;
-      height: 350px;
-    }
-
-    body .carousel-indicator li {
-      background-color: blue;
-    }
-
-    body .carousel-indicators {
-      bottom: 0;
-    }
-
-    body .carousel-control-prev-icon,
-    body .carousel-control-next-icon {
-      background-color: rgb(255, 2, 255);
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-      top: auto;
-      bottom: auto;
-    }
-
-    .carousel-control-prev-icon {
-      position: relative;
-      bottom: 270px;
-    }
-
-    .carousel-control-next-icon {
-      position: relative;
-      bottom: 270px;
-    }
-
-    body .no-padding {
-      padding-left: 0;
-      padding-right: 0;
-    }
-    .animated-bg {
-  background: linear-gradient(-45deg, #ff4e50, black, white, pink, #1e90ff, #2b5876, #ffcc70);
-  background-size: 400% 400%;
-  animation: gradientFlow 5s ease infinite;
-  min-height: 100vh;
-}
-
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-  .btn{
-    margin-right: 1px;
-    border: 2px solid black;
-    color: black;
-    transition: transform 0.5s ease-in;
-  }
-  .btn:hover{
-     color: white;
-     transform: rotate(360deg);
-    background-color: black;
-  }
-  .myfl{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 55px;
-  }
-  .r{
-    margin-left: 90px;
-  }
-  </style>
-</head>
 {% load static %}
-<!-- <body style="background-image: url({% static 'images\41844f569fe2025d2d97879f711b19da.jpg' %}); background-size: cover; background-repeat: no-repeat; background-position: center;">-->
+<link rel="stylesheet" href="{% static 'ecwapp\css\productview.css' %}">
+</head>
 
 <body class="animated-bg">
 
@@ -122,34 +38,7 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <script>
-    console.log("working");
-
-
-    if (localStorage.getItem('cart') == null) {
-      cart = {};
-    }
-    else {
-      cart = JSON.parse(localStorage.getItem('cart'));
-      document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
-    }
-
-    $('.cart').click(function () {
-      console.log("clicked");
-      var idst = this.id.toString();
-      console.log(idst);
-      if (cart[idst] != undefined) {
-        console.log(cart[idst] = cart[idst] + 1);
-      }
-      else {
-        console.log(cart[idst] = 1);
-      }
-      console.log(cart);
-      localStorage.setItem('cart', JSON.stringify(cart));
-      document.getElementById("cart_calc").innerHTML = Object.keys(cart).length;
-    });
-
-  </script>
+  <script src="{% static 'ecwapp\js\productview.js' %}"></script>
 
 
 

@@ -1,0 +1,14 @@
+  input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      border: black 2px solid;
+      border-radius: 10px;
+    }
+
+    /* button[type="submit"] {
+      color: #fff;
+    } */
+    #desc{
+      border: 2px solid black;
+      border-radius: 10px;
+    }

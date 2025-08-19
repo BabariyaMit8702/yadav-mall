@@ -1,0 +1,53 @@
+        a:hover {
+            color: rgba(207, 247, 5, 0.4);
+        }
+
+        a:active {
+            color: red;
+        }
+        h2{
+            color:#feffff;
+        }
+        .box{
+            width: 300px;
+            height: 40px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        .box1{
+            width: 400px;
+            height: 80px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        .addresslebel{
+            position: relative;
+            bottom: 40px;
+        }
+        .submitbtn{
+            height: 40px;
+            width: 100px;
+            border: black solid 2px;
+            border-radius: 10px;
+            transition: transform 0.5s ease-in;
+        }
+        .submitbtn:hover{
+            transform: scale(0.8);
+        }
+        #citems{
+            color: black;
+            font-size: larger;
+        }
+        #payment{
+            height: 30px;
+            border: solid 2px black;
+        }
+        h2{
+            color: black;
+        }
+        .my_table{
+            border: 1;
+            border-radius: 5px;
+            color:honeydew;
+            background-color: rgb(14, 34, 34);
+        }

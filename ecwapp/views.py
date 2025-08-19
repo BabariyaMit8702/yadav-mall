@@ -10,15 +10,6 @@ from io import BytesIO
 import base64
 from urllib.parse import unquote_plus
 
-# Cretate classes
-class Imit(TemplateView):
-    age = 18
-    name = 'Mit Yadav'
-    template_name = "indeed.html"
-    extra_context = {'ag': age , 'nm' : name}
-
-class rd(RedirectView):
-    pattern_name = "about"
 def home(request):
     query = request.GET.get('query', '').strip()  
     catagory_buttons = request.GET.get('catagory_buttons','').strip()
@@ -102,7 +93,6 @@ def scf(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         email = request.POST.get('email')
-        # Process the data (save to DB, etc.)
         return redirect('/return_from_contect/')
 
 def cth(request):

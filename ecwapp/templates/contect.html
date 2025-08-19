@@ -1,27 +1,13 @@
 <!DOCTYPE html>
 
 <head>
+  {% load static %}
   <title>
     contect us
   </title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <style>
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"] {
-      border: black 2px solid;
-      border-radius: 10px;
-    }
-
-    /* button[type="submit"] {
-      color: #fff;
-    } */
-    #desc{
-      border: 2px solid black;
-      border-radius: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="{% static 'ecwapp\css\contect.css' %}">
 </head>
 
 <body id="cbg" style="background-color: #36404a; color: white;">
@@ -53,30 +39,9 @@
 
         <button type="submit" id="sb" class="btn btn-danger">Submit</button>
 
-        <!-- <a style="color:antiquewhite" href="/return_from_contect/">Submit</a>
--->
 
-        <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
-        <script>
-          let btncc = document.getElementById("btncc");
-          let cbg = document.getElementById("cbg");
-          function cb(vr) {
-            let currunt_color = getComputedStyle(vr).color;
-            let currunt_bgcolor = getComputedStyle(vr).backgroundColor
-            if (currunt_color === "rgb(255, 255, 255)") {
-              vr.style.color = "black";
-              vr.style.backgroundColor = "#d8dee9";
-              document.getElementById('btncc').innerHTML = "Switch to Dark Mode"
-            }
-            else {
-              vr.style.color = "white";
-              vr.style.backgroundColor = "#36404a";
-              document.getElementById('btncc').innerHTML = "Switch to Light Mode"
-            }
-          }
-          btncc.addEventListener("click", function () {
-            cb(cbg);
-          });
+        <script src="{% static 'ecwapp\js\contect.js' %}">
+         
         </script>
 </body>
 

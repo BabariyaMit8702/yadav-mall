@@ -1,0 +1,81 @@
+.carousel-indicators .active {
+      background-color: blue;
+    }
+
+    .col-md-3 img {
+      width: 250px;
+      height: 350px;
+    }
+
+    body .carousel-indicator li {
+      background-color: blue;
+    }
+
+    body .carousel-indicators {
+      bottom: 0;
+    }
+
+    body .carousel-control-prev-icon,
+    body .carousel-control-next-icon {
+      background-color: rgb(255, 2, 255);
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      top: auto;
+      bottom: auto;
+    }
+
+    .carousel-control-prev-icon {
+      position: relative;
+      bottom: 270px;
+    }
+
+    .carousel-control-next-icon {
+      position: relative;
+      bottom: 270px;
+    }
+
+    body .no-padding {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .animated-bg {
+  background: linear-gradient(-45deg, #ff4e50, black, white, pink, #1e90ff, #2b5876, #ffcc70);
+  background-size: 400% 400%;
+  animation: gradientFlow 5s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+  .btn{
+    margin-right: 1px;
+    border: 2px solid black;
+    color: black;
+    transition: transform 0.5s ease-in;
+  }
+  .btn:hover{
+     color: white;
+     transform: rotate(360deg);
+    background-color: black;
+  }
+  .myfl{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 55px;
+  }
+  .r{
+    margin-left: 90px;
+  }
