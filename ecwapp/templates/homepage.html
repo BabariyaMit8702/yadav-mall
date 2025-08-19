@@ -450,7 +450,7 @@
                 </div>
               </div>
             </div>
-            {% if forloop.counter|add:"1"|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+            {% if forloop.counter|add:"1"|divisibleby:ns and forloop.counter > 0 and not forloop.last %}
           </div>
           <div class="carousel-item">
             {% endif %}
@@ -585,10 +585,14 @@
     });
 
   </script>
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+  <script>
+    let width = window.innerWidth;
+    let url  = new URL(window.location.href);
+    if(!url.searchParams.has('screen')){
+      url.searchParams.set('screen',width);
+      window.location.href = url.toString();
+    }
+    
+  </script>
 </body>
-
 </html>

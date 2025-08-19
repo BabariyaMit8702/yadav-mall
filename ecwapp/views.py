@@ -24,6 +24,16 @@ def home(request):
     catagory_buttons = request.GET.get('catagory_buttons','').strip()
     catagory_buttons = unquote_plus(catagory_buttons)
     products = []
+    n_of_slides = 4
+    if 'screen' in request.GET:
+        width = int(request.GET['screen'])
+        # print('the',width)
+        if width < 768:
+            n_of_slides = 1
+        elif width > 768 and width < 992:
+            n_of_slides = 3
+        else:
+            n_of_slides = 4
 
     if query:
         filtered_products = product.objects.filter(
@@ -37,12 +47,14 @@ def home(request):
         for cat in cats:
              prod = filtered_products.filter(category=cat)
              n = len(prod)
-             nslides = n // 4 + ceil((n / 4) - (n // 4))
+            #  nslides = n // 4 + ceil((n / 4) - (n // 4))
+             nslides = n // n_of_slides + ceil((n / n_of_slides) - (n // n_of_slides))
              products.append([prod, nslides, range(1, nslides)])
     elif catagory_buttons:
         prod = product.objects.filter(category=catagory_buttons)
         n = len(prod)
-        nslides = n//4 + ceil((n/4) - (n//4))
+        nslides = n // n_of_slides + ceil((n / n_of_slides) - (n // n_of_slides))
+        # nslides = n//4 + ceil((n/4) - (n//4))
         products.append([prod,nslides,range(1,nslides)])
         
     else:
@@ -55,7 +67,8 @@ def home(request):
         for cat in cats:
             prod = product.objects.filter(category=cat)
             n = len(prod)
-            nslides = n // 4 + ceil((n / 4) - (n // 4))
+            # nslides = n // 4 + ceil((n / 4) - (n // 4))
+            nslides = n // n_of_slides + ceil((n / n_of_slides) - (n // n_of_slides))
             products.append([prod, nslides, range(1, nslides)]) 
     
     for_catl = product.objects.all()
@@ -64,7 +77,7 @@ def home(request):
         catlist.append(i.category)
     setlist = set(catlist)
             
-    parameters = {'products': products,'setlist':setlist}
+    parameters = {'products': products,'setlist':setlist,'ns':n_of_slides}
     return render(request, "homepage.html", parameters)
 
 def about(request):
