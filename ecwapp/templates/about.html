@@ -27,7 +27,7 @@
   
 </head>
 
-<body class="d-flex h-100 text-center text-white bg-dark">
+<body class="d-flex text-center text-white bg-dark">
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto">
       <div>
@@ -40,22 +40,22 @@
       </div>
     </header>
     <br>
-    <main class="px-3">
+    <main class="px-3 margin_tc" style="margin-top: 100px;">
       {% block bodypart %}
-      <h1>Here We Tell ABout Us </h1>
-      <pre class="lead">I am Student of Gurukul it Collage.
+      <h1 class="cfont">Here We Tell ABout Us </h1>
+      <pre class="lead cfont">I am Student of Gurukul it Collage.
 Now I am working on ecommerce web app project which 
 will help you for shoping.This web app is my first 
 project which I was shared with world
         </pre>
-      <p class="lead">
+      <p class="lead cfont">
         <a href="https://getbootstrap.com/docs/5.3/examples/cover/" id="cl"
           class="btn btn-lg btn-secondary fw-bold border-white bg-white"></a>
       </p>
       {% endblock %}
     </main>{% block empty %}
-    <br><br><br><Br><Br><br><br>
-    <footer class="mt-auto text-white-50">
+    <br><br>
+    <footer class="ftmtc mt-auto text-white-50">
       <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
           href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
     </footer>

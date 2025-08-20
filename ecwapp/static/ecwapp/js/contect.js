@@ -6,12 +6,12 @@
             if (currunt_color === "rgb(255, 255, 255)") {
               vr.style.color = "black";
               vr.style.backgroundColor = "#d8dee9";
-              document.getElementById('btncc').innerHTML = "Switch to Dark Mode"
+              document.getElementById('btncc').innerHTML = "DARK"
             }
             else {
               vr.style.color = "white";
               vr.style.backgroundColor = "#36404a";
-              document.getElementById('btncc').innerHTML = "Switch to Light Mode"
+              document.getElementById('btncc').innerHTML = "LIGHT"
             }
           }
           btncc.addEventListener("click", function () {

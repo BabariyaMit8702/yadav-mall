@@ -63,4 +63,12 @@
             background-color: #080808;
             color: white;
         }
+        .container{
+            transform: scale(1.5);
+        }
+        @media (min-width:768px) and (max-width:992px){
+            .container{
+                transform: scale(1.7) !important;
+            }
+        }
         

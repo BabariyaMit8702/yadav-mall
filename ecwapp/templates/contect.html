@@ -13,10 +13,10 @@
 <body id="cbg" style="background-color: #36404a; color: white;">
   <div class="container">
     <h3 style="display: inline-block;">Contact Us</h3>
-    <button class="btn btn-danger" style="position: relative; bottom:3px; margin-left: 15px;">
+    <button class="btn btn-danger to_home">
       <a href="/" style="color: white;">Return to Home Page 🏠</a></button>
-    <button id="btncc" style="margin-left: 942px;">Switch To Light Mode</button>
-    <form action="/submit_contect_form/" method="POST" target="_self">
+    <button id="btncc">LIGHT</button>
+    <form class="forms" action="/submit_contect_form/" method="POST" target="_self">
       {% csrf_token %}
       <div class="form-group">
         <label for="name">Name</label>

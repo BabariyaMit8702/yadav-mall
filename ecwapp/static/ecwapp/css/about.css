@@ -50,3 +50,17 @@
       background-color: white;
       color: black;
     }
+    @media (min-width:768px) and (max-width:992px) {
+      .margin_tc{
+        margin-top: 350px !important;
+      }
+      .ftmtc{
+        margin-top: 350px !important;
+      }
+      header{
+        transform: scale(1.1);
+      }
+      .cfont{
+        transform: scale(1.1);
+      }
+    }

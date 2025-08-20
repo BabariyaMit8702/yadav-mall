@@ -4,11 +4,59 @@
       border: black 2px solid;
       border-radius: 10px;
     }
-
-    /* button[type="submit"] {
-      color: #fff;
-    } */
     #desc{
       border: 2px solid black;
       border-radius: 10px;
+    }
+    .to_home{
+      position: relative;
+       bottom:3px;
+        margin-left: 15px;
+    }
+    #btncc{
+      margin-left:900px !important;
+    }
+    .container{
+        max-width: 1000px;
+        margin-top: 50px;
+      }
+    
+
+    @media (min-width:768px) and (max-width:992px){
+      .container{
+        max-width: 800px;
+        margin-top: 50px;
+      }
+      .forms{
+        margin-top: 333px;
+      }.to_home{
+        transform: scale(1.2);
+        position: relative;
+        left: 260px;
+      }
+      #btncc{
+        transform: scale(1.5);
+        position: relative;
+        right: 195px;
+        bottom: 40px;
+      }
+      h3{
+        transform: scale(1.3);
+        margin-left: 40px;
+      }
+      .forms{
+        transform: scale(1.1);
+      }
+      .form-group{
+        font-size:30px; 
+      }
+      .form-control{
+        height: 50px;
+        font-size: 35px;
+      }
+      #sb{
+        transform: scale(1.2);
+        position: relative;
+        left: 11px;
+      }
     }
