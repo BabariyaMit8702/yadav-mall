@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="{% static 'ecwapp/css/homepage.css' %}">
   <style>
     
-    @media (max-width:992) and (min-width:768){
+    @media (max-width:992px) and (min-width:768px){
     
     }
 
@@ -27,13 +27,11 @@
 </head>
 
 <body>
-  <div id="bg-gradient"></div>
+  <!-- <div id="bg-gradient"></div> -->
 
-  <!-- Slightly floating background image -->
-  <div class="bg-layer"></div>
+  <!-- <div class="bg-layer"></div> -->
 
-  <!-- Particles.js overlay -->
-  <div id="particles-js"></div>
+  <!-- <div id="particles-js"></div> -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="position: sticky; top: 0px; z-index: 10;">
       <a class="navbar-brand" href="#">YADAV MALL</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -139,9 +137,14 @@
 {% else %}
 <div class="container carousel-inner no-padding">
           <pre><h1 style="color: chartreuse;">{{prod.0.category}}  </h1></pre>
+          {% if ns == 2 %}
+              <div class="carousel-item active ml-5">
+                {% else %}
               <div class="carousel-item active">
+                {% endif %}
+
               {% if ns == 2 %}
-             <div class="col-xs-3 col-sm-3 col-md-3 " style="max-width: 48%;">
+             <div class="col-xs-3 col-sm-3 col-md-3 " style="max-width: 45%; margin-left: 5px;">
               {% else %}
             <div class="col-xs-3 col-sm-3 col-md-3 ">
             {% endif %}
@@ -167,7 +170,7 @@
             {% for i in prod|slice:"1:" %}
             
             {% if ns == 2 %}
-             <div class="col-xs-3 col-sm-3 col-md-3 " style="max-width: 48%;">
+             <div class="col-xs-3 col-sm-3 col-md-3 " style="max-width: 45%; {% if not forloop.first and forloop.counter|divisibleby:2 %} margin-left:26px;{% endif %}">
               {% else %}
             <div class="col-xs-3 col-sm-3 col-md-3 ">
             {% endif %}
