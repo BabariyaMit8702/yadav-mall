@@ -16,15 +16,6 @@ def home(request):
     catagory_buttons = unquote_plus(catagory_buttons)
     products = []
     n_of_slides = int(request.GET.get('itm',4))
-    # if 'screen' in request.GET:
-    #     width = int(request.GET['screen'])
-    #     # print('the',width)
-    #     if width < 768:
-    #         n_of_slides = 1
-    #     elif width > 768 and width < 992:
-    #         n_of_slides = 3
-    #     else:
-    #         n_of_slides = 4
 
     if query:
         filtered_products = product.objects.filter(
@@ -38,30 +29,21 @@ def home(request):
         for cat in cats:
              prod = filtered_products.filter(category=cat)
              n = len(prod)
-            #  nslides = n // 4 + ceil((n / 4) - (n // 4))
-            #  nslides = n // n_of_slides + ceil((n / n_of_slides) - (n // n_of_slides))
              nslides = ceil(n / n_of_slides)
              products.append([prod, nslides, range(1, nslides)])
     elif catagory_buttons:
         prod = product.objects.filter(category=catagory_buttons)
         n = len(prod)
-        # nslides = n // n_of_slides + ceil((n / n_of_slides) - (n // n_of_slides))
         nslides = ceil(n / n_of_slides)
-        # nslides = n//4 + ceil((n/4) - (n//4))
         products.append([prod,nslides,range(1,nslides)])
         
     else:
-        #catprods = product.objects.values('category', 'id')
-        #cats = {items['category'] for items in catprods}
-
         cats = product.objects.values_list('category', flat=True).distinct()
 
 
         for cat in cats:
             prod = product.objects.filter(category=cat)
             n = len(prod)
-            # nslides = n // 4 + ceil((n / 4) - (n // 4))
-            # nslides = n // n_of_slides + ceil((n / n_of_slides) - (n // n_of_slides))
             nslides = ceil(n / n_of_slides)
             products.append([prod, nslides, range(1, nslides)]) 
     

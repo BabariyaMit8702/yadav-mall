@@ -33,9 +33,9 @@ let cart = {};
     let width = window.innerWidth;
     let item = 4;
     if(width<768){
-      item = 2;
+      item = 1;
     }else if(width<992){
-      item = 3;
+      item = 2;
     }else{
       item = 4;
     }
