@@ -30,7 +30,7 @@ class orders(models.Model):
     selected_items = models.CharField(max_length=300,default="")
     total_amount = models.IntegerField(default=0)
     name = models.CharField(max_length=20,default="")
-    phone_no = models.CharField(max_length=10,default="")
+    phone_no = models.CharField(max_length=15,default="")
     address = models.CharField(max_length=300,default="")
     city = models.CharField(max_length=30,default="")
     zip_code = models.CharField(max_length=10,default="")

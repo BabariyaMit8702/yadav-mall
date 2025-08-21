@@ -5,49 +5,120 @@
         a:active {
             color: red;
         }
-        h2{
-            color:#feffff;
-        }
-        .box{
+
+        .box {
             width: 300px;
             height: 40px;
             border: 2px solid black;
             border-radius: 10px;
         }
-        .box1{
+
+        .box1 {
             width: 400px;
             height: 80px;
             border: 2px solid black;
             border-radius: 10px;
         }
-        .addresslebel{
+
+        .addresslebel {
             position: relative;
             bottom: 40px;
         }
-        .submitbtn{
+
+        .submitbtn {
             height: 40px;
             width: 100px;
             border: black solid 2px;
             border-radius: 10px;
             transition: transform 0.5s ease-in;
+            margin-top: 50px;
+            position: relative;
+            bottom: 33px;
         }
-        .submitbtn:hover{
+
+        .submitbtn:hover {
             transform: scale(0.8);
+            background-color: black;
+            color: aliceblue;
         }
-        #citems{
+
+        #citems {
             color: black;
             font-size: larger;
         }
-        #payment{
+
+        #payment {
             height: 30px;
             border: solid 2px black;
         }
-        h2{
+
+        h2 {
             color: black;
         }
-        .my_table{
+
+        .my_table {
             border: 1;
             border-radius: 5px;
-            color:honeydew;
+            color: honeydew;
             background-color: rgb(14, 34, 34);
+        }
+
+        body {
+            background-image: url('/static/images/e-commerce-background.jpg');
+            background-repeat: repeat;
+            background-size: 1333px auto;
+            background-attachment: fixed;
+            position: static;
+            top: 0px;
+
+        }
+
+        @media (min-width:768px) and (max-width:992px) {
+            form {
+                /* transform: scale(1.45); */
+                font-size: 25px;
+                position: relative;
+                top: 155px;
+            }
+            body{
+                position: relative;
+                background-image: none !important;
+            }
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                background-image: url('/static/images/fortablet_showcart.png') !important;
+                background-repeat: repeat;
+                background-size: 950px auto;
+                background-attachment: fixed;
+                z-index: -1;
+                opacity: 0.5;
+            }
+            .box{
+                font-size: 25px;
+            }
+            #address{
+                font-size: 25px;
+            }
+            #payment{
+                height: 47px;
+                width: auto;
+                font-size: 25px;
+            }
+            .submitbtn{
+                font-size: 25px;
+                width: auto;
+                border: 3px black solid;
+                margin-top: 50px;
+                position: relative;
+                bottom: 50px;
+            }
+            #citems{
+                font-size: 25px;
+            }
+
         }
