@@ -13,6 +13,7 @@ urlpatterns = [
     path('return_from_contect/',views.cth,name="bye contectpage"),
     path('contect/',views.contectpage,name="contect"),
     path('products/<int:myid>',views.productview,name="productview"),
+    # ***
     path('showcart/',views.showcart,name="showcart"),
     path('reod/',views.reod,name="reod"),
     path('thnx/',views.thnx,name="thankU"),

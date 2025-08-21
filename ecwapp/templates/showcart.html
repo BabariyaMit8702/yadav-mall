@@ -2,24 +2,29 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-{% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, initial-scale=1.0 maximum-scale=1.0">
+
+    {% load static %}
     <title>Simple Payment Form</title>
     <link rel="stylesheet" href="{% static 'ecwapp\css\showcart.css' %}">
 </head>
-<body style="color: black; background-image: url({% static 'images/e-commerce-background.jpg' %}); background-repeat: repeat; background-size: 1400px auto; position: relative; top: 0px;">
-  <a style="font-size: larger;" href="/"><button class="submitbtn">🏠 HOME</button></a>
+
+<body
+    style="color: black; background-image: url({% static 'images/e-commerce-background.jpg' %}); background-repeat: repeat; background-size: 1400px auto; position: relative; top: 0px;">
+    <a style="font-size: larger;" href="/"><button class="submitbtn">🏠 HOME</button></a>
     <center>
-        <p style="display: inline-block; width: auto;" id="citems" style="color: white;">Please add your favourite product in cart 
-<a href="/">🏠</a>
+        <p style="display: inline-block; width: auto;" id="citems" style="color: white;">Please add your favourite
+            product in cart
+            <a href="/">🏠</a>
         </p>
         <!---->
-        
+
         <h2>FILL THIS FORM TO ORDER ITEMS WHICH IS IN CART</h2><br>
 
         <form action="/reod/" method="post" target="_self">
             {% csrf_token %}
-            
+
             <input type="hidden" name="selected_items" value="is coming soon" id="selected_items">
             <input type="hidden" name="total_amount" value="will soon" id="total_amount">
             <label for="fullname">Full Name:</label>
@@ -29,8 +34,8 @@
             <input type="tel" id="phone" name="phone" placeholder="Enter your contect No" class="box" required><br><br>
 
             <label class="addresslebel" for="address">Address:</label>
-            <textarea id="address" name="address" class="box1" placeholder="Enter your parmanent address" rows="4" cols="40"
-                required></textarea><br><br>
+            <textarea id="address" name="address" class="box1" placeholder="Enter your parmanent address" rows="4"
+                cols="40" required></textarea><br><br>
 
             <label>City Name:</label>
             <input type="text" name="CT" id="city_name" class="box" placeholder="Enter your city name" required><br><Br>

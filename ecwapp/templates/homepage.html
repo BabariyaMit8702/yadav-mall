@@ -2,19 +2,16 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, initial-scale=1.0 maximum-scale=1.0">
+
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-{% load static %}
+  {% load static %}
   <title>Hello, world!</title>
   <link rel="stylesheet" href="{% static 'ecwapp/css/homepage.css' %}">
 </head>
@@ -25,71 +22,71 @@
   <div class="bg-layer"></div>
 
   <div id="particles-js"></div>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="position: sticky; top: 0px; z-index: 10;">
-      <a class="navbar-brand" href="#">YADAV MALL</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="position: sticky; top: 0px; z-index: 10;">
+    <a class="navbar-brand" href="#">YADAV MALL</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
-          </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
+        </li>
 
-          <li class="nav-item">
-            <a class="nav-link" style="color: lightyellow;" href="about/">ABOUT-US</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: lightyellow;" href="about/">ABOUT-US</a>
+        </li>
 
-          <li class="nav-item">
-            <a class="nav-link" style="color: lightyellow;" href="contect/">CONTECT-US</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: lightyellow;" href="contect/">CONTECT-US</a>
+        </li>
 
-          <li class="nav-item">
-            <a class="nav-link" style="color: lightyellow;" href="/">ORDER HISTORY</a>
-          </li>
-          
-        </ul>
-        <form style="padding-right: 5px;" method="GET" target="_self" action="/" class="form-inline my-2 my-lg-0">
-          <button class="btn btn-outline-danger mr-2">
-            Login
-          </button>
-          <input class="form-control mr-sm-2" type="search" placeholder="Search 🔍" aria-label="Search" name="query">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <li class="nav-item">
+          <a class="nav-link" style="color: lightyellow;" href="/">ORDER HISTORY</a>
+        </li>
 
-        
-          <a href="showcart/" style="color: white;">
-            <button type="button" id="cart_i" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"
+      </ul>
+      <form style="padding-right: 5px;" method="GET" target="_self" action="/" class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-danger mr-2">
+          Login
+        </button>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search 🔍" aria-label="Search" name="query">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+
+      <a href="showcart/" style="color: white;">
+        <button type="button" id="cart_i" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"
           title="click here to purchase items which you was keeped in cart">
-            &#128722;(<span id="cart_calc">0</span>)</button>
-          </a>
+          &#128722;(<span id="cart_calc">0</span>)</button>
+      </a>
 
-        
 
-        <button type="button" id="clear" class="btn btn-secondary" style="margin-left: 5px;">Clear &#128722;</button>
 
-      </div>
-    </nav>
+      <button type="button" id="clear" class="btn btn-secondary" style="margin-left: 5px;">Clear &#128722;</button>
+
+    </div>
+  </nav>
   <div class="page-content">
-  
+
     <br>
     <hr>
 
     <div class="container">
       <div class="mycats btncntflex">
-        <a href="/" ><button class="mycatsminor allbtn">All</button></a>
-          {% for i in setlist %}
-          <form target="_self" method="get" action="/">
-            <button class="mycatsminor" name="catagory_buttons" value="{{i}}">
-              {{i}}
-            </button>
-            </form>
-              {% endfor %}
+        <a href="/"><button class="mycatsminor allbtn">All</button></a>
+        {% for i in setlist %}
+        <form target="_self" method="get" action="/">
+          <button class="mycatsminor" name="catagory_buttons" value="{{i}}">
+            {{i}}
+          </button>
+        </form>
+        {% endfor %}
       </div>
-      {% for prod,nslides,slide_range in products %}  
-      
+      {% for prod,nslides,slide_range in products %}
+
       <!--Slideshow starts here -->
 
       <div id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">
@@ -101,156 +98,161 @@
 
         </ul>
 
-        
 
-{% if ns == 1 %}
-    
-    <div class="container carousel-inner no-padding">
+
+        {% if ns == 1 %}
+
+        <div class="container carousel-inner no-padding">
           <pre><h1 style="color: chartreuse;">{{prod.0.category}}  </h1></pre>
           {% for i in prod %}
-<div class="carousel-item {% if forloop.first %}active{% endif %}">
-    <div class="card imgback" style="width: 18rem; margin: auto;">
-        <img src="media/{{i.image}}" class="card-img-top imgs" alt="{{i.product_name}}">
-        <hr style="border: #0069d9 1px solid;">
-        <div class="card-body d-flex flex-column">
-            <h5 class="card-title">{{i.product_name}}</h5>
-            <h6 class="card-title">Rs. {{i.price}}</h6>
-            <p class="card-text">{{i.desc|slice:":30"}}...</p>
-            <div class="mt-auto">
-                <button id="{{i.product_name}} || Rs. {{i.price}}" class="btn btn-primary cart">Add To Cart</button>
-                <a href="/products/{{i.id}}" class="btn btn-primary quick-view-link" style="margin-left: 10px;">
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <div class="card imgback" style="width: 18rem; margin: auto;">
+              <img src="media/{{i.image}}" class="card-img-top imgs" alt="{{i.product_name}}">
+              <hr style="border: #0069d9 1px solid;">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{i.product_name}}</h5>
+                <h6 class="card-title">Rs. {{i.price}}</h6>
+                <p class="card-text">{{i.desc|slice:":30"}}...</p>
+                <div class="mt-auto">
+                  <button id="{{i.product_name}} || Rs. {{i.price}}" class="btn btn-primary cart">Add To Cart</button>
+                  <a href="/products/{{i.id}}" class="btn btn-primary quick-view-link" style="margin-left: 10px;">
                     Quick View
-                </a>
+                  </a>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-</div>
-{% endfor %}
+          </div>
+          {% endfor %}
 
-{% else %}
-<div class="container carousel-inner no-padding">
-          <pre><h1 style="color: chartreuse;">{{prod.0.category}}  </h1></pre>
-          {% if ns == 2 %}
-              <div class="carousel-item active ml-5">
-                {% else %}
+          {% else %}
+          <div class="container carousel-inner no-padding">
+            <pre><h1 style="color: chartreuse;">{{prod.0.category}}  </h1></pre>
+            {% if ns == 2 %}
+            <div class="carousel-item active ml-5">
+              {% else %}
               <div class="carousel-item active">
                 {% endif %}
 
-              {% if ns == 2 %}
-             <div class="col-xs-3 col-sm-3 col-md-3 " style="max-width: 45%; margin-left: 5px;">
-              {% else %}
-            <div class="col-xs-3 col-sm-3 col-md-3 ">
-            {% endif %}
-              <div class="card imgback" style="width: 18rem;">
-                <img src='media/{{prod.0.image}}' class="card-img-top imgs" alt="my image">
-                <hr style="border: #0069d9 1px solid;">
-                <div class="card-body">
-                  <h5 class="card-title">{{prod.0.product_name}}</h5>
-                  <h6 class="card-title">Rs.{{prod.0.price}}</h6>
-                  <p class="card-text">{{prod.0.desc|slice:":30" }}...</p>
-                 
-                  <button id="{{prod.0.product_name}} || Rs. {{prod.0.price}}" class="btn btn-primary cart">Add To
-                    Cart</button>
-                  
-                  <a href="/products/{{prod.0.id}}" class="btn btn-primary quick-view-link"
-                    style="margin-left: 10px;">Quick View</a>
+                {% if ns == 2 %}
+                <div class="col-xs-3 col-sm-3 col-md-3 " style="max-width: 45%; margin-left: 5px;">
+                  {% else %}
+                  <div class="col-xs-3 col-sm-3 col-md-3 ">
+                    {% endif %}
+                    <div class="card imgback" style="width: 18rem;">
+                      <img src='media/{{prod.0.image}}' class="card-img-top imgs" alt="my image">
+                      <hr style="border: #0069d9 1px solid;">
+                      <div class="card-body">
+                        <h5 class="card-title">{{prod.0.product_name}}</h5>
+                        <h6 class="card-title">Rs.{{prod.0.price}}</h6>
+                        <p class="card-text">{{prod.0.desc|slice:":30" }}...</p>
 
+                        <button id="{{prod.0.product_name}} || Rs. {{prod.0.price}}" class="btn btn-primary cart">Add To
+                          Cart</button>
+
+                        <a href="/products/{{prod.0.id}}" class="btn btn-primary quick-view-link"
+                          style="margin-left: 10px;">Quick View</a>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+                  {% for i in prod|slice:"1:" %}
+
+                  {% if ns == 2 %}
+                  <div class="col-xs-3 col-sm-3 col-md-3 "
+                    style="max-width: 45%; {% if not forloop.first and forloop.counter|divisibleby:2 %} margin-left:26px;{% endif %}">
+                    {% else %}
+                    <div class="col-xs-3 col-sm-3 col-md-3 ">
+                      {% endif %}
+                      <div class="card imgback" style="width: 18rem;">
+                        <img src='media/{{i.image}}' class="card-img-top imgs" alt="...">
+                        <hr style="border: #0069d9 1px solid;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{i.product_name}}</h5>
+                          <h6 class="card-title">Rs.{{i.price}}</h6>
+                          <p class="card-text">{{i.desc|slice:":30"}}...</p>
+                          <button id="{{i.product_name}} || Rs. {{i.price}}" class="btn btn-primary cart">Add To
+                            Cart</button>
+
+                          <a href="/products/{{i.id}}" class="btn btn-primary quick-view-link"
+                            style="margin-left: 10px;">Quick
+                            View</a>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    {% if forloop.counter|add:"1"|divisibleby:ns and forloop.counter > 0 and not forloop.last %}
+                  </div>
+                  <div class="carousel-item">
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                  {% endif %}
                 </div>
               </div>
+              <!-- left and right controls for the slide -->
+              <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+
+
             </div>
-
-
-            {% for i in prod|slice:"1:" %}
-            
-            {% if ns == 2 %}
-             <div class="col-xs-3 col-sm-3 col-md-3 " style="max-width: 45%; {% if not forloop.first and forloop.counter|divisibleby:2 %} margin-left:26px;{% endif %}">
-              {% else %}
-            <div class="col-xs-3 col-sm-3 col-md-3 ">
-            {% endif %}
-              <div class="card imgback" style="width: 18rem;">
-                <img src='media/{{i.image}}' class="card-img-top imgs" alt="...">
-                <hr style="border: #0069d9 1px solid;">
-                <div class="card-body">
-                  <h5 class="card-title">{{i.product_name}}</h5>
-                  <h6 class="card-title">Rs.{{i.price}}</h6>
-                  <p class="card-text">{{i.desc|slice:":30"}}...</p>
-                  <button id="{{i.product_name}} || Rs. {{i.price}}" class="btn btn-primary cart">Add To Cart</button>
-                 
-                  <a href="/products/{{i.id}}" class="btn btn-primary quick-view-link" style="margin-left: 10px;">Quick
-                    View</a>
-
-                </div>
-              </div>
-            </div>
-            
-            {% if forloop.counter|add:"1"|divisibleby:ns and forloop.counter > 0 and not forloop.last %}
-          </div>
-          <div class="carousel-item">
-            {% endif %}
             {% endfor %}
           </div>
-          {% endif %}
-        </div>
-      </div>
-      <!-- left and right controls for the slide -->
-      <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </a>
-      <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </a>
+          <br><Br>
 
+          <div class="footer">
+            <h2>Thanks for visit our website </h2>
+            <button class="subscribe-btn">FOLLOW US ON FOLLOWING PLATFORMS</button>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/mit_ahir.8703/?igsh=ZTYyNnJ3MGRzOGt2#"><i
+                  class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://github.com/BabariyaMit8702"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
-    </div>
-    {% endfor %}
-  </div>
-  <br><Br>
-  
-  <div class="footer">
-    <h2>Thanks for visit our website </h2>
-    <button class="subscribe-btn">FOLLOW US ON FOLLOWING PLATFORMS</button>
-    <div class="social-icons">
-      <a href="https://www.instagram.com/mit_ahir.8703/?igsh=ZTYyNnJ3MGRzOGt2#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://github.com/BabariyaMit8702"><i class="fab fa-github"></i></a>
-    </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ...></script>
+          <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ...></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
 
 
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-  <!-- Particles.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#ffffff" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.4, "random": true },
-        "size": { "value": 3, "random": true },
-        "move": { "enable": true, "speed": 2 }
-      }
-    });
-  </script>
+          <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+          <!-- Particles.js CDN -->
+          <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+          <script>
+            particlesJS("particles-js", {
+              "particles": {
+                "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.4, "random": true },
+                "size": { "value": 3, "random": true },
+                "move": { "enable": true, "speed": 2 }
+              }
+            });
+          </script>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="{% static 'ecwapp/js/homepage.js' %}"></script>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script src="{% static 'ecwapp/js/homepage.js' %}"></script>
 </body>
+
 </html>
