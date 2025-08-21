@@ -85,3 +85,9 @@ body {
     .home-btn:hover {
       background: #6c2eb8;
     }
+
+    @media (min-width:768px) and (max-width:992px) {
+      .mdq{
+      width: 400px;
+      }
+    }
