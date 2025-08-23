@@ -141,3 +141,12 @@ def thnx(request):
 
 def bs(request):
     return render(request,'random_image.html')
+
+def signup(request):
+    return render(request,'signup.html')
+
+def login(request):
+    return render(request,'login.html')
+
+def app(request):
+    return HttpResponse('THE APP')

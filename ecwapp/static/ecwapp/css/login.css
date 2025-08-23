@@ -1,0 +1,70 @@
+ body,
+ html {
+     height: 100%;
+     margin: 0;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ .bg-image {
+     background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?fit=crop&w=1600&q=80');
+     background-size: cover;
+     background-position: center;
+     filter: blur(6px);
+     height: 100%;
+     width: 100%;
+     position: fixed;
+     z-index: -1;
+ }
+
+ .login-form {
+     backdrop-filter: blur(12px);
+     background-color: rgba(0, 0, 0, 0.4);
+     border-radius: 15px;
+     padding: 40px 30px;
+     box-shadow: 0 8px 155px rgba(0, 0, 0, 1);
+     max-width: 400px;
+     width: 100%;
+     color: #fff;
+ }
+
+ .login-form h2 {
+     margin-bottom: 30px;
+     font-weight: 600;
+     text-align: center;
+ }
+
+ .form-control {
+     background-color: #000;
+     /* Black input background */
+     color: white;
+     border: 1px solid #000;
+     /* Black border */
+ }
+
+ .form-control::placeholder {
+     color: #aaa;
+ }
+
+ .form-control:focus {
+     background-color: #111;
+     border-color: #fff;
+     color: white;
+     box-shadow: none;
+ }
+
+ .btn-login {
+     background-color: #0d1117;
+     color: #fff;
+     border: none;
+     width: 100%;
+ }
+
+ .btn-login:hover {
+     background-color: #151a21;
+ }
+
+ @media (max-width: 576px) {
+     .login-form {
+         padding: 30px 20px;
+     }
+ }

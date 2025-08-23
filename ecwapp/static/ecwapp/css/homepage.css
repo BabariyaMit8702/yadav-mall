@@ -1,292 +1,306 @@
  .col-md-3 {
-      display: inline-block;
-      margin-left: -4px;
-    }
+   display: inline-block;
+   margin-left: -4px;
+ }
 
-    .carousel-indicators .active {
-      background-color: black;
-    }
+ .carousel-indicators .active {
+   background-color: black;
+ }
 
-    .col-md-3 img {
-      width: auto;
-      height: 350px;
-    }
+ .col-md-3 img {
+   width: auto;
+   height: 350px;
+ }
 
-    body .carousel-indicator li {
-      color: white;
-    }
+ body .carousel-indicator li {
+   color: white;
+ }
 
-    body .carousel-indicators {
-      position: relative;
-      bottom: -655px;
-    }
+ body .carousel-indicators {
+   position: relative;
+   bottom: -655px;
+ }
 
-    body .carousel-control-prev-icon,
-    body .carousel-control-next-icon {
-      background-color: black;
-      height: 35px;
-      width: 35px;
-    }
+ body .carousel-control-prev-icon,
+ body .carousel-control-next-icon {
+   background-color: black;
+   height: 35px;
+   width: 35px;
+ }
 
-    body .carousel-control-prev-icon {
-      position: relative;
-      right: 10px;
-    }
+ body .carousel-control-prev-icon {
+   position: relative;
+   right: 10px;
+ }
 
-    .carousel-control-prev,
-    .carousel-control-next {
-      top: auto;
-      bottom: auto;
-    }
+ .carousel-control-prev,
+ .carousel-control-next {
+   top: auto;
+   bottom: auto;
+ }
 
-    .imgs {
-      object-fit: contain;
-    }
+ .imgs {
+   object-fit: contain;
+ }
 
-    .carousel-control-prev-icon {
-      position: relative;
-      bottom: 270px;
-    }
+ .carousel-control-prev-icon {
+   position: relative;
+   bottom: 270px;
+ }
 
-    .carousel-control-prev-icon:hover {
-      background-color: black;
-    }
+ .carousel-control-prev-icon:hover {
+   background-color: black;
+ }
 
-    .carousel-control-next-icon {
-      position: relative;
-      bottom: 270px;
-      left: 20px;
-    }
+ .carousel-control-next-icon {
+   position: relative;
+   bottom: 270px;
+   left: 20px;
+ }
 
-    .carousel-control-next-icon:hover {
-      background-color: black;
-    }
+ .carousel-control-next-icon:hover {
+   background-color: black;
+ }
 
-    body .no-padding {
-      padding-left: 0;
-      padding-right: 0;
-    }
+ body .no-padding {
+   padding-left: 0;
+   padding-right: 0;
+ }
 
-    .quick-view-link {
-      cursor: pointer !important;
-    }
+ .quick-view-link {
+   cursor: pointer !important;
+ }
 
-    .nav-link:hover {
-      background-color: #0069d9;
-      color: black;
-    }
+ .nav-link:hover {
+   background-color: #0069d9;
+   color: black;
+ }
 
-    .col-xs-3:hover .card-body {
-      background-color: black;
-      color: #0069d9;
-    }
+ .col-xs-3:hover .card-body {
+   background-color: black;
+   color: #0069d9;
+ }
 
-    .col-xs-3:hover .imgback {
-      background-color: black;
-    }
+ .col-xs-3:hover .imgback {
+   background-color: black;
+ }
 
-    .col-xs-3:hover .cart {
-      background-color: black;
-      color: #0069d9;
-    }
+ .col-xs-3:hover .cart {
+   background-color: black;
+   color: #0069d9;
+ }
 
-    .col-xs-3:hover .quick-view-link {
-      background-color: black;
-      color: #0069d9;
-    }
+ .col-xs-3:hover .quick-view-link {
+   background-color: black;
+   color: #0069d9;
+ }
 
-    #clear:hover {
-      background-color: rgb(255, 0, 0);
-    }
+ #clear:hover {
+   background-color: rgb(255, 0, 0);
+ }
 
-    #clear:active {
-      background-color: rgb(0, 255, 81);
-    }
+ #clear:active {
+   background-color: rgb(0, 255, 81);
+ }
 
-    #cart_i:hover {
-      background-color: blueviolet;
-    }
+ #cart_i:hover {
+   background-color: red;
+ }
 
-    #cart_i:active {
-      background-color: rgba(43, 180, 226, 1);
-    }
-body {
-      margin: 0;
-      padding: 0;
-      position: relative;
-      overflow-x: hidden;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: white;
-    }
+ #cart_i:active {
+   background-color: rgba(43, 180, 226, 1);
+ }
 
-    /* Gradient background animation */
-    #bg-gradient {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(-45deg, #1a2a6c, #b21f1f, black, #11998e);
-      background-size: 400% 400%;
-      animation: gradientBG 5s ease infinite;
-      z-index: -3;
-    }
+ body {
+   margin: 0;
+   padding: 0;
+   position: relative;
+   overflow-x: hidden;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: white;
+ }
 
-    @keyframes gradientBG {
-      0% {
-        background-position: 0% 50%;
-      }
+ /* Gradient background animation */
+ #bg-gradient {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(-45deg, #1a2a6c, #b21f1f, black, #11998e);
+   background-size: 400% 400%;
+   animation: gradientBG 5s ease infinite;
+   z-index: -3;
+ }
 
-      50% {
-        background-position: 100% 50%;
-      }
+ @keyframes gradientBG {
+   0% {
+     background-position: 0% 50%;
+   }
 
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+   50% {
+     background-position: 100% 50%;
+   }
 
-    /* Particles overlay container */
-    #particles-js {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
-    }
+   100% {
+     background-position: 0% 50%;
+   }
+ }
 
-    /* Subtle moving background images */
-    .bg-layer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 200%;
-      background-image: url('https://source.unsplash.com/1600x900/?abstract,tech');
-      background-size: cover;
-      opacity: 0.05;
-      transform: translate(-50%, -50%);
-      animation: floatImg 30s ease-in-out infinite;
-      z-index: -1;
-    }
+ /* Particles overlay container */
+ #particles-js {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -2;
+ }
 
-    @keyframes floatImg {
-      0% {
-        transform: translate(-45%, -45%) scale(1);
-      }
+ /* Subtle moving background images */
+ .bg-layer {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 200%;
+   height: 200%;
+   background-image: url('https://source.unsplash.com/1600x900/?abstract,tech');
+   background-size: cover;
+   opacity: 0.05;
+   transform: translate(-50%, -50%);
+   animation: floatImg 30s ease-in-out infinite;
+   z-index: -1;
+ }
 
-      50% {
-        transform: translate(-55%, -55%) scale(1.05);
-      }
+ @keyframes floatImg {
+   0% {
+     transform: translate(-45%, -45%) scale(1);
+   }
 
-      100% {
-        transform: translate(-45%, -45%) scale(1);
-      }
-    }
+   50% {
+     transform: translate(-55%, -55%) scale(1.05);
+   }
 
-    .page-content {
-      position: relative;
-      z-index: 1;
-    }
-     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #fff;
-    }
+   100% {
+     transform: translate(-45%, -45%) scale(1);
+   }
+ }
 
-    .footer {
-      background: #1e1e1e;
-      padding: 40px 20px;
-      text-align: center;
-    }
+ .page-content {
+   position: relative;
+   z-index: 1;
+ }
 
-    .footer h2 {
-      margin: 0;
-      font-size: 28px;
-      font-weight: 600;
-      color: #ffffff;
-    }
+ body {
+   margin: 0;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-color: #121212;
+   color: #fff;
+ }
 
-    .subscribe-btn {
-      margin-top: 20px;
-      display: inline-block;
-      background-color: #cc0000;
-      color: #fff;
-      padding: 12px 25px;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      text-transform: uppercase;
-      transition: background 0.3s ease;
-    }
+ .footer {
+   background: #1e1e1e;
+   padding: 40px 20px;
+   text-align: center;
+ }
 
-    .subscribe-btn:hover {
-      background-color: #e60000;
-    }
+ .footer h2 {
+   margin: 0;
+   font-size: 28px;
+   font-weight: 600;
+   color: #ffffff;
+ }
 
-    .social-icons {
-      margin-top: 25px;
-    }
+ .subscribe-btn {
+   margin-top: 20px;
+   display: inline-block;
+   background-color: #cc0000;
+   color: #fff;
+   padding: 12px 25px;
+   font-size: 16px;
+   font-weight: bold;
+   border: none;
+   border-radius: 25px;
+   cursor: pointer;
+   text-transform: uppercase;
+   transition: background 0.3s ease;
+ }
 
-    .social-icons a {
-      color: #ffffff;
-      margin: 0 10px;
-      font-size: 22px;
-      transition: color 0.3s ease;
-    }
+ .subscribe-btn:hover {
+   background-color: #e60000;
+ }
 
-    .social-icons a:hover {
-      color: #ff4081;
-    }
+ .social-icons {
+   margin-top: 25px;
+ }
 
-    @media screen and (max-width: 600px) {
-      .footer h2 {
-        font-size: 22px;
-      }
+ .social-icons a {
+   color: #ffffff;
+   margin: 0 10px;
+   font-size: 22px;
+   transition: color 0.3s ease;
+ }
 
-      .subscribe-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-      }
+ .social-icons a:hover {
+   color: #ff4081;
+ }
 
-      .social-icons a {
-        font-size: 20px;
-      }
-    }
+ .lgsp:hover {
+   color: aliceblue;
+   text-decoration: none;
+   color: white;
+ }
 
-    .subscribe-btn:hover {
-      opacity: 0;
-      pointer-events: none;
-    }
-    .card-body{
-      color: blue;
-    }
-    .navbar{
-      background-color: black;
-    }
-    .mycatsminor{
-      margin-left: 25px;
-      margin-top: 5px;
-      text-align: center;
-      background-color: white;
-      color: blue;
-      border: black 2px solid;
-      border-radius: 15px;
-      display: inline-block;
-      width: 170px;
-    }
-    .mycatsminor:hover{
-      background-color: rgb(45, 45, 160);
-      color: wheat;
-    }
-    .allbtn{
-        text-decoration-line: none;
-    }
-    .btncntflex{
-      display: flex;
-      flex-wrap: wrap;
-    }
+ @media screen and (max-width: 600px) {
+   .footer h2 {
+     font-size: 22px;
+   }
+
+   .subscribe-btn {
+     padding: 10px 20px;
+     font-size: 14px;
+   }
+
+   .social-icons a {
+     font-size: 20px;
+   }
+ }
+
+ .subscribe-btn:hover {
+   opacity: 0;
+   pointer-events: none;
+ }
+
+ .card-body {
+   color: blue;
+ }
+
+ .navbar {
+   background-color: black;
+ }
+
+ .mycatsminor {
+   margin-left: 25px;
+   margin-top: 5px;
+   text-align: center;
+   background-color: white;
+   color: blue;
+   border: black 2px solid;
+   border-radius: 15px;
+   display: inline-block;
+   width: 170px;
+ }
+
+ .mycatsminor:hover {
+   background-color: rgb(45, 45, 160);
+   color: wheat;
+ }
+
+ .allbtn {
+   text-decoration-line: none;
+ }
+
+ .btncntflex {
+   display: flex;
+   flex-wrap: wrap;
+ }

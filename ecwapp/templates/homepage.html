@@ -14,6 +14,7 @@
   {% load static %}
   <title>Hello, world!</title>
   <link rel="stylesheet" href="{% static 'ecwapp/css/homepage.css' %}">
+
 </head>
 
 <body>
@@ -23,7 +24,7 @@
 
   <div id="particles-js"></div>
   <nav class="navbar navbar-expand-lg navbar-dark" style="position: sticky; top: 0px; z-index: 10;">
-    <a class="navbar-brand" href="#">YADAV MALL</a>
+    <!-- <a class="navbar-brand" href="/">YADAV MALL</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -32,7 +33,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">YADAV MALL <span class="sr-only">(current)</span></a>
         </li>
 
         <li class="nav-item">
@@ -49,23 +50,29 @@
 
       </ul>
       <form style="padding-right: 5px;" method="GET" target="_self" action="/" class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-danger mr-2">
-          Login
+        <a href="app/login" class="lgsp btn btn-outline-primary mr-2">
+            Login
+        </a>
+
+        <a href="app/signup" class="lgsp btn btn-outline-primary mr-2">
+            Sign Up
+        </a>
         </button>
         <input class="form-control mr-sm-2" type="search" placeholder="Search 🔍" aria-label="Search" name="query">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
       </form>
 
 
       <a href="showcart/" style="color: white;">
-        <button type="button" id="cart_i" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"
-          title="click here to purchase items which you was keeped in cart">
+        <button type="button" id="cart_i" class="btn btn-outline-primary" data-bs-toggle="tooltip"
+          data-bs-placement="bottom" title="click here to purchase items which you was keeped in cart">
           &#128722;(<span id="cart_calc">0</span>)</button>
       </a>
 
 
 
-      <button type="button" id="clear" class="btn btn-secondary" style="margin-left: 5px;">Clear &#128722;</button>
+      <button type="button" id="clear" class="btn btn-outline-primary" style="margin-left: 5px;">Clear
+        &#128722;</button>
 
     </div>
   </nav>
