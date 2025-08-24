@@ -14,7 +14,7 @@
   <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="login-form">
       <h2>Login</h2>
-      <form action="#" method="POST">
+      <form action="#" method="POST" id="myform">
         {% csrf_token %}
         <div class="mb-3">
           <label for="username" class="form-label">Username</label>
@@ -28,5 +28,6 @@
       </form>
     </div>
   </div>
+  <script src="{% static 'ecwapp/js/login.js' %}"></script>
 </body>
 </html>
