@@ -170,4 +170,7 @@ def signup_process(request):
 def log_after_sign(request):
     return render(request,'sign+log.html')
 
+def profile_page(request):
+    return render(request,'profile_page.html')
+
         

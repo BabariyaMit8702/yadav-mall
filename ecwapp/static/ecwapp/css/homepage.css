@@ -251,6 +251,11 @@
    color: white;
  }
 
+ #profile_icon{
+  position: relative;
+  left: 133px;
+ }
+
  @media screen and (max-width: 600px) {
    .footer h2 {
      font-size: 22px;

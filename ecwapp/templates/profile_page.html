@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Page</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'ecwapp/css/profile_page.css' %}">
+  <style>
+    .home{
+        text-decoration: none;
+    }
+    .edit{
+        text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <a href="/" class="btn home">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M3 9.75L12 3l9 6.75M4.5 10.5V21h6v-6h3v6h6V10.5" />
+        </svg>
+        Home
+    </a>
+
+      <a href="#" class="btn edit">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M11 5h2m2 0h2M6 19h12M4 21h16a1 1 0 001-1v-9a1 1 0 00-.293-.707l-7-7a1 1 0 00-1.414 0l-7 7A1 1 0 004 11v9a1 1 0 001 1z" />
+        </svg>
+        Edit
+    </a>
+    </div>
+
+    <div class="profile">
+      <img src="https://i.pravatar.cc/150?img=3" alt="Profile" />
+      <h2>John Doe</h2>
+    </div>
+
+    <div class="info">
+      <div class="info-item">
+        <p>Address</p>
+        <p>123 Main Street, New York</p>
+      </div>
+      <div class="info-item">
+        <p>Email</p>
+        <p>johndoe@example.com</p>
+      </div>
+      <div class="info-item">
+        <p>Phone</p>
+        <p>+91 9876543210</p>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

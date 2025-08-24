@@ -10,5 +10,6 @@ urlpatterns = [
     path('api/get-access/',TokenObtainPairView.as_view()),
     path('api/get-refresh/',TokenRefreshView.as_view()),
     path('signup-process/',views.signup_process),
-    path('success/',views.log_after_sign)
+    path('success/',views.log_after_sign),
+    path('profile/',views.profile_page)
     ]

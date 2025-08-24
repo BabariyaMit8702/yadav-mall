@@ -98,14 +98,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const accessToken = localStorage.getItem("access");
   const Btn1 = document.getElementById("lgspin");
   const Btn2 = document.getElementById("lgspup");
+  const the_icon = document.getElementById('profile_icon');
 
   if (isTokenValid(accessToken) == true) {
     Btn1.style.visibility = "hidden";
     Btn2.style.visibility = "hidden";
+    the_icon.style.visibility = 'visible';
   } else {
     if (isTokenValid(accessToken) == false) {
       Btn1.style.visibility = "visible";
       Btn2.style.visibility = "visible";
+      the_icon.style.visibility = 'hidden';
     }else{
        getrefresh(accessToken)
     }
