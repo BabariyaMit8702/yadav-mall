@@ -1,5 +1,4 @@
- body {
-     background: #f0f2f5;
+#thewrap {
      display: flex;
      justify-content: center;
      align-items: center;
@@ -38,6 +37,7 @@
      outline: none;
      border: none;
  }
+
 
  @media (max-width: 576px) {
       .signup-form{

@@ -1,4 +1,5 @@
 from django.shortcuts import render,HttpResponse,redirect
+from django.contrib import messages
 from .models import product,contect,orders,UpiTransaction
 from math import ceil
 from django.db.models import Q
@@ -9,6 +10,7 @@ import qrcode
 from io import BytesIO
 import base64
 from urllib.parse import unquote_plus
+from django.contrib.auth.models import User
 
 def home(request):
     query = request.GET.get('query', '').strip()  
@@ -150,3 +152,22 @@ def login(request):
 
 def app(request):
     return HttpResponse('THE APP')
+
+def signup_process(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email_id = request.POST.get('email','')
+        password = request.POST.get('password')
+
+        if User.objects.filter(username=username).exists():
+            messages.error(request,'USERNAME ALREADY EXISTS')
+            return redirect('/app/signup/')
+        
+        usersaveing = User.objects.create_user(username=username,email=email_id,password=password)
+        usersaveing.save()
+        return redirect('/app/success/')
+    
+def log_after_sign(request):
+    return render(request,'sign+log.html')
+
+        
