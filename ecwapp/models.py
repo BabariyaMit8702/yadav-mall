@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class product(models.Model):
@@ -48,3 +49,11 @@ class UpiTransaction(models.Model):
  
     def __str__(self):
         return self.txn_id
+
+class profile(models.Model):
+    profile_id = models.AutoField(primary_key=True)
+    onwer = models.OneToOneField(User,on_delete=models.CASCADE)
+    profile_pic = models.ImageField(upload_to="myimages/",default="")
+    address = models.CharField(max_length=50,default="")
+    email = models.CharField(max_length=33,default="")
+    phone_no = models.CharField(max_length=15,default="")

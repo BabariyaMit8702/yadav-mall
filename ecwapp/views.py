@@ -1,6 +1,6 @@
 from django.shortcuts import render,HttpResponse,redirect
 from django.contrib import messages
-from .models import product,contect,orders,UpiTransaction
+from .models import product,contect,orders,UpiTransaction,profile
 from math import ceil
 from django.db.models import Q
 import uuid
@@ -11,6 +11,10 @@ from io import BytesIO
 import base64
 from urllib.parse import unquote_plus
 from django.contrib.auth.models import User
+from .serializers import profile_Serializer
+from rest_framework import viewsets,status
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
 
 def home(request):
     query = request.GET.get('query', '').strip()  
@@ -173,4 +177,29 @@ def log_after_sign(request):
 def profile_page(request):
     return render(request,'profile_page.html')
 
-        
+
+class profile_info(viewsets.ViewSet):
+    
+    def retrieve(self,request,pk=None):
+        permission_class = [IsAuthenticated]
+        the_onwer = profile.objects.get(pk=pk)
+        serializer = profile_Serializer(the_onwer)
+        return Response(serializer.data)
+    
+    def update(self,request,pk=None):
+        permission_classes = [IsAuthenticated]
+        the_onwer = profile.objects.get(pk=pk)
+        serializer = profile_Serializer(the_onwer,data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response (serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+    
+    def partial_update(self,request,pk=None):
+        permission_classes = [IsAuthenticated]
+        the_onwer = profile.objects.get(pk=pk)
+        serializer = profile_Serializer(the_onwer,data=request.data,partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors,status=status.HTTP_101_SWITCHING_PROTOCOLS)
