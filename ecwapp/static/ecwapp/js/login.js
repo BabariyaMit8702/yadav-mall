@@ -27,6 +27,9 @@ form.addEventListener('submit',function(e) {
         let data = await response.json();
         console.log(data.access);
         console.log(data.refresh);
+        localStorage.setItem('access',data.access);
+        localStorage.setItem('refresh',data.refresh);
+        window.location.href = '/';
     }catch(err){
         console.log(err)
     }
