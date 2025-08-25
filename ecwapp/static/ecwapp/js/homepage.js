@@ -26,7 +26,7 @@ $('.cart').click(function () {
 
 let cl = document.getElementById('clear');
 cl.addEventListener('click', function () {
-  localStorage.clear();
+  localStorage.removeItem('cart');
   location.reload();
 });
 (function () {
@@ -83,7 +83,8 @@ async function getrefresh(a_tkn) {
     location.reload();
   }
   if(isTokenValid(refresh_tkn) == '-1'){
-      localStorage.clear();
+      localStorage.removeItem('access');
+      localStorage.removeItem('refresh');
       location.reload();
   }
   // else{

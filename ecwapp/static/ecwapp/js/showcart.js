@@ -79,6 +79,6 @@
     updatet();
                
         $("#sb").click(function () {
-            localStorage.clear();
+            localStorage.removeItem('cart');
             location.reload();
         })
