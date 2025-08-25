@@ -70,7 +70,7 @@ async function getrefresh(a_tkn) {
       {
         method: 'POST',
         headers: {
-          'Content-type': 'application/json'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({ refresh: refresh_tkn })
       }

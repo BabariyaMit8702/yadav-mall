@@ -11,7 +11,7 @@ from io import BytesIO
 import base64
 from urllib.parse import unquote_plus
 from django.contrib.auth.models import User
-from .serializers import profile_Serializer
+from .serializers import profile_Serializer,Userserializer
 from rest_framework import viewsets,status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
@@ -177,14 +177,24 @@ def log_after_sign(request):
 def profile_page(request):
     return render(request,'profile_page.html')
 
+class my_id(viewsets.ViewSet):
+
+    def list(self,request):
+        permission_classes = [IsAuthenticated]
+        u = request.user
+        serializer = Userserializer(u)
+        return Response(serializer.data)
 
 class profile_info(viewsets.ViewSet):
     
     def retrieve(self,request,pk=None):
-        permission_class = [IsAuthenticated]
-        the_onwer = profile.objects.get(pk=pk)
-        serializer = profile_Serializer(the_onwer)
-        return Response(serializer.data)
+        permission_classes = [IsAuthenticated]
+        try:
+            the_onwer = profile.objects.get(pk=pk)
+            serializer = profile_Serializer(the_onwer)
+            return Response(serializer.data)
+        except profile.DoesNotExist:
+            return Response({'error':'profile does not exist'},status=404)
     
     def update(self,request,pk=None):
         permission_classes = [IsAuthenticated]

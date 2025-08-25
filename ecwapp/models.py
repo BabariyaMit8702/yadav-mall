@@ -57,3 +57,6 @@ class profile(models.Model):
     address = models.CharField(max_length=50,default="")
     email = models.CharField(max_length=33,default="")
     phone_no = models.CharField(max_length=15,default="")
+
+    def __str__(self):
+        return f'{self.onwer.id}. {self.onwer.username}'

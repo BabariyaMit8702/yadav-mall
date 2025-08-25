@@ -13,7 +13,7 @@ form.addEventListener('submit',function(e) {
             {
                 method: 'POST',
                 headers:{
-                    'Content-type': 'application/json'
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ 
                     username : uname,
