@@ -1,0 +1,108 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 500px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: 0.3s;
+      width: 100%;
+      box-shadow: 0 4px 6px #00f2fe;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #4facfe;
+      outline: none;
+      box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+    }
+
+    .upload-field {
+      border: 2px dashed #aaa;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .upload-field:hover {
+      border-color: #4facfe;
+      background: #f9f9f9;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scaleX(0.7);
+      opacity: 0.7;
+    }
+
+    .btn:active{
+      visibility: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 20px;
+      }
+      input, textarea {
+        font-size: 14px;
+      }
+    }

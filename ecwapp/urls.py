@@ -17,5 +17,6 @@ urlpatterns = [
     path('signup-process/',views.signup_process),
     path('success/',views.log_after_sign),
     path('profile/',views.profile_page),
+    path('edit-profile/',views.put_patch),
     path('custom-apis/',include(router.urls)),
    ]

@@ -177,6 +177,9 @@ def log_after_sign(request):
 def profile_page(request):
     return render(request,'profile_page.html')
 
+def put_patch(request):
+    return render(request,'update_profile.html')
+
 class my_id(viewsets.ViewSet):
 
     def list(self,request):
@@ -212,3 +215,4 @@ class profile_info(viewsets.ViewSet):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors,status=status.HTTP_101_SWITCHING_PROTOCOLS)
+
