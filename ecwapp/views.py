@@ -187,14 +187,13 @@ class my_id(viewsets.ViewSet):
 
 class profile_info(viewsets.ViewSet):
     
-    def retrieve(self,request,pk=None):
+    def list(self,request):
         permission_classes = [IsAuthenticated]
-        try:
-            the_onwer = profile.objects.get(pk=pk)
-            serializer = profile_Serializer(the_onwer)
-            return Response(serializer.data)
-        except profile.DoesNotExist:
-            return Response({'error':'profile does not exist'},status=404)
+        the_list = profile.objects.filter(onwer=request.user)
+        print(request.user)
+        serializer = profile_Serializer(the_list,many=True)
+        return Response(serializer.data)
+        
     
     def update(self,request,pk=None):
         permission_classes = [IsAuthenticated]

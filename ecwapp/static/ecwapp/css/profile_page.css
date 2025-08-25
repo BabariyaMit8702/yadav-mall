@@ -66,13 +66,15 @@
         text-align: center;
     }
 
-    .profile img {
-        width: 110px;
-        height: 110px;
+    #profile_pic_now {
         border-radius: 50%;
         border: 4px solid #3b82f6;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        object-fit: cover;
+        background-image: url('https://wallpapers.com/images/hd/user-profile-placeholder-icon-jiv4adftoq5dhj54.png');
+        width: 150px;
+        height: 150px;
+        position: relative;
+        left: 110px;
     }
 
     .profile h2 {
@@ -119,15 +121,18 @@
 
     @media (max-width: 480px) {
         .card {
-            padding: 15px;
+             transform: scale(0.9);
         }
 
-        .profile img {
-            width: 90px;
-            height: 90px;
+        #profile_pic_now {
+            position: static;
+            transform: scale(0.7);
         }
 
         .profile h2 {
-            font-size: 18px;
+            font-size: 20px;
+            position: relative;
+            left : 80px;
+            bottom: 100px;
         }
     }
