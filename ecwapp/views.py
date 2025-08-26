@@ -188,6 +188,11 @@ class my_id(viewsets.ViewSet):
         u = request.user
         serializer = Userserializer(u)
         return Response(serializer.data)
+    
+    def destroy(self,request,pk=None):
+        u = request.user
+        u.delete()
+        return Response({'messege':'user was deleted succussfully'})
 
 class profile_info(viewsets.ViewSet):
     

@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-    async function get_id() {
+    async function get_username() {
         try {
             let access = localStorage.getItem('access');
             let response = await fetch('http://127.0.0.1:8000/app/custom-apis/user_pk/',
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     async function exe() {
-        let name_now = await get_id();
+        let name_now = await get_username();
         await profile_info(name_now);
     }
     exe();
@@ -138,3 +138,59 @@ function ok_cb() {
     api(the_id);
 }
 ok.addEventListener('click', ok_cb)
+
+let out = document.getElementById('logout');
+out.addEventListener('click',function(){
+    localStorage.clear();
+    window.location.href = '/';
+})
+
+async function user_id_now (){
+    try{
+        let access = localStorage.getItem('access');
+        let response = await fetch('http://127.0.0.1:8000/app/custom-apis/user_pk/',
+            {
+                method:'GET',
+                headers:{
+                    'Authorization':'Bearer ' + access,
+                    'Content-Type':'application/json'
+                }
+            }
+        )
+        if(!response.ok){
+            throw new Error('the new one');
+        }
+        let data = await response.json();
+        return data.id;
+    }catch(e){
+        console.log(e);        
+    }
+}
+
+let per = document.getElementById('per');
+per.addEventListener('click',async function(){
+    let the_rv = await user_id_now();
+    async function del(id) {
+        try{
+            let access = localStorage.getItem('access');
+            let response = await fetch(`http://127.0.0.1:8000/app/custom-apis/user_pk/${id}/`,
+                {
+                    method:'DELETE',
+                    headers:{
+                        'Authorization':'Bearer ' + access
+                    }
+                }    
+            )
+            if(!response.ok){
+                throw new Error('the new one');
+            }
+            // let data = await response.json();
+   
+        }catch(e){
+            console.log(e)
+        }
+    }
+    await del(the_rv);
+    localStorage.clear();
+    window.location.href = '/';
+})

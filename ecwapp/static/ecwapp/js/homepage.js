@@ -46,6 +46,16 @@ cl.addEventListener('click', function () {
   }
 })();
 
+function go_to_cart(){
+  let access = localStorage.getItem('access');
+  if(access !== null){
+      window.location.href = 'showcart/';
+  }else{
+      window.location.href = 'app/login/';
+  }
+}
+
+
 function isTokenValid(token) {
   if (!token) { return false; }
   if (token == null) { return false; }
@@ -150,7 +160,7 @@ document.addEventListener("DOMContentLoaded",async function () {
       Btn2.style.visibility = "visible";
       the_icon.style.visibility = 'hidden';
     }else{
-       getrefresh(accessToken)
+      getrefresh(accessToken);
     }
   }
 });
