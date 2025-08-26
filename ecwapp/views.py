@@ -194,7 +194,6 @@ class profile_info(viewsets.ViewSet):
     def list(self,request):
         permission_classes = [IsAuthenticated]
         the_list = profile.objects.filter(onwer=request.user)
-        print(request.user)
         serializer = profile_Serializer(the_list,many=True)
         return Response(serializer.data)
         

@@ -136,10 +136,13 @@ document.addEventListener("DOMContentLoaded",async function () {
     await pic_now();
     
     let dp_location = localStorage.getItem('homepage_dp');
-    if(dp_location !== ""){
+    
+    if(dp_location !== "" && dp_location !=="null"){
     the_icon.style.setProperty("background-image",`url(${dp_location})`,"important")
     the_icon.style.border = '0px white solid';
     the_icon.style.borderRadius = '50%';
+    }else{
+      the_icon.style.setProperty("background-image",`url("https://static.vecteezy.com/system/resources/previews/010/056/184/non_2x/people-icon-sign-symbol-design-free-png.png")`)
     }
   } else {
     if (isTokenValid(accessToken) == false) {
