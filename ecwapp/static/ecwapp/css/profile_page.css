@@ -112,6 +112,59 @@
         color: #111827;
     }
 
+    #custom-model{
+        position: fixed;
+        top: 10px;
+        display: none;
+        background-color: #111827;
+        padding: 23px;
+        color:#fff;
+        border: 0px;
+        border-radius: 13px;
+        animation: th 1s 1;
+    }
+
+    #model-cancel{
+        border: 0px black solid;
+        width: 123px;
+        height: 33px;
+        border-radius: 50px;
+        position: relative;
+        top: 13px;
+        transition: transform 0.3s ease;
+    }
+
+    #model-ok{
+        background-color: red;
+        border: 0px black solid;
+        width: 123px;
+        height: 33px;    
+        border-radius: 50px;    
+        margin-left: 15px;
+        position: relative;
+        top: 13px;
+        color: #fff;
+        transition: transform 0.3s ease;
+    }
+
+    #model-ok:active{
+        border: 2px wheat solid;
+        transform: scale(0.7);
+    }
+
+    #model-cancel:active{
+        transform: scale(0.7);
+    }
+
+    @keyframes th {
+        0%{
+            transform: scale(0);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
+
     @media (max-width: 768px) {
         .card {
             padding: 20px;
@@ -124,7 +177,7 @@
 
     @media (max-width: 480px) {
         .card {
-             transform: scale(0.9);
+            transform: scale(0.9);
         }
 
         #profile_pic_now {
@@ -135,7 +188,7 @@
         .profile h2 {
             font-size: 20px;
             position: relative;
-            left : 80px;
+            left: 80px;
             bottom: 100px;
         }
     }

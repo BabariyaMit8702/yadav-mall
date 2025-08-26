@@ -1,5 +1,4 @@
 
-
 let form = document.getElementById('the_form');
 form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -26,7 +25,7 @@ form.addEventListener('submit', function (e) {
         if(phone !== ""){
             formdata.append('phone_no',phone);
         }
-        if(the_pic.value !== ""){
+        if(the_pic.value !== "" || the_pic.value !== null){
             formdata.append('profile_pic',the_pic.files[0]);
         }
         let response = await fetch(`http://127.0.0.1:8000/app/custom-apis/profile-details/${pr_id}/`,

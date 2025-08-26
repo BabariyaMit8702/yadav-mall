@@ -180,6 +180,7 @@ def profile_page(request):
 def put_patch(request):
     return render(request,'update_profile.html')
 
+
 class my_id(viewsets.ViewSet):
 
     def list(self,request):
