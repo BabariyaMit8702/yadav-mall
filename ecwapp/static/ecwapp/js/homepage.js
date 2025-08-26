@@ -83,8 +83,7 @@ async function getrefresh(a_tkn) {
     location.reload();
   }
   if(isTokenValid(refresh_tkn) == '-1'){
-      localStorage.removeItem('access');
-      localStorage.removeItem('refresh');
+      localStorage.clear();
       location.reload();
   }
   // else{
