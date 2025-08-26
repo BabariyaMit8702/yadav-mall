@@ -95,7 +95,35 @@ async function getrefresh(a_tkn) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+async function pic_now() {
+  try{
+    let access = localStorage.getItem('access');
+    let response = await fetch(`http://127.0.0.1:8000/app/custom-apis/profile-details/`,
+      {
+        method:'GET',
+        headers:{
+          'Authorization':'Bearer ' + access,
+          // 'Content-Type':'application/json'
+        }
+      }
+    )
+    if(!response.ok){
+      throw new Error('the new one yet')
+    }
+    let data = await response.json();
+
+    data.map((dp) => {
+      localStorage.setItem('homepage_dp',dp.profile_pic);
+    })
+        
+
+  }catch(e){
+    console.log(e);
+    
+  }
+}
+
+document.addEventListener("DOMContentLoaded",async function () {
   const accessToken = localStorage.getItem("access");
   const Btn1 = document.getElementById("lgspin");
   const Btn2 = document.getElementById("lgspup");
@@ -105,6 +133,15 @@ document.addEventListener("DOMContentLoaded", function () {
     Btn1.style.visibility = "hidden";
     Btn2.style.visibility = "hidden";
     the_icon.style.visibility = 'visible';
+    
+    await pic_now();
+    
+    let dp_location = localStorage.getItem('homepage_dp');
+    if(dp_location !== ""){
+    the_icon.style.setProperty("background-image",`url(${dp_location})`,"important")
+    the_icon.style.border = '0px white solid';
+    the_icon.style.borderRadius = '50%';
+    }
   } else {
     if (isTokenValid(accessToken) == false) {
       Btn1.style.visibility = "visible";
@@ -115,3 +152,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+

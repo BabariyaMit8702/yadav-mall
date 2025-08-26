@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="{% static 'ecwapp/css/update_profile.css' %}">
 </head>
 <body>
+  
   <div class="container">
+    <a href="/app/profile/" class="pr">
+      GO BACK
+    </a>
     <h2>Edit Profile</h2>
     <form id="the_form">
       <div>
@@ -33,7 +37,7 @@
         </div>
       </div>
 
-      <button type="submit" class="btn">Update Profile</button>
+      <button type="submit" class="btn" id="btn">Update Profile</button>
     </form>
   </div>
   <script src="{% static 'ecwapp/js/update_profile.js' %}"></script>

@@ -254,6 +254,12 @@
  #profile_icon{
   position: relative;
   left: 133px;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/010/056/184/non_2x/people-icon-sign-symbol-design-free-png.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 33px;
+  height: 33px;
  }
 
  @media screen and (max-width: 600px) {

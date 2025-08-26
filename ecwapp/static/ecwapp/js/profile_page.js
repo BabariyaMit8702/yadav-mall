@@ -42,7 +42,9 @@ document.addEventListener('DOMContentLoaded',function(){
             let data = await response.json();
             
             data.map((p) => 
-            {
+            {   
+                localStorage.setItem('profile_id',p.profile_id);
+                
                 localStorage.setItem('profile_email',p.email);
                 localStorage.setItem('profile_phone_no',p.phone_no);
                 localStorage.setItem('profile_address',p.address);
@@ -80,6 +82,6 @@ document.addEventListener('DOMContentLoaded',function(){
     async function exe() {
         let name_now = await get_id();
         await profile_info(name_now);
-    }
+        }
     exe();
 })

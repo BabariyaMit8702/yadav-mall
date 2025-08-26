@@ -53,7 +53,7 @@
     }
 
     input:focus, textarea:focus {
-      border-color: #4facfe;
+      border: 2px solid #4facfe;
       outline: none;
       box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
     }
@@ -84,11 +84,29 @@
     }
 
     .btn:hover {
-      transform: scaleX(0.7);
       opacity: 0.7;
     }
 
-    .btn:active{
+    .btn:focus{
+      visibility: hidden;
+    }
+
+    .pr{
+      height: 50px;
+      width: 50px;
+      background-color: aqua;
+      color: white;
+      padding: 5px;
+      border: #00f2fe 2px solid;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    .pr:hover{
+      opacity: 0.7;
+    }
+
+    .pr:focus{
       visibility: hidden;
     }
 

@@ -73,7 +73,7 @@
         background-image: url('https://wallpapers.com/images/hd/user-profile-placeholder-icon-jiv4adftoq5dhj54.png');
         background-repeat: no-repeat;
         background-position: center;
-        background-size: contain;
+        background-size: cover;
         width: 150px;
         height: 150px;
         position: relative;
