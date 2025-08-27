@@ -19,25 +19,24 @@
 </div>
 
     <img src="data:image/png;base64,{{ qr_img }}" alt="Scan to Pay">
-    <br><Br><br>
+    <br><br>
       <div id="or">
     <p>Enter your Details to Verify:</p>
     <form action="/verify/" method="POST">
       {% csrf_token %}
       <br>
-      <label for="text">Enter Transaction ID which You can show onside of QR:-</label><br>
+      <label for="text">Enter Transaction ID:-</label>
       <input type="text" name="trn_id" id="trn_id" required>
       <br>
-      <label for="text">Enter Your txn id from your payment history:-</label><br>
+      <label for="text">Enter Your txn Id:-</label>
         <input type="text" name="txn" id="txn" required>
-      <br>
-      <label for="text">Enter Your Name which You was used in order Form:-</label><br>
-        <input type="text" name="full name" id="the_name" required>
-      <br>
-      <br>
-      <button type="submit">
+      
+      
+      <br><br>
+      <button type="submit" id="verify">
         Verify
       </button>
+      <br><br><Br>
       </form>
 </div>
   </div>

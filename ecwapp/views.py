@@ -152,7 +152,7 @@ def verify(request):
             the_obj.name = the_name
             the_obj.verify = tx
             the_obj.save()
-            return redirect(request,"thnx.html")
+            return render(request,"thnx.html")
 
     return redirect('/tid/')
 

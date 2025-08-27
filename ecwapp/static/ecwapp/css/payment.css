@@ -55,8 +55,18 @@
 
     #or{
       position: static;
-      margin-top: 20px;
+      margin-top: 3px;
+      transform: scale(1.5);
     }
+    #verify{
+      border-radius: 15px;
+      color: #2a64c5;
+      background-color: white;
+      border: none;
+      text-decoration: none;
+      padding: 7px 20px 7px 20px;
+    }
+
     #and{
       font-size: 23px;
     }
