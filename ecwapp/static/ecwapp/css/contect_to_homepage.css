@@ -71,4 +71,9 @@
                 transform: scale(1.7) !important;
             }
         }
+        @media (max-width:768px) {
+            .container{
+                transform: scale(0.7);
+            }
+        }
         
