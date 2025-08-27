@@ -100,15 +100,16 @@ def reod(request):
     
     if(request.method=="POST"):    
         selected_items = request.POST.get("selected_items")
-        total_amount = request.POST.get("total_amount")    
-        name = request.POST.get("fullname")
+        total_amount = request.POST.get("total_amount") 
+        global order_user_name   
+        order_user_name = request.POST.get("fullname")
         phone_no = request.POST.get("phone")
         address = request.POST.get("address")
         city = request.POST.get("CT")
         zip_code = request.POST.get("zip_code")
         payment_method = request.POST.get("payment")
 
-        od = orders(selected_items=selected_items,total_amount=total_amount,name=name,phone_no=phone_no,address=address,city=city,zip_code=zip_code,payment_method=payment_method)
+        od = orders(selected_items=selected_items,total_amount=total_amount,name=order_user_name,phone_no=phone_no,address=address,city=city,zip_code=zip_code,payment_method=payment_method)
         od.save()
         
     if(request.method=="POST"):
@@ -143,7 +144,8 @@ def verify(request):
     if(request.method == "POST"):
         trn = request.POST.get('trn_id')
         tx = request.POST.get('txn')
-        the_name = request.POST.get('full name')
+        the_name = order_user_name
+        print(the_name)
         try:
             the_obj = UpiTransaction.objects.get(txn_id = trn)
         except UpiTransaction.DoesNotExist:
