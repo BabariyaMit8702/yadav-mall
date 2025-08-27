@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function exe() {
         let name_now = await get_username();
+        
         await profile_info(name_now);
     }
     exe();

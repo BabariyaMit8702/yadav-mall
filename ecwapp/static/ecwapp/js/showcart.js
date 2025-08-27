@@ -6,7 +6,8 @@
                 discount = 0;
             }
                 updatet();
-            }
+        }
+
 
         if (localStorage.getItem('cart') == null) {
             cart = {};

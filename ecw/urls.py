@@ -17,6 +17,8 @@ urlpatterns = [
     path('reod/',views.reod,name="reod"),
     path('thnx/',views.thnx,name="thankU"),
     path('img/',views.bs),
+    path('tid/',views.returnback),
+    path('verify/',views.verify),
     path('app/',include('ecwapp.urls')),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

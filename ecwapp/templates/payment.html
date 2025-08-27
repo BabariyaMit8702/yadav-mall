@@ -21,7 +21,24 @@
     <img src="data:image/png;base64,{{ qr_img }}" alt="Scan to Pay">
     <br><Br><br>
       <div id="or">
-    <p>Or click this link: <a style="color: rgb(98, 255, 0);" href="{{ upi_url }}">Pay via UPI App</a></p>
+    <p>Enter your Details to Verify:</p>
+    <form action="/verify/" method="POST">
+      {% csrf_token %}
+      <br>
+      <label for="text">Enter Transaction ID which You can show onside of QR:-</label><br>
+      <input type="text" name="trn_id" id="trn_id" required>
+      <br>
+      <label for="text">Enter Your txn id from your payment history:-</label><br>
+        <input type="text" name="txn" id="txn" required>
+      <br>
+      <label for="text">Enter Your Name which You was used in order Form:-</label><br>
+        <input type="text" name="full name" id="the_name" required>
+      <br>
+      <br>
+      <button type="submit">
+        Verify
+      </button>
+      </form>
 </div>
   </div>
 </body>

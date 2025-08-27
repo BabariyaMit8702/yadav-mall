@@ -22,14 +22,15 @@ form.addEventListener('submit',function(e) {
             }
         )
         if(!response.ok){   
-            throw new Error('login failed');
-        }
+            alert('Your data is invalid');
+        }else{
         let data = await response.json();
         console.log(data.access);
         console.log(data.refresh);
         localStorage.setItem('access',data.access);
         localStorage.setItem('refresh',data.refresh);
         window.location.href = '/';
+        }
     }catch(err){
         console.log(err)
     }

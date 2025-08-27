@@ -112,18 +112,15 @@ def reod(request):
         od.save()
         
     if(request.method=="POST"):
-        #zip_code = request.POST.get("zip_code")
         pm = request.POST.get("payment")
-        if(pm=="cash_on_delivery"): 
+        if(pm=="cash_on_delivery"):
             return redirect("/thnx/")
         elif(pm=="upi"):
             payble_amount = request.POST.get("total_amount")
             txn_id = str(uuid.uuid4())
-            upi_id = "gpay-11262978705@okbizaxis"
-            upi_url = f"upi://pay?pa={upi_id}&pn=YourName&tid={txn_id}&tr={txn_id}&tn=Order%20Payment&am={payble_amount}&cu=INR"
+            upi_id = 'ahirnaimish655@oksbi'
             
-            # UPI payment URL
-            upi_url = f"upi://pay?pa={upi_id}&pn=YourName&tid={txn_id}&tr={txn_id}&tn=Order%20Payment&am={payble_amount}&cu=INR"
+            upi_url = f"upi://pay?pa={upi_id}&pn=YourName&tn=Order%20Payment&am={payble_amount}&cu=INR"
 
 
             UpiTransaction.objects.create(txn_id=txn_id, amount=payble_amount)
@@ -139,8 +136,28 @@ def reod(request):
                 "txn_id": txn_id,
                 "amount": payble_amount,
             })
-
+        
         return render(request,"payment.html",{'upi_url': upi_url})
+
+def verify(request):
+    if(request.method == "POST"):
+        trn = request.POST.get('trn_id')
+        tx = request.POST.get('txn')
+        the_name = request.POST.get('full name')
+        try:
+            the_obj = UpiTransaction.objects.get(txn_id = trn)
+        except UpiTransaction.DoesNotExist:
+            the_obj = None
+        if(the_obj != None):
+            the_obj.name = the_name
+            the_obj.verify = tx
+            the_obj.save()
+            return redirect(request,"thnx.html")
+
+    return redirect('/tid/')
+
+def returnback(request):
+    return render(request,"return back.html")
 
 def thnx(request):
     return render(request,"thnx.html")
