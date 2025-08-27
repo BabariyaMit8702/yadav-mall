@@ -88,7 +88,16 @@ input[type="text"],
     }
 
     @media (max-width:768px) {
-      .container{
-        
+      #btncc{
+        margin-left: 250px !important;
+        margin-bottom: 175px;
+        position: relative;
+        top: 20px;
+        transform: scale(1.33);
+      }
+      .to_home{
+        position: relative;
+        top: 55px;
+        right: 150px;
       }
     }

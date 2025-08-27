@@ -2,6 +2,9 @@
   background-color: blue;
 }
 
+body{
+  height: 100vh;
+}
 .col-md-3 img {
   width: 250px;
   height: 350px;
@@ -119,5 +122,23 @@ body .no-padding {
 
   .p {
     width: 550px;
+  }
+}
+
+@media (max-width:768px) {
+  img{
+    transform: scale(1.55);
+    margin: 103px;
+    margin-top: 200px;
+  }
+  .r{
+    position: relative;
+    top: 150px;
+    transform: scale(1.15);
+    margin-left: 50px;
+  }
+  .btn{
+    position: relative;
+    top: 50px;
   }
 }

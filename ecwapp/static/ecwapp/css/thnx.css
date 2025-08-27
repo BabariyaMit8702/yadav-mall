@@ -91,3 +91,8 @@ body {
       width: 400px;
       }
     }
+    @media (max-width:768px) {
+      .mdq{
+        width: 299px;
+      }
+    }
