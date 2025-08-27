@@ -110,11 +110,13 @@
         {% if ns == 1 %}
 
         <div class="container carousel-inner no-padding">
-          <pre><h1 style="color: chartreuse;">{{prod.0.category}}  </h1></pre>
+          <pre><h1 style="color: chartreuse;" class="ml-3">{{prod.0.category}}  </h1></pre>
           {% for i in prod %}
           <div class="carousel-item {% if forloop.first %}active{% endif %}">
             <div class="card imgback" style="width: 18rem; margin: auto;">
+              <div class="forimg">
               <img src="media/{{i.image}}" class="card-img-top imgs" alt="{{i.product_name}}">
+              </div>
               <hr style="border: #0069d9 1px solid;">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">{{i.product_name}}</h5>

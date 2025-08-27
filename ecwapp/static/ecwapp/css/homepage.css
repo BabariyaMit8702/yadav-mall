@@ -120,7 +120,6 @@
    color: white;
  }
 
- /* Gradient background animation */
  #bg-gradient {
    position: fixed;
    top: 0;
@@ -147,7 +146,6 @@
    }
  }
 
- /* Particles overlay container */
  #particles-js {
    position: fixed;
    top: 0;
@@ -157,7 +155,6 @@
    z-index: -2;
  }
 
- /* Subtle moving background images */
  .bg-layer {
    position: fixed;
    top: 0;
@@ -314,4 +311,27 @@
  .btncntflex {
    display: flex;
    flex-wrap: wrap;
+ }
+
+ @media (max-width:768px) {
+  .card{
+    width: 350px !important;
+    height: 550px I !important;
+  }
+  .forimg{
+    height: 400px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(201, 224, 167);
+  }
+  .imgs{
+    width: 300px;
+    height: auto;
+  }
+  .carousel-indicators{
+    position: relative;
+    top: 750px !important;
+  }
  }
