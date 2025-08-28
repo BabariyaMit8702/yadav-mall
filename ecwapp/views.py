@@ -255,3 +255,9 @@ class review_api(viewsets.ViewSet):
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+    
+    def destroy(self,request,pk=None):
+        permission_calsses = [IsAuthenticated]
+        review = Review.objects.get(pk=pk)
+        review.delete()
+        return Response({'messages':'deleted succussfully'})

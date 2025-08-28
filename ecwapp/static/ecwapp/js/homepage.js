@@ -185,9 +185,10 @@ document.addEventListener("DOMContentLoaded",async function () {
             console.log(e);
         }
     }
+    if(localStorage.getItem('access')){
     let the_name = await get_username();
     localStorage.setItem('my_currunt_name',`${the_name}`);
-    
+    }
 
   const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.getElementById('navbarSupportedContent');

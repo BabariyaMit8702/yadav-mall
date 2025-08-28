@@ -35,9 +35,10 @@ document.addEventListener('DOMContentLoaded',async function () {
           hr.classList.add('the_hr');
           spa.innerText = `User:-  ${fd.user_name}`;
           li.innerText = `Review:- ${fd.the_review}`;
-          ul_access.appendChild(hr)
+          ul_access.appendChild(hr);
           ul_access.appendChild(spa);
-          ul_access.appendChild(li);          
+          ul_access.appendChild(li);
+          ul_access.appendChild(btn);
         })
         
         
@@ -47,12 +48,18 @@ document.addEventListener('DOMContentLoaded',async function () {
     }
   }
   await list();
+ 
+
 })
 
 let add = document.getElementById('form');
 
 add.addEventListener('submit',async function (e) {
     e.preventDefault();
+    if(!localStorage.getItem('access')){
+      window.location.href = '/app/login/';
+      return;
+    }
     try{
       let val = document.getElementById('review_input').value;
       let access = localStorage.getItem('access');
@@ -85,7 +92,6 @@ add.addEventListener('submit',async function (e) {
       console.log(e);
       
     }
-      
-    
     
 })
+
