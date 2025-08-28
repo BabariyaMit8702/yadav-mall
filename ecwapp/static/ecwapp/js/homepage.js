@@ -163,5 +163,14 @@ document.addEventListener("DOMContentLoaded",async function () {
       getrefresh(accessToken);
     }
   }
+
+  const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.getElementById('navbarSupportedContent');
+
+    navbarToggler.addEventListener('click', function () {
+      if (navbarCollapse.classList.contains('show')) {
+        location.reload();
+      }
+    });
 });
 

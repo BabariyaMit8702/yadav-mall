@@ -23,8 +23,8 @@
   <div class="bg-layer"></div>
 
   <div id="particles-js"></div>
-  <nav class="navbar navbar-expand-lg navbar-dark" style="position: sticky; top: 0px; z-index: 10;">
-    <!-- <a class="navbar-brand" href="/">YADAV MALL</a> -->
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark" style="position: sticky; top: 0px; z-index: 10;">
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -75,7 +75,52 @@
         &#128722;</button>
 
     </div>
-  </nav>
+  </nav> -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="position: sticky; top: 0; z-index: 10; background-color:black;">
+  
+  <a class="navbar-brand" id="yadavmall" href="/">YADAV MALL</a>
+
+  <div class="d-flex order-lg-2 align-items-center">
+    <a href="app/login" id="lgspin" class="lgsp btn btn-outline-primary mr-2">Login</a>
+    <a href="app/signup" id="lgspup" class="lgsp btn btn-outline-primary mr-2">Sign Up</a>
+    <a href="app/profile/" id="profile_icon"></a>
+  </div>
+
+  <button class="navbar-toggler order-lg-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse order-lg-1" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: lightyellow;" href="about/">ABOUT-US</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: lightyellow;" href="contect/">CONTACT-US</a>
+      </li>
+    </ul>
+
+    <form class="form-inline my-2 my-lg-0" method="GET" target="_self" action="/">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search 🔍" aria-label="Search" name="query">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+    <a onclick="go_to_cart()" style="color: white;">
+      <button type="button" id="cart_i" class="btn btn-outline-primary ml-2">
+        &#128722;(<span id="cart_calc">0</span>)
+      </button>
+    </a>
+    <button type="button" id="clear" class="btn btn-outline-primary ml-2">
+      Clear &#128722;
+    </button>
+  </div>
+</nav>
+
+
   <div class="page-content">
 
     <br>

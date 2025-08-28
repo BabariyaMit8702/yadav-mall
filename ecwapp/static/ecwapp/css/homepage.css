@@ -248,15 +248,21 @@
    color: white;
  }
 
+ #lgspin{
+  margin-left: 10px;
+ }
+
  #profile_icon{
-  position: relative;
-  left: 133px;
   background-image: url('https://static.vecteezy.com/system/resources/previews/010/056/184/non_2x/people-icon-sign-symbol-design-free-png.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   width: 33px;
   height: 33px;
+  margin-left: 10px;
+  display: inline-block;
+  position: relative;
+  right: 150px;
  }
 
  @media screen and (max-width: 600px) {
@@ -334,4 +340,25 @@
     position: relative;
     top: 750px !important;
   }
+ }
+ @media (max-width:440px) {
+  .align-items-center{
+    position: relative;
+    right: 33px;
+  }
+  .navbar-brand{
+      transform: scale(0.7);
+  }
+  .navbar-toggler{
+    position: fixed;
+    right: 10px;
+    transform: scale(0.7);
+  }
+  #yadavmall{
+    margin-left: -19px;
+  }
+ }
+
+ @media (max-width:1102px) and (min-width:993) {
+  
  }
