@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded',async function () {
           let spa = document.createElement('span');
           let li = document.createElement('li');
           let hr = document.createElement('hr');
+          
           hr.classList.add('the_hr');
           spa.innerText = `User:-  ${fd.user_name}`;
           li.innerText = `Review:- ${fd.the_review}`;
           ul_access.appendChild(hr);
           ul_access.appendChild(spa);
           ul_access.appendChild(li);
-          ul_access.appendChild(btn);
         })
         
         
@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded',async function () {
   }
   await list();
  
+  
+  
 
 })
 
