@@ -61,3 +61,12 @@ class profile(models.Model):
 
     def __str__(self):
         return f'{self.onwer.id}. {self.onwer.username}'
+    
+class Review(models.Model):
+    review_id = models.AutoField(primary_key=True)
+    product_name = models.CharField(max_length=30,default="")
+    user_name = models.CharField(max_length=30,default="")
+    the_review = models.CharField(max_length=50,default="")
+
+    def __str__(self):
+        return self.product_name

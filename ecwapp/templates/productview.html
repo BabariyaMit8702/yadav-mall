@@ -25,14 +25,29 @@
     </div>
 
     <div class="r">
-      <h3 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+      <h3 id="h3" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
         {{currunt_product.product_name}}</h3>
       <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">RS. {{currunt_product.price}}
       </p>
       <p class="p" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
         descriptions: {{ currunt_product.desc }}
       </p>
+    <BR><BR><br>
+    <div id="review">
+      <h3>REVIEWS</h3>
+      <BR>
+      <form action="" method="post" id="form">
+        {% csrf_token %}
+        <input type="text" placeholder="Tell about this product" name="review" value="" required oninput="changes()" id="review_input">
+        <button type="submit" id="submitbtn">Add</button>
+      </form>
+      <div id="allrevs">
+        <ul style="list-style: none;" id="ul_list">
+        </ul>
+      </div>
     </div>
+    <br><br><br><br><br>
+  </div>
   </div>
 
 

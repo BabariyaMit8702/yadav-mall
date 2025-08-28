@@ -1,6 +1,6 @@
 from django.shortcuts import render,HttpResponse,redirect
 from django.contrib import messages
-from .models import product,contect,orders,UpiTransaction,profile
+from .models import product,contect,orders,UpiTransaction,profile,Review
 from math import ceil
 from django.db.models import Q
 import uuid
@@ -11,7 +11,7 @@ from io import BytesIO
 import base64
 from urllib.parse import unquote_plus
 from django.contrib.auth.models import User
-from .serializers import profile_Serializer,Userserializer
+from .serializers import profile_Serializer,Userserializer,reviewSerializer
 from rest_framework import viewsets,status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
@@ -240,3 +240,18 @@ class profile_info(viewsets.ViewSet):
             return Response(serializer.data)
         return Response(serializer.errors,status=status.HTTP_101_SWITCHING_PROTOCOLS)
 
+class review_api(viewsets.ViewSet):
+    
+    def list(self,request):
+        reviews = Review.objects.all()
+        serializer = reviewSerializer(reviews,many=True)
+        return Response(serializer.data)
+    
+    def create(self,request):
+        permission_classes = [IsAuthenticated]
+        posted_data = request.data
+        serializer = reviewSerializer(data=posted_data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)

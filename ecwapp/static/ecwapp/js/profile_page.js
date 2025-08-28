@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function exe() {
         let name_now = await get_username();
-        
+        localStorage.setItem('my_currunt_name',`${name_now}`);
         await profile_info(name_now);
     }
     exe();

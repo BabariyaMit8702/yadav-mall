@@ -164,6 +164,31 @@ document.addEventListener("DOMContentLoaded",async function () {
     }
   }
 
+ async function get_username() {
+        try {
+            let access = localStorage.getItem('access');
+            let response = await fetch('http://127.0.0.1:8000/app/custom-apis/user_pk/',
+                {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + access,
+                        'Content-Type': 'application/json'
+                    }
+                }
+            )
+            if (!response.ok) {
+                throw new Error('HTTPS!!!' + response.status)
+            }
+            let data = await response.json();
+            return data.username;
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    let the_name = await get_username();
+    localStorage.setItem('my_currunt_name',`${the_name}`);
+    
+
   const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.getElementById('navbarSupportedContent');
 

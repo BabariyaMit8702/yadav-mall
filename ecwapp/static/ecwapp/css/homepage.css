@@ -303,11 +303,16 @@
    border-radius: 15px;
    display: inline-block;
    width: 170px;
+   transition: transform 0.4s ease;
  }
 
  .mycatsminor:hover {
    background-color: rgb(45, 45, 160);
    color: wheat;
+ }
+
+ .mycatsminor:active{
+  transform: scale(0.7);
  }
 
  .allbtn {
@@ -357,8 +362,4 @@
   #yadavmall{
     margin-left: -19px;
   }
- }
-
- @media (max-width:1102px) and (min-width:993) {
-  
  }

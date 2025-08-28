@@ -69,15 +69,19 @@ body .no-padding {
   margin-right: 1px;
   border: 2px solid black;
   color: black;
-  transition: transform 0.5s ease-in;
   position: relative;
   bottom: 33px;
+  transition: transform 1s ease;
 }
 
 .btn:hover {
   color: white;
   transform: rotate(360deg);
   background-color: black;
+}
+
+.btn:active{
+  transform: scale(0.000001);
 }
 
 .myfl {
@@ -92,6 +96,33 @@ body .no-padding {
 
 .p {
   width: 600px;
+}
+#review{
+  width: 550px;
+  height: auto;
+  background-color: #ff4e50;
+  padding: 10px;
+}
+#review_input{
+  width: 400px;
+  border-radius: 5px;
+  border: none;
+}
+#submitbtn{
+  margin-left: 5px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  background-color:#2b5876;
+  color: rgb(192, 219, 139);
+  transition: transform 0.3s ease;
+  opacity: 0.33;
+}
+#submitbtn:active{
+  transform: scale(0.7);
+}
+#submitbtn:hover{
+  background-color:#0094f6;
 }
 
 @media (min-width:768px) and (max-width:992px) {
@@ -123,6 +154,10 @@ body .no-padding {
   .p {
     width: 550px;
   }
+}
+
+.the_hr{
+  background-color: bisque;
 }
 
 @media (max-width:768px) {

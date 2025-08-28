@@ -29,7 +29,7 @@ form.addEventListener('submit',function(e) {
         console.log(data.refresh);
         localStorage.setItem('access',data.access);
         localStorage.setItem('refresh',data.refresh);
-        window.location.href = '/';
+        window.location.href = '/app/profile/';
         }
     }catch(err){
         console.log(err)
