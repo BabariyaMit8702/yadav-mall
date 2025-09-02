@@ -97,11 +97,22 @@ body .no-padding {
 .p {
   width: 600px;
 }
+#create{
+  background-color: #ffcc70;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 1px 0px 10px 5px rgb(255, 255, 255,1);
+  transform: scaleX(0.9);
+  position: relative;
+  right: 26px;
+}
 #review{
   width: 550px;
   height: auto;
   background-color: #ff4e50;
   padding: 10px;
+  border-radius: 15px;
+  box-shadow: 1px 0px 10px 5px rgba(0,0,0,1);
 }
 #review_input{
   width: 400px;
@@ -131,6 +142,11 @@ body .no-padding {
     position: relative;
     right: 22px;
     top: 33px;
+  }
+
+  #create{
+    transform: scaleX(0.9) !important;
+    width: 600px;
   }
 
   img {
@@ -175,5 +191,8 @@ body .no-padding {
   .btn{
     position: relative;
     top: 50px;
+  }
+  #create{
+    transform: scaleX(0.9) !important;
   }
 }
