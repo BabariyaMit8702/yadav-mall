@@ -8,6 +8,7 @@ router = DefaultRouter()
 router.register(r'profile-details',views.profile_info,basename='profile-detail')
 router.register(r'user_pk',views.my_id , basename='user-info')
 router.register(r'review',views.review_api,basename='review-details')
+router.register(r'order-history',views.order_history,basename='order-history')
 
 urlpatterns = [
     path('',views.app),
@@ -19,5 +20,6 @@ urlpatterns = [
     path('success/',views.log_after_sign),
     path('profile/',views.profile_page),
     path('edit-profile/',views.put_patch),
+    path('order-mestory/',views.order_mestory),
     path('custom-apis/',include(router.urls)),
    ]

@@ -11,10 +11,11 @@ from io import BytesIO
 import base64
 from urllib.parse import unquote_plus
 from django.contrib.auth.models import User
-from .serializers import profile_Serializer,Userserializer,reviewSerializer
+from .serializers import profile_Serializer,Userserializer,reviewSerializer,orderSerializer
 from rest_framework import viewsets,status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from django_filters.rest_framework import DjangoFilterBackend
 
 def home(request):
     query = request.GET.get('query', '').strip()  
@@ -261,3 +262,12 @@ class review_api(viewsets.ViewSet):
         review = Review.objects.get(pk=pk)
         review.delete()
         return Response({'messages':'deleted succussfully'})
+    
+class order_history(viewsets.ModelViewSet):
+    queryset = orders.objects.all()
+    serializer_class = orderSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['name']
+
+def order_mestory(reqeust):
+    return render(reqeust,'order-history.html')

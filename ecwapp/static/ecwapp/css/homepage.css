@@ -363,3 +363,17 @@
     margin-left: -19px;
   }
  }
+
+ @media (max-width:768px) {
+  .the_gb{
+    transform: scale(1.3);
+    position: relative;
+    left: 50px;
+  }
+ }
+
+ @media (max-width:450px) {
+ .get_small{
+    transform: scale(0.7) !important;
+  }
+ }

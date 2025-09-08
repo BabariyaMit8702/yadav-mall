@@ -49,6 +49,9 @@
       <li class="nav-item">
         <a class="nav-link" style="color: lightyellow;" href="contect/">CONTACT-US</a>
       </li>
+       <li class="nav-item">
+        <a class="nav-link" style="color: lightyellow;" href="app/order-mestory/">ORDER-HISTORY</a>
+      </li>
     </ul>
 
     <form class="form-inline my-2 my-lg-0" method="GET" target="_self" action="/">
@@ -101,10 +104,10 @@
 
         {% if ns == 1 %}
 
-        <div class="container carousel-inner no-padding">
+        <div class="container carousel-inner the_small no-padding">
           <pre><h1 style="color: chartreuse;" class="ml-3">{{prod.0.category}}  </h1></pre>
           {% for i in prod %}
-          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <div class="carousel-item get_small {% if forloop.first %}active{% endif %}">
             <div class="card imgback" style="width: 18rem; margin: auto;">
               <div class="forimg">
               <img src="media/{{i.image}}" class="card-img-top imgs" alt="{{i.product_name}}">
@@ -114,9 +117,9 @@
                 <h5 class="card-title">{{i.product_name}}</h5>
                 <h6 class="card-title">Rs. {{i.price}}</h6>
                 <p class="card-text">{{i.desc|slice:":30"}}...</p>
-                <div class="mt-auto">
+                <div class="mt-auto the_gb ">
                   <button id="{{i.product_name}} || Rs. {{i.price}}" class="btn btn-primary cart">Add To Cart</button>
-                  <a href="/products/{{i.id}}" class="btn btn-primary quick-view-link" style="margin-left: 10px;">
+                  <a href="/products/{{i.id}}" class="btn btn-primary quick-view-link " style="margin-left: 10px;">
                     Quick View
                   </a>
                 </div>
