@@ -1,0 +1,82 @@
+ body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+      overflow-x: auto; /* mobile ke liye */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px; /* responsive ke liye scroll enable ho */
+    }
+
+    thead {
+      background: #4CAF50;
+      color: white;
+    }
+
+    thead th {
+      padding: 12px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    tbody td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tbody tr:hover {
+      background: #f1f1f1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      table {
+        font-size: 0.9rem;
+      }
+      thead {
+        display: none;
+      }
+      tbody td {
+        display: block;
+        text-align: left;
+        padding: 10px;
+      }
+      tbody td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        color: #4CAF50;
+      }
+      tbody tr {
+        margin-bottom: 15px;
+        display: block;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: white;
+      }
+      #items{
+        display: flex !important;
+        flex-wrap: wrap !important;
+      }
+    }
+  
