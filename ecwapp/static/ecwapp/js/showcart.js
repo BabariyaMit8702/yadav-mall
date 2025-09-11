@@ -83,3 +83,7 @@
             localStorage.removeItem('cart');
             location.reload();
         })
+
+let the_getting_name = (localStorage.getItem('my_currunt_name'));
+let the_value_is = document.getElementById('fullname');
+the_value_is.value = the_getting_name;

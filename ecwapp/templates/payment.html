@@ -15,7 +15,7 @@
     <div id="and">
     <h2>Scan and Pay</h2>
     <p>Amount: ₹{{ amount }}</p>
-    <p>Transaction ID: {{ txn_id }}</p>
+    <p >Transaction ID: {{ txn_id }}</p>
 </div>
 
     <img src="data:image/png;base64,{{ qr_img }}" alt="Scan to Pay">
@@ -40,6 +40,7 @@
       </form>
 </div>
   </div>
+  <script src="{% static 'ecwapp/js/payment.js' %}"></script>
 </body>
 
 </html>

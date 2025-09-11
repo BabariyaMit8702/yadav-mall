@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded',async function(){
         <td data-label="Phone No">${phone}</td>
         <td data-label="Address">${address}</td>
         <td data-label="Payment Method">${payment}</td>
+        <hr>
     `;
 
     tableBody.appendChild(row);
@@ -28,9 +29,23 @@ document.addEventListener('DOMContentLoaded',async function(){
             throw new Error('the new one!');
         }
         let data = await response.json();
-        console.log(data);
+        
         data.map((od) => 
-            addOrderRow(od.selected_items,od.total_amount,od.phone_no,od.address,od.payment_method)
+        {   
+            let json = od.selected_items;
+            let converted = JSON.parse(json);            
+            let result = [];
+
+            for(let k in converted){
+                let value = converted[k];
+                let prod = k.split('||')[0].trim();
+                prod = prod.toLowerCase();
+                result.push(`${prod}(${value})`);
+            }
+
+            result = result.join('<br>');
+            addOrderRow(result,od.total_amount,od.phone_no,od.address,od.payment_method)
+        }
         );
 
     }catch(e){

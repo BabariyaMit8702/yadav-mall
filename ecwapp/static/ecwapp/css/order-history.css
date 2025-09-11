@@ -78,5 +78,8 @@
         display: flex !important;
         flex-wrap: wrap !important;
       }
+      hr{
+        background-color: rgb(255, 0, 0);
+      }
     }
   
