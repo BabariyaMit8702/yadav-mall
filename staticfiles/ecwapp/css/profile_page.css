@@ -1,0 +1,231 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: #36404a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .card {
+        background: #fff;
+        width: 100%;
+        max-width: 420px;
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 1);
+        padding: 25px;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: none;
+        background: none;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .btn.home {
+        color: #2563eb;
+    }
+
+    .btn.home:hover {
+        color: #1e3a8a;
+    }
+
+    .btn.edit {
+        color: #4b5563;
+    }
+
+    .btn.edit:hover {
+        color: #000;
+    }
+
+    .btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .profile {
+        text-align: center;
+    }
+
+    #profile_pic_now {
+        border-radius: 50%;
+        border: 4px solid #3b82f6;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        background-image: url('https://wallpapers.com/images/hd/user-profile-placeholder-icon-jiv4adftoq5dhj54.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 150px;
+        height: 150px;
+        position: relative;
+        left: 110px;
+    }
+
+    .profile h2 {
+        margin-top: 12px;
+        font-size: 24px;
+        font-weight: 700;
+        color: #111827;
+    }
+
+    .info {
+        margin-top: 25px;
+        display: grid;
+        gap: 15px;
+    }
+
+    .info-item {
+        background: #e5e7eb;
+        padding: 12px 15px;
+        border-radius: 12px;
+        box-shadow: 10px 6px 20px rgb(17, 115, 227);
+    }
+
+    .info-item p:first-child {
+        font-size: 12px;
+        color: #6b7280;
+        margin-bottom: 4px;
+    }
+
+    .info-item p:last-child {
+        font-size: 15px;
+        font-weight: 500;
+        color: #111827;
+    }
+
+    #custom-model{
+        position: fixed;
+        top: 10px;
+        display: none;
+        background-color: #111827;
+        padding: 23px;
+        color:#fff;
+        border: 0px;
+        border-radius: 13px;
+        animation: th 1s 1;
+    }
+
+    #model-cancel{
+        border: 0px black solid;
+        width: 123px;
+        height: 33px;
+        border-radius: 50px;
+        position: relative;
+        top: 13px;
+        transition: transform 0.3s ease;
+    }
+
+    #model-ok{
+        background-color: red;
+        border: 0px black solid;
+        width: 123px;
+        height: 33px;    
+        border-radius: 50px;    
+        margin-left: 15px;
+        position: relative;
+        top: 13px;
+        color: #fff;
+        transition: transform 0.3s ease;
+    }
+
+    #model-ok:active{
+        border: 2px wheat solid;
+        transform: scale(0.7);
+    }
+
+    #model-cancel:active{
+        transform: scale(0.7);
+    }
+
+    #footer{
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    #logout{
+        padding: 12px 20px 12px 20px;
+        border: none;
+        border-radius: 12px;
+        background-color: red;
+        color: #fff;
+        transition: transform 0.3s ease;
+    }
+    #logout:hover{
+        opacity: 0.7;
+    }
+    #logout:active{
+        transform: scale(0.7);
+    }
+
+    #per{
+        padding: 12px 20px 12px 20px;
+        border: none;
+        border-radius: 12px;
+        background-color: red;
+        color: #fff;
+        transition: transform 0.3s ease;
+    }
+    #per:hover{
+        opacity: 0.7;
+    }
+    #per:active{
+        transform: scale(0.7);
+    }
+
+
+    @keyframes th {
+        0%{
+            transform: scale(0);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .card {
+            padding: 20px;
+        }
+
+        .profile h2 {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .card {
+            transform: scale(0.9);
+        }
+
+        #profile_pic_now {
+            position: static;
+            transform: scale(0.7);
+        }
+
+        .profile h2 {
+            font-size: 20px;
+            position: relative;
+            left: 80px;
+            bottom: 100px;
+        }
+    }

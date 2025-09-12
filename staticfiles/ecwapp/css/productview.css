@@ -1,0 +1,198 @@
+.carousel-indicators .active {
+  background-color: blue;
+}
+
+body{
+  height: 100vh;
+}
+.col-md-3 img {
+  width: 250px;
+  height: 350px;
+}
+
+body .carousel-indicator li {
+  background-color: blue;
+}
+
+body .carousel-indicators {
+  bottom: 0;
+}
+
+body .carousel-control-prev-icon,
+body .carousel-control-next-icon {
+  background-color: rgb(255, 2, 255);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  top: auto;
+  bottom: auto;
+}
+
+.carousel-control-prev-icon {
+  position: relative;
+  bottom: 270px;
+}
+
+.carousel-control-next-icon {
+  position: relative;
+  bottom: 270px;
+}
+
+body .no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.animated-bg {
+  background: linear-gradient(-45deg, #ff4e50, black, white, pink, #1e90ff, #2b5876, #ffcc70);
+  background-size: 400% 400%;
+  animation: gradientFlow 5s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.btn {
+  margin-right: 1px;
+  border: 2px solid black;
+  color: black;
+  position: relative;
+  bottom: 33px;
+  transition: transform 1s ease;
+}
+
+.btn:hover {
+  color: white;
+  transform: rotate(360deg);
+  background-color: black;
+}
+
+.btn:active{
+  transform: scale(0.000001);
+}
+
+.myfl {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 55px;
+}
+
+.r {
+  margin-left: 90px;
+}
+
+.p {
+  width: 600px;
+}
+#create{
+  background-color: #ffcc70;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 1px 0px 10px 5px rgb(255, 255, 255,1);
+  transform: scaleX(0.9);
+  position: relative;
+  right: 26px;
+}
+#review{
+  width: 550px;
+  height: auto;
+  background-color: #ff4e50;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 1px 0px 10px 5px rgba(0,0,0,1);
+}
+#review_input{
+  width: 400px;
+  border-radius: 5px;
+  border: none;
+}
+#submitbtn{
+  margin-left: 5px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  background-color:#2b5876;
+  color: rgb(192, 219, 139);
+  transition: transform 0.3s ease;
+  opacity: 0.33;
+}
+#submitbtn:active{
+  transform: scale(0.7);
+}
+#submitbtn:hover{
+  background-color:#0094f6;
+}
+
+@media (min-width:768px) and (max-width:992px) {
+  .myfl {
+    display: block;
+    position: relative;
+    right: 22px;
+    top: 33px;
+  }
+
+  #create{
+    transform: scaleX(0.9) !important;
+    width: 600px;
+  }
+
+  img {
+    width: 600px;
+    height: 600px;
+    margin-left: 50px;
+  }
+
+  .btn {
+    position: relative;
+    left: 60px;
+    top: 40px;
+  }
+
+  .r {
+    position: relative;
+    right: 10px;
+    top: 133px;
+  }
+
+  .p {
+    width: 550px;
+  }
+}
+
+.the_hr{
+  background-color: bisque;
+}
+
+@media (max-width:768px) {
+  img{
+    transform: scale(1.55);
+    margin: 103px;
+    margin-top: 200px;
+  }
+  .r{
+    position: relative;
+    top: 150px;
+    transform: scale(1.15);
+    margin-left: 50px;
+  }
+  .btn{
+    position: relative;
+    top: 50px;
+  }
+  #create{
+    transform: scaleX(0.9) !important;
+  }
+}

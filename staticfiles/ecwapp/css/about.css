@@ -1,0 +1,105 @@
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      user-select: none;
+    }
+
+    .cc{
+      border: #fff 2px solid;
+      border-radius: 10px;
+      margin: 5px;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    body {
+      text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+      box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+      height: 100vh; 
+    }
+
+    main{
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cover-container {
+      max-width: 42em;
+    }
+
+    .masthead-nav .nav-link {
+      padding: .25rem 0;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .5);
+      background-color: transparent;
+      border-bottom: .25rem solid transparent;
+    }
+
+    .masthead-nav .nav-link:hover,
+    .masthead-nav .nav-link:focus {
+      border-bottom-color: rgba(255, 255, 255, .25);
+    }
+
+    .masthead-nav .active {
+      color: #fff;
+      border-bottom-color: #fff;
+    }
+
+    .cc {
+      color: white;
+    }
+
+    .cc:hover {
+      background-color: white;
+      color: black;
+    }
+
+    #cl {
+      background-color: white;
+      color: black;
+    }
+    @media (min-width:768px) and (max-width:992px) {
+      .margin_tc{
+        margin-top: 350px !important;
+      }
+      .ftmtc{
+        margin-top: 250px !important;
+        position: fixed;
+        bottom: 13px;
+        left: 300px;
+      }
+      header{
+        transform: scale(1.1);
+      }
+      .cfont{
+        transform: scale(1.1);
+      }
+      main{
+        margin-bottom: 300px;
+      }
+    }
+
+      @media (max-width:768px) {
+        main{
+          margin-bottom: 300px;
+          transform: scale(0.7);
+        }
+        pre{
+          white-space:normal;
+        }
+        nav{
+          margin-top: 10px;
+        }
+        .ftmtc{
+          position: fixed;
+          bottom: 13px;
+          left: 50px;
+        }
+        .cc{
+          margin: 13px;
+        }
+      }
