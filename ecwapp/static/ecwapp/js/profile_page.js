@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     async function get_username() {
         try {
             let access = localStorage.getItem('access');
-            let response = await fetch('http://127.0.0.1:8000/app/custom-apis/user_pk/',
+            let response = await fetch('https://yadav-mall-1.onrender.com/app/custom-apis/user_pk/',
                 {
                     method: 'GET',
                     headers: {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let access = localStorage.getItem('access');
 
 
-            let response = await fetch(`http://127.0.0.1:8000/app/custom-apis/profile-details/`,
+            let response = await fetch(`https://yadav-mall-1.onrender.com/app/custom-apis/profile-details/`,
                 {
                     method: 'GET',
                     headers: {
@@ -116,7 +116,7 @@ function ok_cb() {
             let dic = {
                 profile_pic: null
             }
-            let response = await fetch(`http://127.0.0.1:8000/app/custom-apis/profile-details/${id}/`,
+            let response = await fetch(`https://yadav-mall-1.onrender.com/app/custom-apis/profile-details/${id}/`,
                 {
                     method: 'PATCH',
                     headers: {
@@ -149,7 +149,7 @@ out.addEventListener('click',function(){
 async function user_id_now (){
     try{
         let access = localStorage.getItem('access');
-        let response = await fetch('http://127.0.0.1:8000/app/custom-apis/user_pk/',
+        let response = await fetch('https://yadav-mall-1.onrender.com/app/custom-apis/user_pk/',
             {
                 method:'GET',
                 headers:{
@@ -174,7 +174,7 @@ per.addEventListener('click',async function(){
     async function del(id) {
         try{
             let access = localStorage.getItem('access');
-            let response = await fetch(`http://127.0.0.1:8000/app/custom-apis/user_pk/${id}/`,
+            let response = await fetch(`https://yadav-mall-1.onrender.com/app/custom-apis/user_pk/${id}/`,
                 {
                     method:'DELETE',
                     headers:{

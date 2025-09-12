@@ -62,7 +62,7 @@
 
             let parts = key.split('|| Rs. ');
             if (parts.length === 2) {
-                let price = parseFloat(parts[1]); // Convert string to float (in case decimal)
+                let price = parseFloat(parts[1]); 
                 total += price * quantity;
                 localStorage.setItem('cart_total', JSON.stringify(total));
             }

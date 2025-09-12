@@ -28,7 +28,7 @@ form.addEventListener('submit', function (e) {
         if(the_pic.value !== "" || the_pic.value !== null){
             formdata.append('profile_pic',the_pic.files[0]);
         }
-        let response = await fetch(`http://127.0.0.1:8000/app/custom-apis/profile-details/${pr_id}/`,
+        let response = await fetch(`https://yadav-mall-1.onrender.com/app/custom-apis/profile-details/${pr_id}/`,
             {
                 method:'PATCH',
                 headers:{
