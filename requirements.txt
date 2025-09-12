@@ -16,8 +16,10 @@ pillow                        11.2.1
 pip                           25.0.1
 PyJWT                         2.10.1
 PyMySQL                       1.1.1
+python-dotenv                 1.1.1
 qrcode                        8.2
 requests                      2.32.3
 sqlparse                      0.5.3
 tzdata                        2025.2
 urllib3                       2.4.0
+whitenoise                    6.10.0
