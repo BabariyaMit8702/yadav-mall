@@ -2,8 +2,10 @@ Package                       Version
 ----------------------------- ---------
 asgiref                       3.8.1
 certifi                       2025.4.26
+cffi                          2.0.0
 charset-normalizer            3.4.2
 colorama                      0.4.6
+cryptography                  45.0.7
 Django                        5.2.1
 django-filter                 25.1
 djangorestframework           3.16.1
@@ -14,6 +16,7 @@ mysqlclient                   2.2.7
 packaging                     25.0
 pillow                        11.2.1
 pip                           25.0.1
+pycparser                     2.23
 PyJWT                         2.10.1
 PyMySQL                       1.1.1
 python-dotenv                 1.1.1
