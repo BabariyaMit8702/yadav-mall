@@ -3,6 +3,10 @@ let header = document.getElementById('user');
 header.innerText = `Welcome ${user_name} - Order History`;
 
 document.addEventListener('DOMContentLoaded',async function(){
+    if(user_name === null){
+    window.location.href = "/app/login/";
+    return;
+    }
     const tableBody = document.getElementById("table_body");
     function addOrderRow(items, amount, phone, address, payment) {
     const row = document.createElement("tr");
