@@ -15,14 +15,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'django-insecure-e(t+sxb98a&1j8=_(7yd)g1xg7d)=+kmqe)&b1a*^(w8$(0#u3'
-SECRET_KEY = os.getenv("SECRET_KEY", "insecure-local-key")
+SECRET_KEY = os.getenv("SECRET_KEY", "fc9eaa90efc8638d66ccb6341e3b168b")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 #ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 #os.environ.get('ALLOWED_HOSTS','').split(',')
 
