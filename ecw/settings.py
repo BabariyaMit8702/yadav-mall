@@ -99,16 +99,20 @@ WSGI_APPLICATION = 'ecw.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    "default": dj_database_url.parse(
-        os.getenv("DATABASE_URL"),
-        conn_max_age=600
-    ) if os.getenv("DATABASE_URL") else {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+# DATABASES = {
+#     "default": dj_database_url.parse(
+#         os.getenv("DATABASE_URL"),
+#         conn_max_age=600
+#     ) if os.getenv("DATABASE_URL") else {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
+import dj_database_url
+DATABASES = {
+    "default": dj_database_url.config(default="postgresql://first_host_user:zjifcvwBt7DjfO2N4zbPCj5d5IqRX8xl@dpg-d326c2ndiees738hcnu0-a.singapore-postgres.render.com/first_host")
+}
 
 
 # Password validation
