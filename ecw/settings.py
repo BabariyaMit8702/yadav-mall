@@ -28,7 +28,11 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 #CLOUDINARY_URL = cloudinary://API_KEY:API_SECRET@CLOUD_NAME
 CLOUDINARY_URL='cloudinary://<your_api_key>:<your_api_secret>@de4yvnf2p'
+
+CLOUDINARY_URL = os.getenv("cloudinary://<your_api_key>:<your_api_secret>@de4yvnf2p")
+
 # Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -164,8 +168,8 @@ STATICFILES_DIRS = [
 
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+# MEDIA_URL = '/media/'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -189,5 +193,4 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': False                  
 }
 
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
