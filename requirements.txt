@@ -2,10 +2,12 @@ asgiref==3.8.1
 certifi==2025.4.26
 cffi==2.0.0
 charset-normalizer==3.4.2
+cloudinary==1.44.1
 colorama==0.4.6
 cryptography==45.0.7
 dj-database-url==3.0.1
 Django==5.2.1
+django-cloudinary-storage==0.3.0
 django-filter==25.1
 djangorestframework==3.16.1
 djangorestframework_simplejwt==5.5.1
@@ -21,6 +23,7 @@ PyMySQL==1.1.1
 python-dotenv==1.1.1
 qrcode==8.2
 requests==2.32.3
+six==1.17.0
 sqlparse==0.5.3
 tzdata==2025.2
 urllib3==2.4.0

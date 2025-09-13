@@ -203,5 +203,5 @@ document.addEventListener("DOMContentLoaded",async function () {
 let vr = document.getElementById('the_history_management');
 let the_currunt_name = localStorage.getItem('my_currunt_name');
 if(the_currunt_name == null){
-  vr.href = '/app/login/';
+  vr.href = 'https://yadav-mall-1.onrender.com//app/login/';
 }

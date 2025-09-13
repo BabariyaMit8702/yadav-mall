@@ -10,7 +10,7 @@ class product(models.Model):
     price = models.IntegerField(default=0)          
     desc = models.CharField(max_length=300)
     publicate_data = models.DateField()
-    image = models.ImageField(upload_to="myimages/",default="")
+    image = models.ImageField(upload_to="imgs_two/",default="")
 
     def __str__(self):
         return self.product_name
@@ -54,7 +54,7 @@ class UpiTransaction(models.Model):
 class profile(models.Model):
     profile_id = models.AutoField(primary_key=True)
     onwer = models.OneToOneField(User,on_delete=models.CASCADE)
-    profile_pic = models.ImageField(upload_to="myimages/",null=True)
+    profile_pic = models.ImageField(upload_to="imgs_two/",null=True)
     address = models.CharField(max_length=50,default="")
     email = models.CharField(max_length=33,default="")
     phone_no = models.CharField(max_length=15,default="")

@@ -26,6 +26,8 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 #os.environ.get('ALLOWED_HOSTS','').split(',')
 
+#CLOUDINARY_URL = cloudinary://API_KEY:API_SECRET@CLOUD_NAME
+CLOUDINARY_URL='cloudinary://<your_api_key>:<your_api_secret>@de4yvnf2p'
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,6 +40,8 @@ INSTALLED_APPS = [
     'ecwapp',
     'rest_framework',
     'django_filters',
+    "cloudinary",
+    "cloudinary_storage",
 ]
 
 MIDDLEWARE = [
@@ -184,3 +188,6 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=10),     
     'ROTATE_REFRESH_TOKENS': False                  
 }
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
