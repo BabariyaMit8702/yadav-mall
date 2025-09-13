@@ -27,9 +27,8 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 #os.environ.get('ALLOWED_HOSTS','').split(',')
 
 #CLOUDINARY_URL = cloudinary://API_KEY:API_SECRET@CLOUD_NAME
-CLOUDINARY_URL='cloudinary://<your_api_key>:<your_api_secret>@de4yvnf2p'
+#CLOUDINARY_URL='cloudinary://<your_api_key>:<your_api_secret>@de4yvnf2p'
 
-CLOUDINARY_URL = os.getenv("cloudinary://<your_api_key>:<your_api_secret>@de4yvnf2p")
 
 # Application definition
 
@@ -192,5 +191,17 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=10),     
     'ROTATE_REFRESH_TOKENS': False                  
 }
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+import cloudinary_storage
+import os
+
+cloudinary.config( 
+  cloud_name = os.getenv("CLOUD_NAME"),  
+  api_key = os.getenv("CLOUD_API_KEY"),  
+  api_secret = os.getenv("CLOUD_API_SECRET")  
+)
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
