@@ -76,7 +76,7 @@ async function getrefresh(a_tkn) {
   try {
     let refresh_tkn = localStorage.getItem('refresh');
     if(isTokenValid(refresh_tkn) == true){
-    let response = await fetch('https://yadav-mall-1.onrender.com/app/api/get-refresh/',
+    let response = await fetch('http://127.0.0.1:8000/app/api/get-refresh/',
       {
         method: 'POST',
         headers: {
@@ -107,7 +107,7 @@ async function getrefresh(a_tkn) {
 async function pic_now() {
   try{
     let access = localStorage.getItem('access');
-    let response = await fetch(`https://yadav-mall-1.onrender.com/app/custom-apis/profile-details/`,
+    let response = await fetch(`http://127.0.0.1:8000/app/custom-apis/profile-details/`,
       {
         method:'GET',
         headers:{
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded",async function () {
  async function get_username() {
         try {
             let access = localStorage.getItem('access');
-            let response = await fetch('https://yadav-mall-1.onrender.com/app/custom-apis/user_pk/',
+            let response = await fetch('http://127.0.0.1:8000/app/custom-apis/user_pk/',
                 {
                     method: 'GET',
                     headers: {
@@ -203,5 +203,5 @@ document.addEventListener("DOMContentLoaded",async function () {
 let vr = document.getElementById('the_history_management');
 let the_currunt_name = localStorage.getItem('my_currunt_name');
 if(the_currunt_name == null){
-  vr.href = 'https://yadav-mall-1.onrender.com//app/login/';
+  vr.href = 'http://127.0.0.1:8000/app/login/';
 }

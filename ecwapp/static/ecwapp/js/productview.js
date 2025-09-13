@@ -11,7 +11,7 @@ function changes() {
 document.addEventListener('DOMContentLoaded',async function () {
   async function list() {
     try{
-      let response = await fetch('https://yadav-mall-1.onrender.com/app/custom-apis/review/',
+      let response = await fetch('http://127.0.0.1:8000/app/custom-apis/review/',
         {
           method:'GET',
           headers:{
@@ -72,7 +72,7 @@ add.addEventListener('submit',async function (e) {
         user_name:user,
         product_name:product
       }
-      let response = await fetch(`https://yadav-mall-1.onrender.com/app/custom-apis/review/`,
+      let response = await fetch(`http://127.0.0.1:8000/app/custom-apis/review/`,
         {
           method:'POST',
           headers:{

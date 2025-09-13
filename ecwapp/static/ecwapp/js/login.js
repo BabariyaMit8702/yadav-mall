@@ -9,7 +9,7 @@ form.addEventListener('submit',function(e) {
     
     async function get_tkn() {
     try{
-        let response = await fetch('https://yadav-mall-1.onrender.com/app/api/get-access/',
+        let response = await fetch('http://127.0.0.1:8000/app/api/get-access/',
             {
                 method: 'POST',
                 headers:{

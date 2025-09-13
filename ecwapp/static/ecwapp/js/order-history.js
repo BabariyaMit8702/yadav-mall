@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded',async function(){
 }
 
     try{
-        let response = await fetch(`https://yadav-mall-1.onrender.com/app/custom-apis/order-history/?name=${user_name}`,
+        let response = await fetch(`http://127.0.0.1:8000/app/custom-apis/order-history/?name=${user_name}`,
             {
                 method:'GET',
             }

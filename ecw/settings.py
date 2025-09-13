@@ -14,15 +14,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-e(t+sxb98a&1j8=_(7yd)g1xg7d)=+kmqe)&b1a*^(w8$(0#u3'
-SECRET_KEY = os.getenv("SECRET_KEY", "fc9eaa90efc8638d66ccb6341e3b168b")
+SECRET_KEY = 'django-insecure-e(t+sxb98a&1j8=_(7yd)g1xg7d)=+kmqe)&b1a*^(w8$(0#u3'
+# SECRET_KEY = os.getenv("SECRET_KEY", "fc9eaa90efc8638d66ccb6341e3b168b")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = True
+# DEBUG = os.getenv("DEBUG", "False") == "True"
 
-#ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 #os.environ.get('ALLOWED_HOSTS','').split(',')
 
@@ -95,16 +95,16 @@ WSGI_APPLICATION = 'ecw.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'the_ecom',           
-#         'USER': 'yadav',         
-#         'PASSWORD': 'parth.priyanshu', 
-#         'HOST': '127.0.0.1',        
-#         'PORT': '5432',            
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'the_ecom',           
+        'USER': 'yadav',         
+        'PASSWORD': 'parth.priyanshu', 
+        'HOST': '127.0.0.1',        
+        'PORT': '5432',            
+    }
+}
 
 # DATABASES = {
 #     "default": dj_database_url.parse(
@@ -116,10 +116,10 @@ WSGI_APPLICATION = 'ecw.wsgi.application'
 #     }
 # }
 
-import dj_database_url
-DATABASES = {
-    "default": dj_database_url.config(default="postgresql://first_host_user:zjifcvwBt7DjfO2N4zbPCj5d5IqRX8xl@dpg-d326c2ndiees738hcnu0-a.singapore-postgres.render.com/first_host")
-}
+# import dj_database_url
+# DATABASES = {
+#     "default": dj_database_url.config(default="postgresql://first_host_user:zjifcvwBt7DjfO2N4zbPCj5d5IqRX8xl@dpg-d326c2ndiees738hcnu0-a.singapore-postgres.render.com/first_host")
+# }
 
 
 # Password validation
@@ -157,9 +157,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATICFILES_DIRS = [
- #  BASE_DIR / "static",  # yeh folder aapke project ke root mein hona chahiye
-#]
+STATICFILES_DIRS = [
+  BASE_DIR / "static",  # yeh folder aapke project ke root mein hona chahiye
+]
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
@@ -167,10 +167,10 @@ STATICFILES_DIRS = [
 
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
-# MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-# MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -192,16 +192,16 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': False                  
 }
 
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-import cloudinary_storage
-import os
+# import cloudinary
+# import cloudinary.uploader
+# import cloudinary.api
+# import cloudinary_storage
+# import os
 
-cloudinary.config( 
-  cloud_name = os.getenv("CLOUD_NAME"),  
-  api_key = os.getenv("CLOUD_API_KEY"),  
-  api_secret = os.getenv("CLOUD_API_SECRET")  
-)
+# cloudinary.config( 
+#   cloud_name = os.getenv("CLOUD_NAME"),  
+#   api_key = os.getenv("CLOUD_API_KEY"),  
+#   api_secret = os.getenv("CLOUD_API_SECRET")  
+# )
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
