@@ -1,6 +1,3 @@
-Babariya Mit is the author of this project<br>
-From talangana [360-490]<br>
-Study in gurukul it collage junagadh {SSSDIIT-JND}
+Tech Stack: Django, DRF, Django Templates (for UI)
 
-This is my e-commerce web app project for resume. 
-
+A complete e-commerce platform with JWT authentication, product categories, search, product details with reviews, add-to-cart functionality, and order management. Supports payment methods like COD and UPI (QR code). Users can view order history, post reviews, and interact with dynamic product filtering.
